@@ -1,4 +1,4 @@
-# BGDD rc2 — composants tiers et accès aux sources
+# BGDD rc3 — composants tiers et accès aux sources
 
 Le code original de l’application BGDD est gratuit et propriétaire, copyright © 2026 Angry Thread. **Cette mention ne couvre pas les composants ci-dessous**, leurs fontes, leurs sources ou leurs recettes sous licence libre.
 
@@ -17,7 +17,7 @@ Aucun des trois codes sources codec n’a été modifié dans le build de réfé
 
 ## Composants obtenus directement auprès de leurs éditeurs
 
-Le paquet rc2 **ne contient ni ne redistribue** les archives ou exécutables suivants. L’installateur les demande directement sur votre Mac, après votre action, via HTTPS et des URLs de releases fixées ; chaque archive est vérifiée par son SHA-256 avant préparation.
+Le paquet hybride rc3 **ne contient ni ne redistribue** les archives ou exécutables suivants. L’installateur les demande directement sur votre Mac, après votre action, via HTTPS et des URLs de releases fixées ; chaque archive est vérifiée par son SHA-256 avant préparation.
 
 | Composant | Version | Origine officielle | Licence et notices |
 |---|---|---|---|
@@ -36,3 +36,5 @@ Les conditions propriétaires BGDD ne restreignent pas les droits accordés sur 
 Le kit codec fournit une recette indépendante de construction, puis `install-codecs.pl` pour le remplacement volontaire de FFmpeg/ffprobe et la mise à jour de leurs empreintes locales dans une copie détenue par l’utilisateur. Cette opération ne nécessite ni clé privée ni accès au code propriétaire BGDD. Une configuration modifiée n’est pas une release officiellement vérifiée par Angry Thread et peut être remplacée par une réparation ou mise à jour officielle.
 
 Aucun copyright des fontes ou des moteurs n’est transféré à Angry Thread. Les fontes demeurent sous OFL ; les compositions graphiques réalisées avec leurs glyphes n’imposent pas cette licence au code original de l’application.
+
+Les matériaux et les deux recettes indépendantes hérités de rc2 sont inchangés. Leur label historique ne transforme ni les licences ni le nouveau verdict exact rc3. L’assemblage local du moteur après téléchargement direct n’ajoute aucun runtime amont au DMG ou aux assets hébergés par BGDD.

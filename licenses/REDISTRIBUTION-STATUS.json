@@ -1,11 +1,66 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "reviewedAt": "2026-10-12",
-  "releaseVersion": "0.4.8-rc.2",
+  "releaseVersion": "0.4.8-rc.3",
   "strategy": "hybrid-direct-upstream",
+  "engineLayout": "engine-app-v1",
+  "visibility": "private-preparation-publication-requires-explicit-approval",
   "redistributionAllowed": true,
+  "actualPackageScopeVerified": true,
+  "compiledAssetUploadAllowed": true,
+  "compiledAssetUploadScope": "Exact reviewed private candidate assets only; not permission to publish publicly",
   "localRecipeAllowed": true,
   "publicPublicationAuthorized": false,
+  "scope": "Scoped verdict for the exact rc3 hybrid SDK26 installer and corresponding third-party source kit. The embedded input status remains a pre-inspection snapshot. OS, AppKit, network, human Gatekeeper and public approval are separate qualifications.",
+  "inputReview": {
+    "scope": "controlled-input-materials-and-code-boundary-only",
+    "inputMaterialConformityVerified": true,
+    "embeddedPreInspectionStatus": true,
+    "embeddedStatusSHA256": "703f9bd2680fbd7498605ac3a71f7e74db253124007dc647d9fa71680229f6ab",
+    "actualPackageScopeVerified": false,
+    "compiledAssetUploadAllowed": false,
+    "publicPublicationAuthorized": false
+  },
+  "exactPackageReview": {
+    "actualPackageScopeVerified": true,
+    "redistributionAllowed": true,
+    "publicPublicationAuthorized": false,
+    "candidateSDK": "26.5",
+    "candidateArchitecture": "arm64",
+    "installerAppRegularFiles": 68,
+    "payloadLegalFiles": 23,
+    "thirdPartySourceKitFiles": 15,
+    "exactContainerFileInventory": true,
+    "upstreamRuntimeIncludedInDMG": false,
+    "originalApplicationSourceIncluded": false,
+    "privateRightsEvidenceIncluded": false,
+    "userRebuiltCodecReplacementProductionCoreVerified": true,
+    "DMG": {
+      "file": "BGDD-macOS-arm64.dmg",
+      "bytes": 35233766,
+      "sha256": "49e08ae7235f3474648d0de78441d30858fbdef3f4fd32df463cacbe08307bf7"
+    },
+    "sourceKit": {
+      "file": "BGDD-third-party-sources.zip",
+      "bytes": 14728156,
+      "sha256": "5282ee5ab7d20d0b3400ca56c9e15d6617c6b13cec0b3b07683e919e2929f0ad"
+    },
+    "reference": "../docs/DISTRIBUTION-LICENSES.md",
+    "externalVersionsSHA256": "e9161e0e9db5a03957f4c8dd3bb704c36d3a857defbb241e6cacde5c5f82f55a",
+    "documentationOnlyRefreshPreservedAll68AppFileSHA256": true
+  },
+  "qualification": {
+    "nativeAutomationMacOS26": "PASS",
+    "nativeAutomationMacOS27": "PASS",
+    "canonicalSDK26CodecsMacOS26": "PASS (5 local fixture checks)",
+    "canonicalSDK26CodecsMacOS27": "PASS (same codec bytes; 5 local fixture checks)",
+    "engineAppKitSequence": "UNKNOWN / NOT QUALIFIED (both hosted AppKit harness workflows failed; no verified launch binding or final UI; no engine/Gatekeeper cause inferred; no next attempt planned)",
+    "manualGatekeeperRoute": false,
+    "rc3PlatformNetworkFormats": "NOT TESTED",
+    "AppleDeveloperID": false,
+    "AppleNotarization": false,
+    "canonicalSDK26InstallerWindowOnMacOS27": "Observed read-only; no install or engine action; not a Gatekeeper route"
+  },
   "bundledComponents": [
     {
       "name": "FFmpeg/ffprobe",
@@ -22,7 +77,7 @@
       "userReplacementRecipeSHA256": "647212f56068c064dcb78033547fc3ebb36249d3e2f9511eb8ced51ecdd32e6e",
       "sourceMaterialClosure": true,
       "userReplacementFixtureVerified": true,
-      "userReplacementProductionCoreVerified": false,
+      "userReplacementProductionCoreVerified": true,
       "historicalFirstLocalBuildReference": {
         "record": "../sources/build-record.json",
         "sdk": "27.0",
@@ -33,7 +88,7 @@
         },
         "currentDistributedBinaryAuthority": false
       },
-      "actualCandidateBuildAuthority": "The current release VERSIONS.json:media (actual SDK/compiler/pre-sign hashes), its delivered payload native/integrity.json/native/dependencies.json (post-sign hashes), and release SHA256SUMS.",
+      "actualCandidateBuildAuthority": "../VERSIONS.json:media and the same release checksums; delivered payload integrity/dependencies identify post-sign codecs",
       "sameCorrespondingSourceInputsVerifiedForPreservedSDK26Build": true
     },
     {
@@ -92,22 +147,8 @@
     "originalApplicationContainsIdentifiedGPLCode": false,
     "nativeLibraryLinkToGPLTools": false,
     "standalonePublicCLIsAndOrdinaryFiles": true,
-    "analysis": "Defensible separate-program/aggregate boundary on inspected mechanisms and semantics; reassess if linking/plugins/internal-structure interfaces change.",
+    "analysis": "Separate-program/aggregate boundary reviewed for the rc3 mechanisms, including the original engine interface using fixed public CLI version commands. Physical bundle nesting does not itself decide copyright scope; reassess linking/plugins/internal interfaces.",
     "reference": "../docs/DISTRIBUTION-BOUNDARIES.md"
-  },
-  "unresolved": [],
-  "scope": "Scoped legal verdict for controlled rc2 hybrid corresponding-source inputs and documented inspections only. The first local SDK27 build record is historical. Current release VERSIONS.media and delivered payload integrity/dependencies identify its actual SDK/compiler and codec bytes. No original application source/internal rights evidence is published. Final newly built container needs its own scope inspection; public publication remains unauthorized.",
-  "packageScopeVerified": true,
-  "sourceProvenanceClarification": {
-    "kind": "documentation-only",
-    "historicalRecordExplicitlyScoped": true,
-    "sourceArchivesAndBothRecipesUnchanged": true,
-    "sourceKitFileCount": 15,
-    "payloadLegalFileCount": 23,
-    "allLegalInputFiles": 25,
-    "actualCandidateBuildHashAuthority": "VERSIONS.json:media",
-    "actualCandidateDeliveredCodecHashAuthority": "payload/native/integrity.json and payload/native/dependencies.json",
-    "finalRebuiltContainerScopeInspection": "Required for the final candidate; preserved earlier app/container inspections remain historical and are not a claim that documentation hashes in that earlier sealed app changed."
   },
   "originalCode": {
     "license": "Proprietary-Freeware",
@@ -117,10 +158,14 @@
     "thirdPartyRightsPreserved": true,
     "proprietarySourceIncludedInDistributionRepository": false
   },
-  "historicalReviewedContainer": {
-    "DMGSHA256": "9060b3d033a64be0aaebcaaa76d5aee1d28af7543aadedc9b1827ec08435338c",
-    "sourceKitSHA256": "d2eeefd06b1301f773cd9d55f5c06cefb2c66eb6ed5afcdb6ae4d4302b92e804",
-    "sameInstallerApp66FileSHA256": true,
-    "sameLockedSourceContent15FileSHA256": true
-  }
+  "sourceProvenanceClarification": {
+    "historicalRecord": "../sources/build-record.json",
+    "historicalSDK27RecordIsNotCurrentBinaryAuthority": true,
+    "sourceArchivesAndBothRecipesUnchanged": true,
+    "sourceKitFileCount": 15,
+    "payloadLegalFileCount": 23,
+    "actualCandidateBuildHashAuthority": "../VERSIONS.json:media",
+    "inheritedMaterialLabelsDoNotReuseRC2AppQualification": true
+  },
+  "unresolvedInThisReviewedPackageScope": []
 }

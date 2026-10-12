@@ -1,6 +1,7 @@
 {
   "formatVersion": 1,
-  "releaseVersion": "0.4.8-rc.2",
+  "releaseVersion": "0.4.8-rc.3",
+  "legalStatusFile": "licenses-status-rc3.json",
   "extensionVersion": "0.4.8",
   "nativeVersion": "0.3.4",
   "protocolVersion": 2,
@@ -21,25 +22,25 @@
     "stapled": false,
     "gatekeeperAccepted": false,
     "gatekeeperManualRouteValidated": false,
-    "signedCodeCount": 6
+    "signedCodeCount": 7
   },
   "documentation": {
-    "LIRE-MOI.txt": "91502818ab1725fd474ea3db0931534755c922d7f83bbd6adbc25b52977382f3",
-    "Installation BGDD.md": "87f83ed19781821cf21671cdaa22c73269f35397037e76450e1d1863bd5ee1bf",
-    "Présentation BGDD.md": "e93af56f5d8f0b66befa8f395ecd25b42689170fbea6114141b9072daa8f15d0",
-    "Présentation BGDD EN.md": "180651c2d5074845762b12d52345cd693836d9827845e493496a9e73d928ca25",
-    "Guide Gatekeeper.md": "b343ec9d4a500e44333d135b195fa2fd746acca2482602e13150ae198efd6c7d",
-    "Licences et notices.md": "95334e1a74de8bdb9d95da24b15b5be09ea842f0ca0bc8c1a8785aff86887c3d",
+    "LIRE-MOI.txt": "c4b120529c529f57bdae845c8811e4b36398a6ff1cda4df6476a80d9b8d3e7f2",
+    "Installation BGDD.md": "f39d3322c3d03c9c5680ad66b726a9c7bd1a0e29ec3aa85ce69fadc21dd93290",
+    "Présentation BGDD.md": "18036d283cf0681f5946e656f44003274c44e5b7e44f276ad0e0362a575ec960",
+    "Présentation BGDD EN.md": "a8013277615439d0cdaa3548d158b95ff752610508a501c08a426a1f576623fe",
+    "Guide Gatekeeper.md": "d40e781c0979ec58329806c3bc9e0117a0dc664f7baaa8173d035319efd1c7d6",
+    "Licences et notices.md": "86f05d5f8115ff847485cdc0ac58474bcefebb9aae1956073968efb3cc58782e",
     "Frontières de licence.md": "636e6ff33e4b48a18b598607fc7e51d23824b92d7d444a21f8fed4a7f4ccfab2",
     "Conditions BGDD.md": "44c64226d023c5e10591c569f0b3b3d7038fe514f8817af8aa65ee1814925e00",
-    "Notes de version.md": "229afa5931af7883ad4cb2e0bbb2d2ae2b96e1dd0182b69226eea888168d6b24",
-    "Validation BGDD.md": "f4bc6bd603a38d97a7a18f5c122c691edb25f4b9f7f115e7819e168797479ab4",
+    "Notes de version.md": "4ae8f84e35dc4a176674dda2986a915f3d6af99fff3d011af027e1df9a248d2e",
+    "Validation BGDD.md": "3db320e68c1af0d66d1a1f354cbeeb7659aaf1b02cdcc31fdaf45347d9ab498a",
     "assets/wordmark-dark.svg": "342c18a9810db301f7e774113e226bfa3f54febde2f2fa56e3caad40408d1bfc",
     "assets/wordmark-light.svg": "b8a686d2ec5610d4d55f3322b60cea850e2decf40acba605f853d334a2ae4110",
     "assets/popup-light.png": "6d6db1be8837a051eefe8abc85f81698a1f0524dace25f0ecdf08ec3a6b1f34f",
     "assets/popup-dark.png": "5e765e69acff504939a055c6c31d8293779c0cdfad2a051b752056b15b72a926",
     "assets/installer.png": "c21466698659aa189530cc8a04c3a34ce1a6d5e39cfff71ec3824b8e8e687be7",
-    "Etat des licences.json": "3a70bea9c55c86cee98d22b4dbe8b40671392fad831de9339302337fabac6382"
+    "Etat des licences.json": "703f9bd2680fbd7498605ac3a71f7e74db253124007dc647d9fa71680229f6ab"
   },
   "sourceInputs": {
     "ffmpeg-9.0.2.tar.xz": "8c3850283eb25fa026482078a04051e0be17347b09ef81a0849bec15a96e002e",
@@ -230,6 +231,9 @@
     "Ad hoc code seals provide local integrity, not Apple developer identity or notarization"
   ],
   "toolchain": {
+    "hostDefinitions": [
+      "DISTRIBUTION_ENGINE_APP"
+    ],
     "node": "v24.0.0",
     "swift": "Apple Swift version 6.3.3 (swiftlang-6.3.3.1.3 clang-2100.1.1.101)",
     "xcode": "Xcode 26.6\nBuild version 17F113",
@@ -238,7 +242,7 @@
   "redistributable": true,
   "publicationAuthorized": false,
   "legalVerdict": {
-    "sha256": "3a70bea9c55c86cee98d22b4dbe8b40671392fad831de9339302337fabac6382",
+    "sha256": "703f9bd2680fbd7498605ac3a71f7e74db253124007dc647d9fa71680229f6ab",
     "redistributionAllowed": true,
     "publicPublicationAuthorized": false,
     "bundledSnapshot": "The sealed app resource captured the pre-inspection verdict. Its bytes are preserved; the external verdict and root image documents record the current review."

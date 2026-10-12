@@ -1,4 +1,12 @@
-# BGDD rc2 — frontières de licence et choix de fourniture
+# BGDD rc3 — frontières entre programmes
+
+## Périmètre actuel rc3
+
+La candidate 0.4.8-rc.3 conserve le téléchargement officiel direct de yt-dlp/Python/EJS et de Deno. Après acquisition sur le Mac utilisateur, l’installateur assemble **BGDD Engine.app** : le lanceur original utilise les commandes publiques de version et lance yt-dlp comme programme distinct ; il n’importe ni ne lie son runtime Python. La disposition et la signature techniques ne changent pas les licences des composants tiers. FFmpeg/ffprobe restent des exécutables séparés hors de ce bundle scellé, avec reconstruction et remplacement GPL vérifiés par le cœur de maintenance rc3.
+
+L’app installateur rc3 de 68 fichiers, les 23 matériaux et le kit tiers de 15 fichiers ont fait l’objet d’un nouveau contrôle exact. Les références rc2 et application66 dans le détail ci-dessous restent historiques ; elles ne constituent pas ce verdict rc3. Les deux recettes AppKit du harnais ont échoué ; la préparation graphique du moteur reste UNKNOWN / non qualifiée. Aucune cause moteur ou Gatekeeper n’est déduite et aucune nouvelle tentative n’est prévue. [Verdict actuel](DISTRIBUTION-LICENSES.md), [validation](DISTRIBUTION-VALIDATION.md).
+
+## Analyse et matériaux historiques conservés
 
 12 octobre 2026 · modèle confirmé : **logiciel original gratuit et propriétaire, Angry Thread**. Cette analyse porte sur l’architecture inspectée et sur la stratégie rc2. Elle ne requalifie pas l’ancien paquet autonome rc1 comme conforme.
 
@@ -33,7 +41,7 @@ Les imports TypeScript des entrées de l’extension se résolvent vers les modu
 
 Les sources Swift importent Foundation, AppKit, CryptoKit, Darwin, ImageIO et UniformTypeIdentifiers ; le gardien C utilise les en-têtes POSIX du système. Aucune inclusion `libav`, `libx264`, `libmp3lame`, Python ou Deno, aucun `dlopen` de ces bibliothèques et aucune extension Python/JavaScript propriétaire chargée dans le moteur n’ont été identifiés.
 
-Le contrôle des importations Mach-O du host, du gardien et de l’installateur confirme des bibliothèques et frameworks système Apple et le runtime Swift système. Le contrôle porte sur les binaires inspectés ; les prochains artefacts rc2 doivent être contrôlés à leur tour. Dans les binaires FFmpeg/ffprobe, x264 et LAME sont statiques et les dépendances dynamiques restantes sont macOS système.
+Le contrôle des importations Mach-O du host, du gardien et de l’installateur confirme des bibliothèques et frameworks système Apple et le runtime Swift système. Le contrôle porte sur les binaires inspectés ; ces références historiques ne qualifient pas une candidate ultérieure. Dans les binaires FFmpeg/ffprobe, x264 et LAME sont statiques et les dépendances dynamiques restantes sont macOS système.
 
 Les sources exactes codec sont celles des archives épinglées. Leur code n’est pas recopié dans les sources du host. Aucune bibliothèque nonfree n’est activée. Les encodeurs et filtres utiles ne sont pas retirés pour modifier le régime de licence.
 
