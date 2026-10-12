@@ -1,5 +1,5 @@
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/wordmark-dark.svg"><img src="assets/wordmark-light.svg" width="220" alt="BGDD"></picture></p>
-<p align="center"><strong>Your videos, at their best available quality.</strong><br>by Angry Thread</p>
+<p align="center"><strong>Your videos, in high definition, on your Mac.</strong><br>by Angry Thread</p>
 <p align="center"><a href="README.md">Français</a> · English</p>
 
 BGDD is **free proprietary software** pairing a Chrome extension with a local macOS engine. Choose a publication, format and folder: downloading and processing stay on your Mac. No BGDD account, subscription, download server or telemetry.

@@ -19,7 +19,16 @@
   },
   "compiler": "Apple clang version 21.0.0 (clang-2100.3.34.2)",
   "sdk": "27.0",
-  "purpose": "Actual independently executed corresponding-source recipe for the distributed FFmpeg/ffprobe, not a theoretical equivalent.",
+  "purpose": "Historical record of the FIRST actually executed local rc2 codec recipe on SDK27.0. This is evidence that the unchanged public recipe was genuinely executed, not the build record or binary hash authority for the currently delivered candidate.",
   "installRecipeSHA256": "647212f56068c064dcb78033547fc3ebb36249d3e2f9511eb8ced51ecdd32e6e",
-  "originalApplicationCodeIncluded": false
+  "originalApplicationCodeIncluded": false,
+  "recordType": "historical-local-reference",
+  "historicalReferenceOnly": true,
+  "hashScope": "sourceArchives and recipe identify unchanged corresponding-source inputs. binaries contains ONLY the pre-transport-signing outputs of the historical first local SDK27.0 build. The current release VERSIONS.json media identifies its actual compiler/SDK/pre-sign codec hashes; delivered payload integrity.json and native/dependencies.json identify its post-sign codec bytes. Never compare these historical binary hashes as the expected bytes of a later SDK26 candidate.",
+  "currentCandidateAuthority": {
+    "actualBuild": "VERSIONS.json:media",
+    "deliveredCodecBytes": "payload/native/integrity.json and payload/native/dependencies.json",
+    "containerAndSourceAssetBytes": "SHA256SUMS of that same release",
+    "configurationAndInputs": "The three source archives, public build-codecs.sh and configure flags are unchanged; current SDK/compiler must be read from that release."
+  }
 }

@@ -14,7 +14,7 @@
     "minimumTargetNotCompatibilityQualification": true
   },
   "distributionStrategy": "hybrid-direct-upstream",
-  "hashScope": "Codec source archives and truly executed independent recipe; codec output hashes BEFORE ad hoc transport signing. Signing changes bytes. Final payload integrity.json, VERSIONS.json and release SHA256SUMS identify actual delivered bytes. Upstream archive hashes identify user-downloaded official release archives, not BGDD-redistributed binaries.",
+  "hashScope": "The three archives and public recipe are exact corresponding-source inputs. Any historicalLocalReferencePreTransportSigningSHA256 value is ONLY the first real local SDK27 build, never the currently delivered codec. The current release VERSIONS.json.media records actual compiler/SDK/pre-sign hashes; delivered payload integrity.json and native/dependencies.json identify post-sign codec bytes; release SHA256SUMS identifies container/source assets. Upstream archive hashes identify direct user downloads, not BGDD-redistributed binaries.",
   "components": [
     {
       "name": "ffmpeg",
@@ -27,7 +27,6 @@
       "architecture": "arm64",
       "minimumMacOSTarget": "26.0",
       "minimumTargetNotCompatibilityQualification": true,
-      "preTransportSigningSHA256": "1de2c5141c755b2e1287f125c343beb5c375e3a051153284581c5cbb3fa45f2e",
       "sourceBuildRecipe": "codec-sources/build-codecs.sh",
       "buildRecipeSHA256": "b1f25e73c14b57ec976b10b0053a1c3e4ef53be6c656c23dc94cc7619bb7216b",
       "buildRecipeActuallyExecuted": true,
@@ -36,7 +35,14 @@
         "x264",
         "LAME"
       ],
-      "networkDisabled": true
+      "networkDisabled": true,
+      "historicalLocalReferencePreTransportSigningSHA256": "1de2c5141c755b2e1287f125c343beb5c375e3a051153284581c5cbb3fa45f2e",
+      "historicalLocalReferenceRecord": "codec-sources/build-record.json",
+      "actualDeliveredBinaryHashAuthority": {
+        "beforeTransportSigning": "VERSIONS.json:media.binaries.ffmpeg",
+        "afterTransportSigning": "payload/native/integrity.json:bin/ffmpeg",
+        "actualBuildEnvironment": "VERSIONS.json:media.compiler and media.sdk"
+      }
     },
     {
       "name": "ffprobe",
@@ -49,7 +55,6 @@
       "architecture": "arm64",
       "minimumMacOSTarget": "26.0",
       "minimumTargetNotCompatibilityQualification": true,
-      "preTransportSigningSHA256": "2f21734945cb34941ceffc826fa96985df852dfb5d161be86ea5b6136e23414a",
       "sourceBuildRecipe": "codec-sources/build-codecs.sh",
       "buildRecipeSHA256": "b1f25e73c14b57ec976b10b0053a1c3e4ef53be6c656c23dc94cc7619bb7216b",
       "buildRecipeActuallyExecuted": true,
@@ -58,7 +63,14 @@
         "x264",
         "LAME"
       ],
-      "networkDisabled": true
+      "networkDisabled": true,
+      "historicalLocalReferencePreTransportSigningSHA256": "2f21734945cb34941ceffc826fa96985df852dfb5d161be86ea5b6136e23414a",
+      "historicalLocalReferenceRecord": "codec-sources/build-record.json",
+      "actualDeliveredBinaryHashAuthority": {
+        "beforeTransportSigning": "VERSIONS.json:media.binaries.ffprobe",
+        "afterTransportSigning": "payload/native/integrity.json:bin/ffprobe",
+        "actualBuildEnvironment": "VERSIONS.json:media.compiler and media.sdk"
+      }
     },
     {
       "name": "x264",
@@ -143,7 +155,9 @@
     "compiler": "Apple clang version 21.0.0 (clang-2100.3.34.2)",
     "sdk": "27.0",
     "configure": "--prefix=/bgdd-build --arch=arm64 --cc=/usr/bin/clang --cxx=/usr/bin/clang++ --ar=/usr/bin/ar --nm=/usr/bin/nm --ranlib=/usr/bin/ranlib --disable-autodetect --disable-shared --enable-static --disable-doc --disable-debug --disable-ffplay --disable-avdevice --disable-network --disable-encoders --enable-encoder='libx264,libmp3lame,pcm_s24le,pcm_s16le,aac,png,wrapped_avframe' --disable-filters --enable-filter='scale,pad,format,setsar,fps,aresample,anull,null,rotate,transpose,hflip,vflip' --disable-hwaccels --disable-videotoolbox --disable-audiotoolbox --disable-securetransport --enable-zlib --enable-gpl --enable-libx264 --enable-libmp3lame --pkg-config=../pkg-config --extra-cflags='-I../stage/bgdd-build/include -O3 -arch arm64 -mmacosx-version-min=26.0' --extra-ldflags='-L../stage/bgdd-build/lib -arch arm64 -mmacosx-version-min=26.0'",
-    "sourcePatches": false
+    "sourcePatches": false,
+    "referenceScope": "Historical FIRST local build on SDK27.0; same source/recipe/configure used in later canonical SDK26 builds. This reference is not the current candidate compiler or codec hash authority.",
+    "currentCandidateBuildAuthority": "VERSIONS.json:media"
   },
   "userCodecReplacement": {
     "recipe": "codec-sources/install-codecs.pl",
@@ -154,7 +168,7 @@
   },
   "thirdPartySourceKitFiles": {
     "codec-sources/build-codecs.sh": "b1f25e73c14b57ec976b10b0053a1c3e4ef53be6c656c23dc94cc7619bb7216b",
-    "codec-sources/build-record.json": "2ef770629f7e9e01ddf9d73720311f072d5a65e617b47ac5a1f500a17369c073",
+    "codec-sources/build-record.json": "9e183572590be7bb1016563f9eedd6fea088f55f3980320c3f0edfcb8620bde6",
     "codec-sources/CODEC-LICENSES.txt": "a061f34eab1663a79781548389ce8113ae14716dfecc54ef44226524f2ca72ca",
     "codec-sources/ffmpeg-9.0.2.tar.xz": "8c3850283eb25fa026482078a04051e0be17347b09ef81a0849bec15a96e002e",
     "codec-sources/FFmpeg-build.txt": "98c21e35250eecba2b9a19e009535c77cd6c445ed8cdc4f60cbb3a5fc807b308",
@@ -163,7 +177,7 @@
     "codec-sources/install-codecs.pl": "647212f56068c064dcb78033547fc3ebb36249d3e2f9511eb8ced51ecdd32e6e",
     "codec-sources/lame-3.100.tar.gz": "ddfe36cab873794038ae2c1210557ad34857a4b6bdc515785d1da9e175b1da1e",
     "codec-sources/LAME-LGPL-2.txt": "bfe4a52dc4645385f356a8e83cc54216a293e3b6f1cb4f79f5fc0277abf937fd",
-    "codec-sources/README.md": "bec378354f3534e3ef667b3fcbb4501d12435ffa6cd789a5ec3ceefa11638f93",
+    "codec-sources/README.md": "f8c1223aae88f5367548be2d20a9aad8e262130a90721b4e36c0da57c3ce6775",
     "codec-sources/x264-0480cb05.tar.gz": "be32b1e787ca8e905c10b956d2a5be0b99847deea2ff53be0cd93e488cd90323",
     "codec-sources/x264-GPL-2.txt": "32b1062f7da84967e7019d01ab805935caa7ab7321a7ced0e30ebe75e5df1670",
     "font/OFL-SpaceGrotesk.txt": "c6dec685825f73b18c20926fddc65e8315642e12986f15db0699170940a09efc",

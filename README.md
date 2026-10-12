@@ -1,5 +1,5 @@
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/wordmark-dark.svg"><img src="assets/wordmark-light.svg" width="220" alt="BGDD"></picture></p>
-<p align="center"><strong>Vos vidéos, dans leur meilleure qualité.</strong><br>by Angry Thread</p>
+<p align="center"><strong>Vos vidéos, en haute définition, sur votre Mac.</strong><br>by Angry Thread</p>
 <p align="center">Français · <a href="README.en.md">English</a></p>
 
 BGDD est un logiciel **gratuit et propriétaire** qui associe une extension Chrome à un moteur local macOS. Choisissez une publication, un format et un dossier : le téléchargement et le traitement se font sur votre Mac. Aucun compte BGDD, abonnement, serveur de téléchargement ou télémétrie.

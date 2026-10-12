@@ -6,7 +6,7 @@ BGDD est un logiciel indépendant distribué sans certificat Apple Developer ID 
 
 1. Télécharger le paquet d’une release BGDD approuvée, ouvrir le DMG, puis essayer d’ouvrir **BGDD Installer.app**.
 2. Si une alerte indique qu’Apple ne peut pas vérifier le développeur ou la présence de logiciels malveillants, fermer l’alerte.
-3. Ouvrir **Réglages Système → Confidentialité et sécurité**. Dans Sécurité, choisir **Ouvrir quand même** pour BGDD, lorsque ce bouton est proposé.
+3. Ouvrir **Réglages Système → Confidentialité et sécurité**. Dans Sécurité, choisir **Ouvrir quand même** ou **Autoriser quand même**, selon la version de macOS, pour le composant BGDD nommé dans l’alerte, lorsque ce bouton est proposé.
 4. Confirmer personnellement **Ouvrir**. macOS peut demander une authentification.
 5. Revenir à l’installateur, installer les composants, puis vérifier leur fonctionnement.
 
@@ -14,7 +14,9 @@ Ce parcours suit la [procédure officielle Apple](https://support.apple.com/fr-f
 
 ## Si un composant reste bloqué
 
-La vérification porte aussi sur les auxiliaires et les moteurs. Si macOS bloque un composant après l’installation, conserver le message et son nom, puis vérifier si **Ouvrir quand même** est proposé pour cet élément. Refaire ensuite **Vérifier les composants**. Un blocage persistant ne doit pas être présenté comme une installation réussie.
+La vérification porte aussi sur les auxiliaires et les moteurs. Si macOS bloque un composant après l’installation, conserver le message et son nom, puis vérifier si **Ouvrir quand même** ou **Autoriser quand même** est proposé pour cet élément. Le composant natif `bgdd-host`, le gardien `bgdd-runner`, le sélecteur et le moteur `yt-dlp` ont notamment déclenché ce contrôle dans la recette macOS 27. Chaque exception doit être décidée par l’utilisateur. Relancer ensuite l’action qui a été bloquée dans Chrome.
+
+**Vérifier les composants** contrôle les fichiers, leurs empreintes et l’enregistrement Chrome. Ce contrôle seul ne prouve pas que macOS autorise leur lancement : vérifier ensuite la communication Chrome et un téléchargement autorisé. Un blocage persistant ne doit pas être présenté comme un parcours fonctionnel validé.
 
 Si macOS indique que le logiciel est endommagé, modifié ou dangereux, ou si aucune autorisation officielle n’est proposée, arrêter le parcours et consulter les problèmes connus. L’autorisation manuelle d’une app non identifiée n’est pas une solution générale à toutes les alertes.
 

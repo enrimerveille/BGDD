@@ -18,7 +18,7 @@ Origines : [FFmpeg 9.0.2](https://ffmpeg.org/releases/ffmpeg-9.0.2.tar.xz), [x26
 
 Ces étapes s’adressent aux personnes souhaitant reconstruire ou modifier les codecs. Elles ne font pas partie de l’installation normale de BGDD, qui reste graphique et ne requiert ni Terminal, ni Node, ni Python, ni Homebrew.
 
-Le build de référence a utilisé Apple Silicon, Xcode 27 et Apple Clang 21.0.0, avec SDK 27.0 et cible minimale **macOS 26.0**. Ce minimum de compilation ne qualifie pas à lui seul le fonctionnement sur macOS 26. La recette exige un dossier de sortie vide et ne supprime aucun dossier existant.
+Le **premier build local de référence, conservé comme historique**, a utilisé Apple Silicon, Xcode 27 et Apple Clang 21.0.0, avec SDK 27.0 et cible minimale **macOS 26.0**. Il ne désigne pas automatiquement le build des codecs de chaque candidate actuelle. Ce minimum de compilation ne qualifie pas à lui seul le fonctionnement sur macOS 26. La recette exige un dossier de sortie vide et ne supprime aucun dossier existant.
 
 ```sh
 /bin/sh ./build-codecs.sh . ./build-output
@@ -26,7 +26,11 @@ Le build de référence a utilisé Apple Silicon, Xcode 27 et Apple Clang 21.0.0
 
 La recette réellement exécutée est `build-codecs.sh`. Elle vérifie les trois archives, construit x264/LAME statiques, construit FFmpeg/ffprobe avec les options enregistrées, installe les bibliothèques dans un staging et les exécutables dans `build-output/bin`. Elle génère ses SHA et la notice de configuration. Aucun module privé BGDD n’est requis pour la construction. Le préfixe `/bgdd-build` est logique et utilisé uniquement dans le staging, jamais comme dépendance de runtime.
 
-Les encodeurs H.264, MP3, PCM, AAC, PNG et les décodeurs/parseurs disponibles dans le build sont conservés ; réseau et détection automatique de bibliothèques externes sont désactivés. `build-record.json` rapporte la recette, les trois sources, le compilateur et les empreintes des sorties avant re-signature de distribution. La re-signature ad hoc de transport change les octets et leurs SHA ; les sommes de la release distinguent cette étape.
+Les encodeurs H.264, MP3, PCM, AAC, PNG et les décodeurs/parseurs disponibles dans le build sont conservés ; réseau et détection automatique de bibliothèques externes sont désactivés. `build-record.json` est **une référence historique du premier build local SDK27**, avec ses propres sorties avant signature ; `FFmpeg-build.txt` dans ce kit conserve aussi la sortie brute de cette première construction. Ces SHA historiques ne sont pas les SHA attendues des codecs d’une candidate construite ensuite avec SDK26.
+
+Pour le paquet que vous avez réellement téléchargé, **`VERSIONS.json`, champ `media`, fait autorité** sur le SDK, le compilateur, les sources/recette, les options et les empreintes avant signature du build actuel. Le payload `native/integrity.json` et `native/dependencies.json` donne les empreintes des deux exécutables réellement livrés après signature. Le payload `native/licenses/codec-build/FFmpeg-build.txt` conserve la notice de configuration générée par ce build actuel. Les sommes `SHA256SUMS` de la même release identifient le conteneur et le kit de sources.
+
+La recette publique et les trois archives exactes restent celles qui ont réellement produit ces builds ; seul leur environnement de construction peut différer. La GPL demande les sources correspondantes effectives, sans imposer une identité d’empreinte entre compilateurs différents. [FAQ GNU sur les sources et les SHA binaires](https://www.gnu.org/licenses/gpl-faq.en.html#MustSourceBuildToMatchExactHashOfBinary). La signature de transport change aussi les octets et leurs SHA.
 
 Pour modifier LAME, x264 ou FFmpeg, décompacter la source concernée, effectuer les changements, recréer son archive et adapter dans votre copie de `build-codecs.sh` l’empreinte de l’archive modifiée. Les contrôles de SHA du build de référence sont éditables dans cette recette sous GPL ; ils ne retirent pas le droit de modifier les sources. La recette reconstruira et rééditera les liens statiques avec la bibliothèque modifiée.
 
