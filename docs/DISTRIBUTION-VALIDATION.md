@@ -1,6 +1,6 @@
 # Distribution 0.4.8-rc.2 — Validation
 
-La candidate gratuite propriétaire cible **macOS 26 et 27 Apple Silicon**. Les deux systèmes ont réellement exécuté les recettes privées. L’installation, les outils et Native Messaging passent ; les quatre téléchargements publics demandés échouent sur une vérification YouTube. La compatibilité complète et le parcours Gatekeeper de la candidate finale restent donc **non qualifiés**. Les deux dépôts restent privés et aucune publication publique n’est autorisée.
+La candidate gratuite propriétaire cible **macOS 26 et 27 Apple Silicon**. Les deux systèmes ont réellement exécuté les recettes privées. L’installation, les outils et Native Messaging passent ; les quatre téléchargements publics demandés échouent sur une vérification YouTube. La compatibilité native sous26 est **validée virtuellement dans les périmètres réussis** ; Henry accepte cette preuve sans imposer un Mac physique. Les essais réseau et le parcours Gatekeeper complet de la candidate finale restent distincts et non qualifiés. Les deux dépôts restent privés et aucune publication publique n’est autorisée.
 
 ## Preuves séparées
 
@@ -34,7 +34,7 @@ Le DMG hybride contient BGDD, FFmpeg/ffprobe, les polices et leurs matériaux ex
 
 Le parcours complet doit encore couvrir la candidate finale téléchargée à distance, quarantaine conservée : première ouverture, autorisation humaine, auxiliaires et moteurs, téléchargement autorisé, fermeture/réouverture et désinstallation sur chaque OS. Une exception accordée à un seul exécutable ne qualifie pas les autres.
 
-Aucune VM locale n’est utilisée, conformément à la préférence de Henry. Les recettes distantes sont automatisées ; les validations graphiques restantes peuvent être réalisées sur des Mac sous26 et27 sans imposer de VM à l’utilisateur. L’absence d’un parcours graphique26 reste une limite explicite.
+Aucune VM locale n’est utilisée, conformément à la préférence de Henry. Les recettes distantes sont automatisées. Henry accepte leur validation native26 et ne demande plus de qualification sur un Mac physique sous26. L’interface et les autorisations Gatekeeper graphiques26 n’ont pas été observées ; cette absence reste une limite documentée, sans nouvelle demande de matériel. Les recettes locales conservent leurs HOME et profils isolés ; aucun nouveau compte macOS n’est créé, conformément à sa préférence. Le parcours exact du paquet final reste à distinguer de la variante de recette.
 
 ## Historique et périmètre
 
@@ -46,5 +46,5 @@ Aucun Intel, nouvel essai public X/Instagram/TikTok, écoute humaine, VoiceOver 
 
 - **Préparé techniquement :** paquet construit ; installation et fonctionnement démontrés dans les périmètres ci-dessus.
 - **Conforme pour distribution :** matériaux et droits de redistribution établis pour le périmètre hybride examiné.
-- **Prêt à publier : non.** Parcours Gatekeeper complet de la candidate finale, interface26 et quatre formats réseau sur les deux OS restent à qualifier.
+- **Prêt à publier : non.** Parcours Gatekeeper complet du paquet final et quatre formats réseau restent à qualifier. La validation native26 virtuelle est acceptée ; aucun Mac physique26 ni nouveau compte macOS n’est exigé.
 - **Public : non.** Dépôts privés ; publication conditionnée à une validation terminée et à l’accord final explicite de Henry.
