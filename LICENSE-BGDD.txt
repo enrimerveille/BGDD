@@ -1,0 +1,23 @@
+BGDD — Original application code
+Copyright © 2026 Angry Thread. All rights reserved.
+
+BGDD is free of charge and proprietary. Its original application code is not
+licensed under MIT, GPL, Apache or another open-source license.
+
+This notice covers only the original protectable BGDD application material
+controlled by Angry Thread: extension, native host, guardian, folder selector,
+installer and their original interface/integration. It does not claim ownership
+of third-party software, fonts, corresponding sources or downloaded content.
+
+Free permission to install/use approved releases, make a backup, share official
+public download links and pass on an unchanged public package with all required
+notices is defined in the accompanying CONDITIONS.md. Private candidates may be
+shared only with authorized testers. No general permission to modify or publish
+the original application source is granted, subject to mandatory legal rights.
+
+Third-party licenses remain fully effective and prevail for their components.
+The independent codec corresponding-source recipe has its own GPL-2.0-or-later
+notice solely for that recipe; it does not relicense the BGDD application.
+
+Inspectable extension JavaScript does not by itself grant open-source rights.
+BGDD and Angry Thread names/visual identity are not a grant of trademark rights.

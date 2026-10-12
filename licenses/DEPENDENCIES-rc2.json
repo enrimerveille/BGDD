@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 2,
+  "reviewedAt": "2026-10-12",
+  "product": {
+    "name": "BGDD",
+    "publisher": "Angry Thread",
+    "releaseTag": "v0.4.8-rc.2",
+    "extensionVersion": "0.4.8",
+    "nativeVersion": "0.3.4",
+    "protocol": 2,
+    "originalCodeLicense": "Proprietary-Freeware",
+    "architecture": "arm64; Intel not qualified",
+    "minimumMacOSTarget": "26.0",
+    "minimumTargetNotCompatibilityQualification": true
+  },
+  "distributionStrategy": "hybrid-direct-upstream",
+  "hashScope": "Codec source archives and truly executed independent recipe; codec output hashes BEFORE ad hoc transport signing. Signing changes bytes. Final payload integrity.json, VERSIONS.json and release SHA256SUMS identify actual delivered bytes. Upstream archive hashes identify user-downloaded official release archives, not BGDD-redistributed binaries.",
+  "components": [
+    {
+      "name": "ffmpeg",
+      "version": "9.0.2",
+      "acquisition": "bundled in hybrid BGDD package",
+      "license": "GPL-2.0-or-later",
+      "sourceOrigin": "https://ffmpeg.org/releases/ffmpeg-9.0.2.tar.xz",
+      "sourceArchive": "codec-sources/ffmpeg-9.0.2.tar.xz",
+      "sourceSHA256": "8c3850283eb25fa026482078a04051e0be17347b09ef81a0849bec15a96e002e",
+      "architecture": "arm64",
+      "minimumMacOSTarget": "26.0",
+      "minimumTargetNotCompatibilityQualification": true,
+      "preTransportSigningSHA256": "1de2c5141c755b2e1287f125c343beb5c375e3a051153284581c5cbb3fa45f2e",
+      "sourceBuildRecipe": "codec-sources/build-codecs.sh",
+      "buildRecipeSHA256": "b1f25e73c14b57ec976b10b0053a1c3e4ef53be6c656c23dc94cc7619bb7216b",
+      "buildRecipeActuallyExecuted": true,
+      "systemDynamicLibrariesOnly": true,
+      "staticallyLinkedComponents": [
+        "x264",
+        "LAME"
+      ],
+      "networkDisabled": true
+    },
+    {
+      "name": "ffprobe",
+      "version": "9.0.2",
+      "acquisition": "bundled in hybrid BGDD package",
+      "license": "GPL-2.0-or-later",
+      "sourceOrigin": "https://ffmpeg.org/releases/ffmpeg-9.0.2.tar.xz",
+      "sourceArchive": "codec-sources/ffmpeg-9.0.2.tar.xz",
+      "sourceSHA256": "8c3850283eb25fa026482078a04051e0be17347b09ef81a0849bec15a96e002e",
+      "architecture": "arm64",
+      "minimumMacOSTarget": "26.0",
+      "minimumTargetNotCompatibilityQualification": true,
+      "preTransportSigningSHA256": "2f21734945cb34941ceffc826fa96985df852dfb5d161be86ea5b6136e23414a",
+      "sourceBuildRecipe": "codec-sources/build-codecs.sh",
+      "buildRecipeSHA256": "b1f25e73c14b57ec976b10b0053a1c3e4ef53be6c656c23dc94cc7619bb7216b",
+      "buildRecipeActuallyExecuted": true,
+      "systemDynamicLibrariesOnly": true,
+      "staticallyLinkedComponents": [
+        "x264",
+        "LAME"
+      ],
+      "networkDisabled": true
+    },
+    {
+      "name": "x264",
+      "version": "0480cb05fa188d37ae87e8f4fd8f1aea3711f7ee",
+      "license": "GPL-2.0-or-later",
+      "acquisition": "statically linked inside bundled FFmpeg/ffprobe",
+      "sourceOrigin": "https://code.videolan.org/videolan/x264/-/tree/0480cb05fa188d37ae87e8f4fd8f1aea3711f7ee",
+      "sourceArchive": "codec-sources/x264-0480cb05.tar.gz",
+      "sourceSHA256": "be32b1e787ca8e905c10b956d2a5be0b99847deea2ff53be0cd93e488cd90323"
+    },
+    {
+      "name": "LAME",
+      "version": "3.100",
+      "license": "LGPL-2.0-or-later",
+      "acquisition": "statically linked inside bundled FFmpeg/ffprobe",
+      "sourceOrigin": "https://downloads.sourceforge.net/project/lame/lame/3.100/lame-3.100.tar.gz",
+      "sourceArchive": "codec-sources/lame-3.100.tar.gz",
+      "sourceSHA256": "ddfe36cab873794038ae2c1210557ad34857a4b6bdc515785d1da9e175b1da1e",
+      "fullCodecSourceAndRelinkRecipeProvided": true,
+      "originalProprietaryObjectsLinked": false
+    },
+    {
+      "name": "Space Grotesk",
+      "version": "2.000",
+      "license": "OFL-1.1",
+      "acquisition": "bundled font and original source TTF",
+      "origin": "https://github.com/google/fonts/tree/2861cb7b12f90c0a294a12ed666e381e2211872f/ofl/spacegrotesk",
+      "ttfSHA256": "acad6de1fc93436f5c0f1f4137751ef04f1aea3063e7036535970ffcfbd79f72",
+      "woff2SHA256": "8e085aa438094f11487a836652edd5c054fa6a96f63fc7c282105ee3a4b08c07",
+      "copyright": "Copyright 2020 The Space Grotesk Project Authors",
+      "source": "font/SpaceGrotesk-source.ttf",
+      "licenseFile": "font/OFL-SpaceGrotesk.txt",
+      "modification": "Format conversion to WOFF2; font copyright preserved; no Reserved Font Name declared in supplied header."
+    },
+    {
+      "version": "2026.08.19",
+      "officialURL": "https://github.com/yt-dlp/yt-dlp/releases/download/2026.08.19/yt-dlp_macos.zip",
+      "sha256": "07e54b0865303c864006925913bce2604f8ee8cc6f18699bac9c309f9328a6d8",
+      "license": "GPL-3.0-or-later for the combined frozen bundle; Unlicense for the standalone project source",
+      "licensingURL": "https://github.com/yt-dlp/yt-dlp/blob/2026.08.19/README.md#licensing",
+      "thirdPartyNoticesURL": "https://github.com/yt-dlp/yt-dlp/blob/2026.08.19/THIRD_PARTY_LICENSES.txt",
+      "sourceReleaseURL": "https://github.com/yt-dlp/yt-dlp/releases/tag/2026.08.19",
+      "archiveNoticeHandling": "Preserve _internal/THIRD_PARTY_LICENSES.txt and license files already in the downloaded archive; original modules are not incorporated into BGDD sources.",
+      "name": "yt-dlp macOS onedir with private Python/EJS",
+      "acquisition": "direct official upstream download initiated by the end user",
+      "includedInBGDDDMGOrReleaseAssets": false,
+      "historicalBGDDRedistributionAuditResolved": false
+    },
+    {
+      "version": "2.9.7",
+      "officialURL": "https://github.com/denoland/deno/releases/download/v2.9.7/deno-aarch64-apple-darwin.zip",
+      "sha256": "5cd46d6268f6f78f5d88bdc7159d20bd44cdaa4b3303474839f87ec6fe7ae25c",
+      "license": "MIT for Deno original code, plus independent third-party licenses",
+      "licenseURL": "https://github.com/denoland/deno/blob/v2.9.7/LICENSE.md",
+      "sourceURL": "https://github.com/denoland/deno/tree/v2.9.7",
+      "sourceLockURL": "https://github.com/denoland/deno/blob/v2.9.7/Cargo.lock",
+      "noticeLimitation": "The historical BGDD audit of redistributing the complete Deno binary is not closed. No assertion that top-level MIT covers its entire dependency set is made.",
+      "name": "Deno arm64",
+      "acquisition": "direct official upstream download initiated by the end user",
+      "includedInBGDDDMGOrReleaseAssets": false,
+      "historicalBGDDRedistributionAuditResolved": false
+    },
+    {
+      "version": "0.8.0",
+      "license": "Unlicense, plus Meriyah6.1.4 ISC and Astring1.9.0 MIT",
+      "origin": "Included in the user-downloaded official yt-dlp2026.08.19 macOS onedir archive; no separate BGDD mirror or remote-component update",
+      "sourceURL": "https://pypi.org/project/yt-dlp-ejs/0.8.0/",
+      "sourceArchiveURL": "https://files.pythonhosted.org/packages/d3/e6/cceb9530e8f4e5940f6f7822d90e9d94f1b85343329a16baaf47bbbb3de1/yt_dlp_ejs-0.8.0.tar.gz",
+      "sourceArchiveSHA256": "d5fa1639f63b5c4af8d932495f60689d5370f1a095782c944f7f62a303eb104e",
+      "name": "EJS local from official yt-dlp archive",
+      "acquisition": "direct official upstream download initiated by the end user",
+      "includedInBGDDDMGOrReleaseAssets": false,
+      "historicalBGDDRedistributionAuditResolved": false
+    }
+  ],
+  "codecBuild": {
+    "recipe": {
+      "file": "build-codecs.sh",
+      "sha256": "b1f25e73c14b57ec976b10b0053a1c3e4ef53be6c656c23dc94cc7619bb7216b",
+      "executed": true
+    },
+    "compiler": "Apple clang version 21.0.0 (clang-2100.3.34.2)",
+    "sdk": "27.0",
+    "configure": "--prefix=/bgdd-build --arch=arm64 --cc=/usr/bin/clang --cxx=/usr/bin/clang++ --ar=/usr/bin/ar --nm=/usr/bin/nm --ranlib=/usr/bin/ranlib --disable-autodetect --disable-shared --enable-static --disable-doc --disable-debug --disable-ffplay --disable-avdevice --disable-network --disable-encoders --enable-encoder='libx264,libmp3lame,pcm_s24le,pcm_s16le,aac,png,wrapped_avframe' --disable-filters --enable-filter='scale,pad,format,setsar,fps,aresample,anull,null,rotate,transpose,hflip,vflip' --disable-hwaccels --disable-videotoolbox --disable-audiotoolbox --disable-securetransport --enable-zlib --enable-gpl --enable-libx264 --enable-libmp3lame --pkg-config=../pkg-config --extra-cflags='-I../stage/bgdd-build/include -O3 -arch arm64 -mmacosx-version-min=26.0' --extra-ldflags='-L../stage/bgdd-build/lib -arch arm64 -mmacosx-version-min=26.0'",
+    "sourcePatches": false
+  },
+  "userCodecReplacement": {
+    "recipe": "codec-sources/install-codecs.pl",
+    "sha256": "647212f56068c064dcb78033547fc3ebb36249d3e2f9511eb8ced51ecdd32e6e",
+    "license": "GPL-2.0-or-later",
+    "privateSigningKeyOrOriginalApplicationSourceRequired": false,
+    "ownLocalMetadataCanBeUpdated": true
+  },
+  "thirdPartySourceKitFiles": {
+    "codec-sources/build-codecs.sh": "b1f25e73c14b57ec976b10b0053a1c3e4ef53be6c656c23dc94cc7619bb7216b",
+    "codec-sources/build-record.json": "2ef770629f7e9e01ddf9d73720311f072d5a65e617b47ac5a1f500a17369c073",
+    "codec-sources/CODEC-LICENSES.txt": "a061f34eab1663a79781548389ce8113ae14716dfecc54ef44226524f2ca72ca",
+    "codec-sources/ffmpeg-9.0.2.tar.xz": "8c3850283eb25fa026482078a04051e0be17347b09ef81a0849bec15a96e002e",
+    "codec-sources/FFmpeg-build.txt": "98c21e35250eecba2b9a19e009535c77cd6c445ed8cdc4f60cbb3a5fc807b308",
+    "codec-sources/FFmpeg-GPL-2.txt": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
+    "codec-sources/FFmpeg-LGPL-2.1.txt": "246041b6ecf9bc32d718a62c57877c78b5eb397b6467e74ed7ae2626ab189c30",
+    "codec-sources/install-codecs.pl": "647212f56068c064dcb78033547fc3ebb36249d3e2f9511eb8ced51ecdd32e6e",
+    "codec-sources/lame-3.100.tar.gz": "ddfe36cab873794038ae2c1210557ad34857a4b6bdc515785d1da9e175b1da1e",
+    "codec-sources/LAME-LGPL-2.txt": "bfe4a52dc4645385f356a8e83cc54216a293e3b6f1cb4f79f5fc0277abf937fd",
+    "codec-sources/README.md": "bec378354f3534e3ef667b3fcbb4501d12435ffa6cd789a5ec3ceefa11638f93",
+    "codec-sources/x264-0480cb05.tar.gz": "be32b1e787ca8e905c10b956d2a5be0b99847deea2ff53be0cd93e488cd90323",
+    "codec-sources/x264-GPL-2.txt": "32b1062f7da84967e7019d01ab805935caa7ab7321a7ced0e30ebe75e5df1670",
+    "font/OFL-SpaceGrotesk.txt": "c6dec685825f73b18c20926fddc65e8315642e12986f15db0699170940a09efc",
+    "font/SpaceGrotesk-source.ttf": "acad6de1fc93436f5c0f1f4137751ef04f1aea3063e7036535970ffcfbd79f72"
+  },
+  "originalApplicationSourceIncluded": false,
+  "rightsEvidencePublished": false,
+  "redistributionGate": "licenses-status-rc2.json",
+  "historicalAuditScope": "The prior autonomous rc1 yt-dlp/Deno provenance/notice issues remain unresolved for a future BGDD redistribution of those binaries. They are not waived or globally closed by the direct-download strategy."
+}

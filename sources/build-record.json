@@ -1,0 +1,25 @@
+{
+  "formatVersion": 2,
+  "minimumMacOS": "26.0",
+  "architecture": "arm64",
+  "configure": "--prefix=/bgdd-build --arch=arm64 --cc=/usr/bin/clang --cxx=/usr/bin/clang++ --ar=/usr/bin/ar --nm=/usr/bin/nm --ranlib=/usr/bin/ranlib --disable-autodetect --disable-shared --enable-static --disable-doc --disable-debug --disable-ffplay --disable-avdevice --disable-network --disable-encoders --enable-encoder='libx264,libmp3lame,pcm_s24le,pcm_s16le,aac,png,wrapped_avframe' --disable-filters --enable-filter='scale,pad,format,setsar,fps,aresample,anull,null,rotate,transpose,hflip,vflip' --disable-hwaccels --disable-videotoolbox --disable-audiotoolbox --disable-securetransport --enable-zlib --enable-gpl --enable-libx264 --enable-libmp3lame --pkg-config=../pkg-config --extra-cflags='-I../stage/bgdd-build/include -O3 -arch arm64 -mmacosx-version-min=26.0' --extra-ldflags='-L../stage/bgdd-build/lib -arch arm64 -mmacosx-version-min=26.0'",
+  "sourceArchives": {
+    "ffmpeg-9.0.2.tar.xz": "8c3850283eb25fa026482078a04051e0be17347b09ef81a0849bec15a96e002e",
+    "x264-0480cb05.tar.gz": "be32b1e787ca8e905c10b956d2a5be0b99847deea2ff53be0cd93e488cd90323",
+    "lame-3.100.tar.gz": "ddfe36cab873794038ae2c1210557ad34857a4b6bdc515785d1da9e175b1da1e"
+  },
+  "binaries": {
+    "ffmpeg": "1de2c5141c755b2e1287f125c343beb5c375e3a051153284581c5cbb3fa45f2e",
+    "ffprobe": "2f21734945cb34941ceffc826fa96985df852dfb5d161be86ea5b6136e23414a"
+  },
+  "recipe": {
+    "file": "build-codecs.sh",
+    "sha256": "b1f25e73c14b57ec976b10b0053a1c3e4ef53be6c656c23dc94cc7619bb7216b",
+    "executed": true
+  },
+  "compiler": "Apple clang version 21.0.0 (clang-2100.3.34.2)",
+  "sdk": "27.0",
+  "purpose": "Actual independently executed corresponding-source recipe for the distributed FFmpeg/ffprobe, not a theoretical equivalent.",
+  "installRecipeSHA256": "647212f56068c064dcb78033547fc3ebb36249d3e2f9511eb8ced51ecdd32e6e",
+  "originalApplicationCodeIncluded": false
+}
