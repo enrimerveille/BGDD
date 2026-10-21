@@ -87,7 +87,10 @@
     "AppleDeveloperID": false,
     "AppleNotarization": false,
     "macOS26ChangedCode": "NOT QUALIFIED",
-    "macOS27FinalContainerComponentVerification": "PASS"
+    "macOS27FinalContainerComponentVerification": "PASS",
+    "macOS27ExactGUIUpdate": "PASS rc4 to rc6; 195 files and 22 links",
+    "macOS27ExactEngineTools": "PASS all four tools in production GUI",
+    "macOS27PersonalChromeRefresh": "PENDING native UI access"
   },
   "supportedArchitecture": "arm64",
   "supportedMacOS": [

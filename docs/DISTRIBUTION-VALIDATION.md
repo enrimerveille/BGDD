@@ -14,6 +14,8 @@ Le paquet final passe les contrôles d’inventaire, empreintes, architecture, s
 
 **Conteneur final :** le DMG final a été téléchargé avec sa quarantaine normale par Safari, puis ouvert après la décision humaine macOS. La fenêtre de production et sa vérification des composants ont réussi. Les 68 fichiers de l’app en cours d’exécution correspondent exactement à la candidate contrôlée. Aucune quarantaine n’a été supprimée ni aucune protection macOS modifiée.
 
+La mise à jour graphique de production depuis la rc.4 a ensuite réussi. Les 195 fichiers installés, 22 liens et le sceau strict du moteur ont été vérifiés. La vraie fenêtre du moteur confirme la réussite de yt-dlp, Deno, FFmpeg et ffprobe. Réglages natifs et fichiers téléchargés sont inchangés. Le contrôle Chrome propre à cette mise à jour est encore en attente ; les preuves Chrome rc.4 des exécutables inchangés restent distinguées ci-dessous.
+
 ## Résultats réutilisés des composants inchangés
 
 Les octets de l’extension, du moteur, du host, du gardien, du sélecteur et des codecs sont ceux de la rc.4 qualifiée. Les essais réels des quatre formats ci-dessous sont conservés comme preuves historiques de ces composants ; ils n’ont pas été répétés pour la modification de l’apparence.
