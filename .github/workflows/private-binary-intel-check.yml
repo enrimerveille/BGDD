@@ -1,0 +1,98 @@
+name: Private binary check on free native Intel
+on:
+  workflow_dispatch:
+permissions: {}
+concurrency:
+  group: private-binary-intel-check
+  cancel-in-progress: false
+jobs:
+  native:
+    if: github.repository == 'enrimerveille/BGDD-downloads' && github.ref == 'refs/heads/main' && github.event_name == 'workflow_dispatch'
+    runs-on: macos-26-intel
+    timeout-minutes: 12
+    steps:
+      - name: Check private binaries without publishing them
+        env:
+          BGDD_PROBE_URL: ${{ secrets.BGDD_TEMPORARY_PROBE_URL }}
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import os,sys,json,hashlib,tempfile,subprocess,pathlib,shutil,urllib.request,urllib.parse,zipfile
+          # No checkout, third-party action, source, token, cache or output artifact.
+          # The one-hour URL is a masked repository secret, removed after this run.
+          # Only fixed stage names, hashes and nonpersonal aggregate results are logged.
+          stage='native platform';area=None;mounted=False
+          def run(args,timeout=60):
+            return subprocess.run([str(a) for a in args],check=True,capture_output=True,text=True,timeout=timeout).stdout
+          def digest(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+          try:
+            assert run(['/usr/bin/uname','-m']).strip()=='x86_64'
+            osversion=run(['/usr/bin/sw_vers','-productVersion']).strip();assert osversion.split('.')[0]=='26'
+            translated=subprocess.run(['/usr/sbin/sysctl','-n','sysctl.proc_translated'],capture_output=True,text=True)
+            assert translated.returncode!=0 or translated.stdout.strip()=='0'
+            assert 'enabled' in run(['/usr/sbin/spctl','--status'])
+            url=os.environ.pop('BGDD_PROBE_URL');u=urllib.parse.urlparse(url)
+            assert u.scheme=='https' and u.hostname=='release-assets.githubusercontent.com'
+            stage='private transfer';area=pathlib.Path(tempfile.mkdtemp(prefix='bgdd-private-native-',dir=os.environ['RUNNER_TEMP'])).resolve()
+            transport=area/'transport.zip'
+            with urllib.request.urlopen(url,timeout=90) as response,transport.open('wb') as out:shutil.copyfileobj(response,out)
+            del url,u
+            assert digest(transport)=='26b10962038d992da9ee0117d393cdc88dae7833c381a489e127995fec889d04'
+            with zipfile.ZipFile(transport) as z:
+              assert sorted(z.namelist())==['BGDD-macOS-x86_64.dmg','bootstrap-probe','maintenance-probe']
+              assert all(x.file_size<100_000_000 for x in z.infolist())
+              z.extractall(area)
+            for name in ['bootstrap-probe','maintenance-probe']:
+              p=area/name;p.chmod(0o700)
+              assert run(['/usr/bin/lipo','-archs',p]).strip()=='x86_64'
+              run(['/usr/bin/codesign','--verify','--strict',p])
+            stage='exact package';dmg=area/'BGDD-macOS-x86_64.dmg';assert digest(dmg)=='00528e5825058ebb53d4bfc166c0188ea084e842b8baa7bebbd64a22c70584c0'
+            mount=area/'image';mount.mkdir()
+            run(['/usr/bin/hdiutil','attach','-readonly','-nobrowse','-noautoopen','-mountpoint',mount,dmg]);mounted=True
+            app=mount/'BGDD Installer.app';run(['/usr/bin/codesign','--verify','--deep','--strict',app])
+            resources=app/'Contents/Resources';payload=resources/'payload';mf=payload/'distribution-manifest.json';m=json.loads(mf.read_text())
+            assert m['architecture']=='x86_64' and m['releaseVersion']=='0.4.8-rc.5' and m['links']=={}
+            files={str(p.relative_to(payload)):digest(p) for p in payload.rglob('*') if p.is_file() and p!=mf}
+            assert files==m['files']
+            code=0
+            for p in app.rglob('*'):
+              if p.is_file() and 'Mach-O' in run(['/usr/bin/file','-b',p]):
+                assert run(['/usr/bin/lipo','-archs',p]).strip()=='x86_64';code+=1
+            for n in ['ffmpeg','ffprobe']:
+              assert run([payload/'native/bin'/n,'-version']).startswith(n+' version 9.0.2')
+            print('PASS exact package, signatures, native Intel codec execution; Mach-O files='+str(code),flush=True)
+            stage='isolated template and assembly';home=area/'isolated-home';home.mkdir();(home/'.bgdd-distribution-test-home').write_text('BGDD isolated recipe\n')
+            bootstrap=[area/'bootstrap-probe','--test-home',home,'--resources',resources,'--action']
+            cli=[area/'maintenance-probe','--test-home',home,'--payload',payload]
+            assert 'TEMPLATE VERIFIED' in run(bootstrap+['validate-template'])
+            assert 'INSTALLED' in run(bootstrap+['install'],300)
+            assert 'VERIFIED' in run(cli+['check'])
+            installed=home/'Library/Application Support/BGDD';engine=installed/'BGDD Engine.app'
+            run(['/usr/bin/codesign','--verify','--deep','--strict',engine])
+            q=run(['/usr/bin/xattr','-p','com.apple.quarantine',engine]).strip();assert int(q.split(';')[0],16)&0x40==0
+            nm=json.loads((home/'Library/Application Support/Google/Chrome/NativeMessagingHosts/fr.bgdd.host.json').read_text())
+            assert pathlib.Path(nm['path']).resolve()==(engine/'Contents/MacOS/bgdd-host').resolve()
+            assert nm['allowed_origins']==['chrome-extension://ipjganpibkpndaibhejdcnbdclekogbl/']
+            stage='maintenance and independent codec replacement'
+            media=home/'retained-media';media.write_bytes(b'fixture media')
+            settings=json.dumps({'destination':str(home),'preferredFormat':'wav'});history=json.dumps({'records':[]})
+            (installed/'state/settings.json').write_text(settings);(installed/'state/journal.json').write_text(history)
+            assert 'User-rebuilt codecs installed' in run(['/usr/bin/perl',installed/'licenses/codec-sources/install-codecs.pl',payload/'native/bin',installed],180)
+            assert 'VERIFIED' in run(cli+['check'])
+            assert 'INSTALLED' in run(bootstrap+['install'],300)
+            assert 'VERIFIED' in run(cli+['check'])
+            assert (installed/'state/settings.json').read_text()==settings and (installed/'state/journal.json').read_text()==history
+            assert 'preferences preserved' in run(cli+['uninstall'])
+            assert (installed/'state/settings.json').read_text()==settings and media.read_bytes()==b'fixture media'
+            assert 'INSTALLED' in run(bootstrap+['install'],300)
+            assert 'preferences erased' in run(cli+['uninstall-erase']) and media.read_bytes()==b'fixture media'
+            proof={'kind':'Current exact payload and production bootstrap/core compiled with isolated-home test guard; native Intel','release':m['releaseVersion'],'payloadManifestSHA256':digest(mf),'engineLayout':m['engineLayout'],'engineAppSealVerified':True,'installedAliasCount':22,'userRebuiltCodecReplacementProductionCoreVerified':True,'checks':['assembly','seal','Native Messaging registration path','codec replacement','update preserves settings/history/media','uninstall preserves preferences/media','reinstall','explicit preference erase preserves media'],'enginesExecuted':False,'GUI':False,'Chrome':False,'onlineMedia':False,'manualGatekeeperRoute':False,'executingMacOS':osversion,'executingArchitecture':'x86_64','DMGSHA256':digest(dmg)}
+            print('BGDD_NATIVE_PROOF='+json.dumps(proof,sort_keys=True),flush=True)
+            print('PASS native Intel preparation. GUI, Gatekeeper, installed engine execution and browser qualification remain separate.',flush=True)
+          except Exception as e:
+            print('FAIL fixed stage: '+stage+'; category='+type(e).__name__,flush=True)
+            sys.exit(1)
+          finally:
+            if mounted:run(['/usr/bin/hdiutil','detach',mount])
+            if area:shutil.rmtree(area)
+          PY
