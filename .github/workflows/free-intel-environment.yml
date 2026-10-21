@@ -1,0 +1,29 @@
+name: Free Intel environment availability
+on:
+  workflow_dispatch:
+permissions: {}
+jobs:
+  environment:
+    if: github.repository == 'enrimerveille/BGDD-downloads' && github.event_name == 'workflow_dispatch'
+    runs-on: macos-26-intel
+    timeout-minutes: 3
+    steps:
+      - name: Inspect native platform only
+        shell: bash
+        run: |
+          set -eu
+          test "$(uname -m)" = x86_64
+          BGDD_OS=$(sw_vers -productVersion)
+          test "${BGDD_OS%%.*}" = 26
+          BGDD_TRANSLATED=$(sysctl -n sysctl.proc_translated 2>/dev/null || echo 0)
+          test "$BGDD_TRANSLATED" = 0
+          sw_vers
+          uname -m
+          sysctl -n machdep.cpu.brand_string
+          spctl --status
+          if pgrep -x WindowServer >/dev/null; then
+            echo 'WindowServer process present; no graphical BGDD qualification implied.'
+          else
+            echo 'No WindowServer process observed.'
+          fi
+          echo 'Standard public runner only. No checkout, product, credentials, cache, or uploaded artifact.'
