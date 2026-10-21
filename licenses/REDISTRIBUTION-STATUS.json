@@ -1,65 +1,31 @@
 {
-  "schemaVersion": 3,
-  "reviewedAt": "2026-10-12",
-  "releaseVersion": "0.4.8-rc.3",
+  "schemaVersion": 4,
+  "reviewedAt": "2026-10-21",
+  "releaseVersion": "0.4.8-rc.4",
   "strategy": "hybrid-direct-upstream",
-  "engineLayout": "engine-app-v1",
-  "visibility": "private-preparation-publication-requires-explicit-approval",
+  "engineLayout": "engine-app-v2",
+  "visibility": "public-prerelease",
   "redistributionAllowed": true,
   "actualPackageScopeVerified": true,
-  "compiledAssetUploadAllowed": true,
-  "compiledAssetUploadScope": "Exact reviewed private candidate assets only; not permission to publish publicly",
-  "localRecipeAllowed": true,
-  "publicPublicationAuthorized": false,
-  "scope": "Scoped verdict for the exact rc3 hybrid SDK26 installer and corresponding third-party source kit. The embedded input status remains a pre-inspection snapshot. OS, AppKit, network, human Gatekeeper and public approval are separate qualifications.",
-  "inputReview": {
-    "scope": "controlled-input-materials-and-code-boundary-only",
-    "inputMaterialConformityVerified": true,
-    "embeddedPreInspectionStatus": true,
-    "embeddedStatusSHA256": "703f9bd2680fbd7498605ac3a71f7e74db253124007dc647d9fa71680229f6ab",
-    "actualPackageScopeVerified": false,
-    "compiledAssetUploadAllowed": false,
-    "publicPublicationAuthorized": false
-  },
+  "publicPublicationAuthorized": true,
+  "distributionQualified": true,
+  "scope": "Exact assembled hybrid installer and corresponding source kit; separately reviewed original application and bundled codec/font materials only",
   "exactPackageReview": {
-    "actualPackageScopeVerified": true,
-    "redistributionAllowed": true,
-    "publicPublicationAuthorized": false,
-    "candidateSDK": "26.5",
-    "candidateArchitecture": "arm64",
-    "installerAppRegularFiles": 68,
-    "payloadLegalFiles": 23,
-    "thirdPartySourceKitFiles": 15,
-    "exactContainerFileInventory": true,
-    "upstreamRuntimeIncludedInDMG": false,
-    "originalApplicationSourceIncluded": false,
-    "privateRightsEvidenceIncluded": false,
-    "userRebuiltCodecReplacementProductionCoreVerified": true,
     "DMG": {
       "file": "BGDD-macOS-arm64.dmg",
-      "bytes": 35233766,
-      "sha256": "49e08ae7235f3474648d0de78441d30858fbdef3f4fd32df463cacbe08307bf7"
+      "sha256": "e964a235b19866ada1e0ff5d13b5816680516547561fee2931f7db8ee9bc3c56",
+      "bytes": 35359408
     },
     "sourceKit": {
       "file": "BGDD-third-party-sources.zip",
-      "bytes": 14728156,
-      "sha256": "5282ee5ab7d20d0b3400ca56c9e15d6617c6b13cec0b3b07683e919e2929f0ad"
+      "sha256": "11d4bac4db87a45df947a5da11e945c5b1fe1e115408b5c9788ef55eb8a541bb",
+      "files": 15
     },
-    "reference": "../docs/DISTRIBUTION-LICENSES.md",
-    "externalVersionsSHA256": "e9161e0e9db5a03957f4c8dd3bb704c36d3a857defbb241e6cacde5c5f82f55a",
-    "documentationOnlyRefreshPreservedAll68AppFileSHA256": true
-  },
-  "qualification": {
-    "nativeAutomationMacOS26": "PASS",
-    "nativeAutomationMacOS27": "PASS",
-    "canonicalSDK26CodecsMacOS26": "PASS (5 local fixture checks)",
-    "canonicalSDK26CodecsMacOS27": "PASS (same codec bytes; 5 local fixture checks)",
-    "engineAppKitSequence": "UNKNOWN / NOT QUALIFIED (both hosted AppKit harness workflows failed; no verified launch binding or final UI; no engine/Gatekeeper cause inferred; no next attempt planned)",
-    "manualGatekeeperRoute": false,
-    "rc3PlatformNetworkFormats": "NOT TESTED",
-    "AppleDeveloperID": false,
-    "AppleNotarization": false,
-    "canonicalSDK26InstallerWindowOnMacOS27": "Observed read-only; no install or engine action; not a Gatekeeper route"
+    "installerAppRegularFiles": 68,
+    "exactContainerFileInventory": true,
+    "upstreamRuntimeIncludedInDMG": false,
+    "originalApplicationSourceIncluded": false,
+    "userRebuiltCodecReplacementProductionCoreVerified": true
   },
   "bundledComponents": [
     {
@@ -74,7 +40,7 @@
       },
       "buildRecipeSHA256": "b1f25e73c14b57ec976b10b0053a1c3e4ef53be6c656c23dc94cc7619bb7216b",
       "buildRecipeActuallyExecuted": true,
-      "userReplacementRecipeSHA256": "647212f56068c064dcb78033547fc3ebb36249d3e2f9511eb8ced51ecdd32e6e",
+      "userReplacementRecipeSHA256": "7765531b747c38eb106c7a3ef3d014a3032f5f423614e427148aced18d83b89e",
       "sourceMaterialClosure": true,
       "userReplacementFixtureVerified": true,
       "userReplacementProductionCoreVerified": true,
@@ -113,59 +79,24 @@
       "sourceTTFSHA256": "acad6de1fc93436f5c0f1f4137751ef04f1aea3063e7036535970ffcfbd79f72"
     }
   ],
-  "fetchedDirectly": [
-    {
-      "name": "yt-dlp macOS combined bundle incl Python/EJS",
-      "version": "2026.08.19",
-      "source": "official upstream GitHub release, user-initiated direct download",
-      "includedInDMGOrBGDDReleaseAssets": false,
-      "archiveSHA256": "07e54b0865303c864006925913bce2604f8ee8cc6f18699bac9c309f9328a6d8"
-    },
-    {
-      "name": "Deno",
-      "version": "2.9.7",
-      "source": "official upstream GitHub release, user-initiated direct download",
-      "includedInDMGOrBGDDReleaseAssets": false,
-      "archiveSHA256": "5cd46d6268f6f78f5d88bdc7159d20bd44cdaa4b3303474839f87ec6fe7ae25c"
-    }
+  "qualification": {
+    "macOS27ExactGUIInstall": "PASS",
+    "macOS27BrowserQuarantine": "PASS",
+    "macOS27HumanInstallerApproval": "PASS",
+    "macOS27ExactEngineTools": "PASS",
+    "macOS26ChangedCode": "NOT RUN: hosted ARM capacity unavailable twice",
+    "AppleDeveloperID": false,
+    "AppleNotarization": false,
+    "macOS27ExactNativeMessaging": "PASS isolated Chrome",
+    "macOS27RealButtonFormats": "PASS max/mp4/wav/mp3",
+    "actualInstalledEJS": "PASS four synthetic challenges; no live challenge observed",
+    "cancellationAndParentStop": "PASS",
+    "personalRestoration": "PASS"
+  },
+  "supportedArchitecture": "arm64",
+  "supportedMacOS": [
+    "27"
   ],
-  "historicalOpenIssues": [
-    {
-      "id": "DENO_TRANSITIVE_NOTICE_CLOSURE",
-      "scope": "Only an attempted future BGDD redistribution of the Deno binary, including private/offline assets; unchanged historical unresolved audit.",
-      "items": 66,
-      "binaryBuildEvidenceItems": 24,
-      "resolved": false
-    },
-    {
-      "id": "YT_FROZEN_SOURCE_PROVENANCE",
-      "scope": "Only an attempted future BGDD redistribution of the combined frozen yt-dlp binary; historical source/build reconciliation remains open.",
-      "resolved": false
-    }
-  ],
-  "architectureVerdict": {
-    "originalApplicationContainsIdentifiedGPLCode": false,
-    "nativeLibraryLinkToGPLTools": false,
-    "standalonePublicCLIsAndOrdinaryFiles": true,
-    "analysis": "Separate-program/aggregate boundary reviewed for the rc3 mechanisms, including the original engine interface using fixed public CLI version commands. Physical bundle nesting does not itself decide copyright scope; reassess linking/plugins/internal interfaces.",
-    "reference": "../docs/DISTRIBUTION-BOUNDARIES.md"
-  },
-  "originalCode": {
-    "license": "Proprietary-Freeware",
-    "publisher": "Angry Thread",
-    "notice": "../LICENSE-BGDD.txt",
-    "conditions": "../CONDITIONS.md",
-    "thirdPartyRightsPreserved": true,
-    "proprietarySourceIncludedInDistributionRepository": false
-  },
-  "sourceProvenanceClarification": {
-    "historicalRecord": "../sources/build-record.json",
-    "historicalSDK27RecordIsNotCurrentBinaryAuthority": true,
-    "sourceArchivesAndBothRecipesUnchanged": true,
-    "sourceKitFileCount": 15,
-    "payloadLegalFileCount": 23,
-    "actualCandidateBuildHashAuthority": "../VERSIONS.json:media",
-    "inheritedMaterialLabelsDoNotReuseRC2AppQualification": true
-  },
-  "unresolvedInThisReviewedPackageScope": []
+  "testedMacOS": "27.0.1",
+  "macOS26Qualified": false
 }

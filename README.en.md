@@ -4,7 +4,7 @@
 
 BGDD is **free proprietary software** pairing a Chrome extension with a local macOS engine. Choose a publication, format and folder: downloading and processing stay on your Mac. No BGDD account, subscription, download server or telemetry.
 
-**Candidate 0.4.8-rc.3 is being prepared privately.** No public download is available yet. Target: **macOS 26 and 27 on Apple Silicon**; check the [actual validation scope](docs/DISTRIBUTION-VALIDATION.md). Intel is not supported.
+**Prerelease 0.4.8-rc.4 — Apple Silicon, macOS 27 only.** [Download the ARM DMG](https://github.com/enrimerveille/BGDD-downloads/releases/download/v0.4.8-rc.4/BGDD-macOS-arm64.dmg) · [Release, checksums and third-party source kit](https://github.com/enrimerveille/BGDD-downloads/releases/tag/v0.4.8-rc.4). macOS 26 is not yet qualified for this version; Intel is in preparation. [Evidence and limitations](docs/DISTRIBUTION-VALIDATION.md).
 
 <p align="center"><img src="assets/popup-light.png" width="320" alt="BGDD light"><img src="assets/popup-dark.png" width="320" alt="BGDD dark"></p>
 
@@ -26,13 +26,13 @@ YouTube, X, Instagram and TikTok have dedicated adapters. TikTok also offers pho
 1. Download an approved release DMG and open **BGDD Installer.app**.
 2. If macOS blocks it, use **System Settings → Privacy & Security → Open Anyway**, when offered, and confirm yourself. BGDD has **no Developer ID certificate or Apple notarization**. [Gatekeeper guide](docs/DISTRIBUTION-GATEKEEPER.md).
 3. Choose **Installer / Mettre à jour**. Internet is required: yt-dlp and Deno are downloaded directly from their official releases at fixed versions, with integrity checks.
-4. Choose **Ouvrir le moteur**. The **BGDD — préparer le moteur** window checks the versions of yt-dlp, FFmpeg and ffprobe without downloading media. It stops at the first failure; read the tool name and message, personally decide any opening offered by macOS, then reopen the engine. Choose **Vérifier les composants** afterwards.
+4. Choose **Ouvrir le moteur**. The **BGDD — préparer le moteur** window checks the versions of yt-dlp, Deno, FFmpeg and ffprobe without downloading media. It stops at the first failure; read the tool name and message, personally decide any opening offered by macOS, then reopen the engine. Choose **Vérifier les composants** afterwards.
 5. Choose **Préparer Chrome**, open the copied address, enable **Developer mode**, select **Load unpacked**, and choose the shown folder.
 6. Open BGDD and choose **Réglages → Vérifier l’installation**.
 
 No Terminal, Homebrew, separate Python or Node.js installation. Chrome loading is manual, normally intended for development, and does not provide Chrome Web Store updates. The interface uses French labels. [Detailed guide](docs/DISTRIBUTION-INSTALL.md).
 
-Assembly, integrity and the exact rc3 package audit pass on macOS26 and27, including codec replacement and Chrome checks. The same SDK26 codecs are also verified on both systems. The actual SDK26 installer window was observed without making changes; engine preparation remains **UNKNOWN / unqualified** after two failed AppKit recipes, without an established engine or Gatekeeper cause. These results establish neither a manual Gatekeeper route nor an rc3 network media download. [Evidence and limitations](docs/DISTRIBUTION-VALIDATION.md).
+The candidate groups executables inside BGDD Engine.app and distinguishes guardian failures from tool failures. See [validation](docs/DISTRIBUTION-VALIDATION.md) for the tested scope and release limitations. An isolated Chrome profile does not mean a Mac with fresh Gatekeeper trust history.
 
 ## Update or uninstall
 

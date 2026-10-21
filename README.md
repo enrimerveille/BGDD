@@ -4,7 +4,7 @@
 
 BGDD est un logiciel **gratuit et propriétaire** qui associe une extension Chrome à un moteur local macOS. Choisissez une publication, un format et un dossier : le téléchargement et le traitement se font sur votre Mac. Aucun compte BGDD, abonnement, serveur de téléchargement ou télémétrie.
 
-**Candidate 0.4.8-rc.3 en préparation privée.** Aucun téléchargement public n’est encore disponible. Cible : **macOS 26 et 27, Apple Silicon** ; consultez le [périmètre réellement validé](docs/DISTRIBUTION-VALIDATION.md). Intel n’est pas pris en charge.
+**Préversion 0.4.8-rc.4 — Apple Silicon, macOS 27 uniquement.** [Télécharger le DMG ARM](https://github.com/enrimerveille/BGDD-downloads/releases/download/v0.4.8-rc.4/BGDD-macOS-arm64.dmg) · [Release, empreintes et kit tiers](https://github.com/enrimerveille/BGDD-downloads/releases/tag/v0.4.8-rc.4). macOS 26 reste non qualifié pour cette version ; Intel est en préparation. [Preuves et limites](docs/DISTRIBUTION-VALIDATION.md).
 
 <p align="center"><img src="assets/popup-light.png" width="320" alt="BGDD clair"><img src="assets/popup-dark.png" width="320" alt="BGDD sombre"></p>
 
@@ -26,13 +26,13 @@ YouTube, X, Instagram et TikTok ont des adaptateurs dédiés. TikTok propose aus
 1. Télécharger le DMG d’une release approuvée et ouvrir **BGDD Installer.app**.
 2. Si macOS bloque l’ouverture, suivre **Réglages Système → Confidentialité et sécurité → Ouvrir quand même**, lorsque cette option est proposée, puis confirmer vous-même. BGDD est distribué **sans certificat Developer ID ni notarisation Apple**. [Guide Gatekeeper](docs/DISTRIBUTION-GATEKEEPER.md).
 3. Choisir **Installer / Mettre à jour**. Une connexion Internet est nécessaire : yt-dlp et Deno sont récupérés directement depuis leurs releases officielles, à versions fixes et après vérification d’intégrité.
-4. Choisir **Ouvrir le moteur**. La fenêtre **BGDD — préparer le moteur** vérifie les versions de yt-dlp, FFmpeg et ffprobe, sans téléchargement de média. Au premier échec, consulter le nom de l’outil et son message ; décider personnellement de l’ouverture si macOS la propose, puis rouvrir le moteur. Choisir ensuite **Vérifier les composants**.
+4. Choisir **Ouvrir le moteur**. La fenêtre **BGDD — préparer le moteur** vérifie les versions de yt-dlp, Deno, FFmpeg et ffprobe, sans téléchargement de média. Au premier échec, consulter le nom de l’outil et son message ; décider personnellement de l’ouverture si macOS la propose, puis rouvrir le moteur. Choisir ensuite **Vérifier les composants**.
 5. Choisir **Préparer Chrome**, ouvrir l’adresse copiée, activer **Mode développeur**, puis **Charger l’extension non empaquetée** et sélectionner le dossier indiqué.
 6. Dans BGDD, ouvrir **Réglages → Vérifier l’installation**.
 
 Aucun Terminal, Homebrew, Python ou Node.js à installer. Le chargement Chrome est manuel et normalement destiné au développement ; il ne fournit pas les mises à jour du Chrome Web Store. [Guide détaillé](docs/DISTRIBUTION-INSTALL.md).
 
-L’assemblage, l’intégrité et l’audit exact des paquets rc3 passent sur macOS26 et27, avec remplacement des codecs et contrôles Chrome. Les mêmes codecs SDK26 sont aussi vérifiés sur les deux OS. La fenêtre du véritable installateur SDK26 est observée en lecture seule ; la préparation du moteur reste **UNKNOWN / non qualifiée** après deux recettes AppKit en échec, sans cause moteur ou Gatekeeper établie. Ces preuves ne qualifient ni Gatekeeper manuel ni un téléchargement média réseau rc3. [Preuves et limites](docs/DISTRIBUTION-VALIDATION.md).
+La candidate regroupe les exécutables dans BGDD Engine.app et distingue les erreurs du gardien de celles des outils. Les résultats de recette et les réserves de publication figurent dans [Validation](docs/DISTRIBUTION-VALIDATION.md). Le profil Chrome isolé ne constitue pas un Mac à l’historique Gatekeeper vierge.
 
 ## Mettre à jour ou retirer BGDD
 

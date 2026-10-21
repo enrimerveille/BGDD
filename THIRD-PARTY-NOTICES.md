@@ -1,4 +1,4 @@
-# BGDD rc3 — composants tiers et accès aux sources
+# BGDD rc4 — composants tiers et accès aux sources
 
 Le code original de l’application BGDD est gratuit et propriétaire, copyright © 2026 Angry Thread. **Cette mention ne couvre pas les composants ci-dessous**, leurs fontes, leurs sources ou leurs recettes sous licence libre.
 
@@ -17,7 +17,7 @@ Aucun des trois codes sources codec n’a été modifié dans le build de réfé
 
 ## Composants obtenus directement auprès de leurs éditeurs
 
-Le paquet hybride rc3 **ne contient ni ne redistribue** les archives ou exécutables suivants. L’installateur les demande directement sur votre Mac, après votre action, via HTTPS et des URLs de releases fixées ; chaque archive est vérifiée par son SHA-256 avant préparation.
+Le paquet hybride rc4 **ne contient ni ne redistribue** les archives ou exécutables suivants. L’installateur les demande directement sur votre Mac, après votre action, via HTTPS et des URLs de releases fixées ; chaque archive est vérifiée par son SHA-256 avant préparation.
 
 | Composant | Version | Origine officielle | Licence et notices |
 |---|---|---|---|
@@ -37,4 +37,4 @@ Le kit codec fournit une recette indépendante de construction, puis `install-co
 
 Aucun copyright des fontes ou des moteurs n’est transféré à Angry Thread. Les fontes demeurent sous OFL ; les compositions graphiques réalisées avec leurs glyphes n’imposent pas cette licence au code original de l’application.
 
-Les matériaux et les deux recettes indépendantes hérités de rc2 sont inchangés. Leur label historique ne transforme ni les licences ni le nouveau verdict exact rc3. L’assemblage local du moteur après téléchargement direct n’ajoute aucun runtime amont au DMG ou aux assets hébergés par BGDD.
+Les archives, licences et la recette de construction héritées de rc2 sont inchangées. La recette indépendante de remplacement et son guide sont adaptés à engine-app-v2 : nouvelle enveloppe avec quarantaine ordinaire, sauvegarde de l’application initiale et maintien des droits de remplacement. L’assemblage local du moteur après téléchargement direct n’ajoute aucun runtime amont au DMG ou aux assets hébergés par BGDD.

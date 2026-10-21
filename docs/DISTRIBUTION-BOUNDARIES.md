@@ -88,3 +88,7 @@ L’éditeur Angry Thread retient explicitement le modèle propriétaire gratuit
 Un nom d’auteur Git ne prouve pas à lui seul une cession de droits ; les contrats de travail, licences de contributions antérieures ou autres accords non fournis ne peuvent pas être établis par un scan. Les mentions portent donc sur les éléments originaux protégeables détenus par Angry Thread, sans s’attribuer les tiers ni les fragments non protégeables. Aucune prétention nouvelle de propriété exclusive sur Space Grotesk ou les outils n’est introduite.
 
 Toute contribution tierce future, import de code, plugin, liaison de bibliothèque ou modification profonde de l’IPC doit être examinée avant d’entrer dans une release. Les réserves rc1 de Deno et du bundle yt-dlp restent historiques et ouvertes pour une éventuelle future redistribution de leurs binaires.
+
+## Disposition rc4
+
+Le host, le gardien, Deno et les codecs sont maintenant dans BGDD Engine.app, avec le sélecteur imbriqué. Ce placement ne crée pas de lien de bibliothèque avec le code original BGDD : les processus, arguments fixes et formats d’échange restent distincts. La recette de remplacement des codecs renouvelle une enveloppe ad hoc avec une quarantaine ordinaire et conserve l’application initiale. Une décision macOS supplémentaire peut être nécessaire. Les archives amont et licences restent inchangées.

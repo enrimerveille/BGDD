@@ -12,13 +12,13 @@ BGDD est un logiciel indépendant distribué sans certificat Apple Developer ID 
 
 Ce parcours suit la [procédure officielle Apple](https://support.apple.com/fr-fr/102445). L’utilisateur prend lui-même la décision ; l’installateur ne simule pas cette autorisation.
 
-## Préparation du moteur rc3
+## Préparation du moteur
 
-Après l’installation, **Ouvrir le moteur** ouvre la fenêtre **BGDD — préparer le moteur**. Cette étape prévue pour rc3 vérifie ponctuellement, sans média ni connexion réseau, les versions de **yt-dlp**, puis **FFmpeg**, puis **ffprobe**. Elle s’arrête au premier échec et affiche l’outil concerné. Sa qualification avec le paquet rc3 final et l’interface reste à établir ; l’essai privé d’un prototype ne constitue pas cette qualification.
+Après l'installation, **Ouvrir le moteur** lance **BGDD — préparer le moteur**. La séquence vérifie yt-dlp, Deno, FFmpeg et ffprobe, sans média ni connexion réseau. Le gardien et ces outils sont des exécutables distincts contenus dans BGDD Engine.app ; leur regroupement ne constitue pas, à lui seul, une autorisation macOS.
 
-Si macOS bloque **BGDD Engine**, fermer l’alerte et décider personnellement de son ouverture dans **Confidentialité et sécurité**, lorsque l’option officielle est proposée. Après confirmation, revenir à **Ouvrir le moteur**. FFmpeg et ffprobe restent des exécutables séparés : macOS peut demander une décision pour chacun. Après une autorisation personnelle, rouvrir le moteur pour refaire la séquence ; une autorisation de l’app ne prouve pas à elle seule l’autorisation de tous les outils.
+Si macOS bloque **BGDD Engine.app**, fermer l'alerte puis décider personnellement de l'ouverture dans **Confidentialité et sécurité**, lorsque **Ouvrir quand même** est proposé. Aller jusqu'à la confirmation finale **Ouvrir** et l'authentification éventuelle. Le DMG rc.4 exact, téléchargé avec sa quarantaine navigateur normale, a terminé ces quatre vérifications après cette procédure sur macOS 27.0.1. Le détail et les limites, notamment l’historique de confiance du Mac et l’absence de preuve macOS 26 actuelle, figurent dans [Validation](DISTRIBUTION-VALIDATION.md).
 
-La confirmation des trois vérifications prépare le parcours, sans prouver un téléchargement complet. Revenir ensuite à **Vérifier les composants**, puis au diagnostic Chrome et à un téléchargement autorisé.
+Un échec indique désormais si le gardien n'a pas démarré, s'il a reçu un signal, si le lancement de l'outil a échoué ou si l'outil lui-même a échoué. Un signal seul ne suffit pas à affirmer un refus Gatekeeper ; le message système doit le confirmer. La réussite des quatre vérifications prépare le parcours, puis il faut vérifier la communication Chrome et un téléchargement autorisé.
 
 ## Si un composant reste bloqué
 
