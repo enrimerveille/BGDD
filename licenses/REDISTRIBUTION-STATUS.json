@@ -90,7 +90,9 @@
     "macOS27FinalContainerComponentVerification": "PASS",
     "macOS27ExactGUIUpdate": "PASS rc4 to rc6; 195 files and 22 links",
     "macOS27ExactEngineTools": "PASS all four tools in production GUI",
-    "macOS27PersonalChromeRefresh": "PENDING native UI access"
+    "macOS27PersonalChromeRefresh": "PASS existing card reloaded; same extension ID and path",
+    "macOS27ExactNativeMessaging": "PASS ready diagnostic; Chrome-parented canonical host, guardian and folder observed",
+    "macOS27PersonalDataPreservation": "PASS native state, downloads inventory, eight extension storage keys and 17 history entries unchanged"
   },
   "supportedArchitecture": "arm64",
   "supportedMacOS": [

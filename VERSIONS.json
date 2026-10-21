@@ -261,5 +261,5 @@
   "testedMacOS": "27.0.1",
   "macOS26Qualified": false,
   "distributionQualified": true,
-  "qualificationNote": "arm64 macOS27 only: final browser-downloaded container human opening and GUI component check passed; automatic appearance and isolated production-core maintenance passed; unchanged rc4 component runtime proof reused."
+  "qualificationNote": "arm64 macOS27 only: exact final downloaded container human opening, production GUI update and four engine tools PASS; existing Chrome card refreshed, Native Messaging and canonical process paths PASS; native and Chrome data unchanged; automatic appearance PASS; unchanged rc4 media proofs reused."
 }
