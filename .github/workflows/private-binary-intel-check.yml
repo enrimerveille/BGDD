@@ -69,6 +69,7 @@ jobs:
             assert 'VERIFIED' in run(cli+['check'])
             installed=home/'Library/Application Support/BGDD';engine=installed/'BGDD Engine.app'
             run(['/usr/bin/codesign','--verify','--deep','--strict',engine])
+            aliascount=sum(p.is_symlink() for p in engine.rglob('*'));assert aliascount==22
             q=run(['/usr/bin/xattr','-p','com.apple.quarantine',engine]).strip();assert int(q.split(';')[0],16)&0x40==0
             nm=json.loads((home/'Library/Application Support/Google/Chrome/NativeMessagingHosts/fr.bgdd.host.json').read_text())
             assert pathlib.Path(nm['path']).resolve()==(engine/'Contents/MacOS/bgdd-host').resolve()
@@ -86,7 +87,7 @@ jobs:
             assert (installed/'state/settings.json').read_text()==settings and media.read_bytes()==b'fixture media'
             assert 'INSTALLED' in run(bootstrap+['install'],300)
             assert 'preferences erased' in run(cli+['uninstall-erase']) and media.read_bytes()==b'fixture media'
-            proof={'kind':'Current exact payload and production bootstrap/core compiled with isolated-home test guard; native Intel','release':m['releaseVersion'],'payloadManifestSHA256':digest(mf),'engineLayout':m['engineLayout'],'engineAppSealVerified':True,'installedAliasCount':22,'userRebuiltCodecReplacementProductionCoreVerified':True,'checks':['assembly','seal','Native Messaging registration path','codec replacement','update preserves settings/history/media','uninstall preserves preferences/media','reinstall','explicit preference erase preserves media'],'enginesExecuted':False,'GUI':False,'Chrome':False,'onlineMedia':False,'manualGatekeeperRoute':False,'executingMacOS':osversion,'executingArchitecture':'x86_64','DMGSHA256':digest(dmg)}
+            proof={'kind':'Current exact payload and production bootstrap/core compiled with isolated-home test guard; native Intel','release':m['releaseVersion'],'payloadManifestSHA256':digest(mf),'engineLayout':m['engineLayout'],'engineAppSealVerified':True,'installedAliasCount':aliascount,'userRebuiltCodecReplacementProductionCoreVerified':True,'checks':['assembly','seal','Native Messaging registration path','codec replacement','update preserves settings/history/media','uninstall preserves preferences/media','reinstall','explicit preference erase preserves media'],'enginesExecuted':False,'GUI':False,'Chrome':False,'onlineMedia':False,'manualGatekeeperRoute':False,'executingMacOS':osversion,'executingArchitecture':'x86_64','DMGSHA256':digest(dmg)}
             print('BGDD_NATIVE_PROOF='+json.dumps(proof,sort_keys=True),flush=True)
             print('PASS native Intel preparation. GUI, Gatekeeper, installed engine execution and browser qualification remain separate.',flush=True)
           except Exception as e:
