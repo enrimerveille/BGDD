@@ -1,17 +1,17 @@
-# BGDD 0.4.8-rc.4
+# BGDD 0.4.8-rc.6
 
-Angry Thread · préversion gratuite et propriétaire · extension **0.4.8** · host, gardien et moteur **0.3.5** · sélecteur **0.3.4** · Native Messaging **2**.
+Angry Thread · préversion gratuite et propriétaire · Apple Silicon · macOS 27 uniquement.
 
-**Préversion ARM pour macOS 27 uniquement.** [Télécharger](https://github.com/enrimerveille/BGDD-downloads/releases/download/v0.4.8-rc.4/BGDD-macOS-arm64.dmg). macOS 26 reste non qualifié pour le code modifié.
+L’installateur suit désormais l’apparence claire ou sombre de macOS, y compris les changements pendant son ouverture. Il reprend la palette BGDD et Space Grotesk, avec des boutons natifs, des messages longs défilants et des confirmations système conservées. Le composant installateur passe à 0.4.9.
 
-Cette candidate corrige le transfert du moteur et son lancement. Les fichiers du runtime sont déplacés exclusivement sur le même volume APFS, avec contrôles séparés des octets, de l'identité du fichier et de la quarantaine. Le gardien, le host, Deno et les codecs rejoignent l'application moteur ; le sélecteur est un auxiliaire imbriqué. L'état utilisateur reste extérieur à l'application signée. Le diagnostic identifie le gardien séparément de l'outil demandé et refuse toute réussite fondée sur une sortie 0 accompagnée d'un signal.
+L’extension 0.4.8, le host, le gardien et le moteur 0.3.5, le sélecteur 0.3.4, les codecs et Native Messaging 2 conservent exactement les octets de la rc.4 qualifiée. Les formats et le fonctionnement des téléchargements ne changent pas. Les corrections de copie et de lancement du moteur introduites en rc.4 sont conservées.
 
-Les versions de yt-dlp/Python/EJS, Deno, FFmpeg, x264 et LAME restent inchangées. yt-dlp et Deno sont téléchargés directement depuis leurs releases officielles, avec URL, versions, archives et inventaires fixés. Le DMG ne contient pas ces moteurs amont. Les codecs ARM existants sont réutilisés. Le kit tiers adapte le remplacement volontaire de FFmpeg/ffprobe à la nouvelle enveloppe ; il conserve les sources et la recette de construction.
+Le minimum technique inscrit dans le paquet est macOS 26. La compatibilité proposée pour cette préversion reste limitée à **macOS 27 sur Apple Silicon**. macOS 26 ARM n’est pas qualifié ; Intel dispose d’une candidate privée et d’une validation distincte. Les essais de compilation croisée ne constituent pas une exécution native Intel.
 
-Les formats, la qualité, l'identité Chrome, l'extension et le fonctionnement local restent conservés. L'exigence APFS concerne le staging d'installation ; elle n'interdit pas les dossiers de téléchargement sur exFAT. Aucun daemon, serveur local ou recherche périodique n'est ajouté.
+BGDD reste distribué sans certificat Apple Developer ID ni notarisation. L’utilisateur décide personnellement des ouvertures proposées par macOS. yt-dlp et Deno sont acquis depuis leurs releases officielles, avec versions, empreintes et inventaires fixés. Le DMG contient uniquement les codecs reconstruits et les autres composants prévus. Les garanties d’intégrité et de quarantaine sont inchangées.
 
-BGDD n'a ni certificat Developer ID ni notarisation. L'utilisateur décide personnellement des ouvertures que macOS propose. [Installation](DISTRIBUTION-INSTALL.md) · [Gatekeeper](DISTRIBUTION-GATEKEEPER.md) · [Validation et limites](DISTRIBUTION-VALIDATION.md) · [Licences et sources](DISTRIBUTION-LICENSES.md).
+Le dossier, l’identité de l’extension, les réglages et l’historique sont conservés par la mise à jour transactionnelle. Aucun daemon, serveur local, surveillance ou mise à jour silencieuse n’est ajouté. Les fichiers téléchargés restent conservés, y compris après désinstallation.
 
-rc.3 reste historique et non recommandée : son installateur a échoué lors de la copie du moteur. Ses assets ne sont pas remplacés. Le parcours du DMG exact a réussi sur macOS 27.0.1, avec autorisations humaines de l’installateur et du moteur, puis téléchargement depuis le vrai bouton Chrome dans les quatre formats. Intel macOS 26 fait l'objet d'une qualification distincte.
+Les documents du paquet décrivent sa préparation. Les validations finales et limites sont consignées dans la release publiée et la documentation en ligne. Les assets ARM rc.4 publiés restent inchangés.
 
-Les documents et métadonnées contenus dans les assets immuables sont le relevé de préparation ; la présente release et la page Validation consignent la qualification obtenue ensuite. Le libellé initial du composant peut encore afficher 0.3.4 ; après installation, le récapitulatif affiche correctement 0.3.5.
+[Installation](DISTRIBUTION-INSTALL.md) · [Gatekeeper](DISTRIBUTION-GATEKEEPER.md) · [Validation et limites](DISTRIBUTION-VALIDATION.md) · [Licences et sources](DISTRIBUTION-LICENSES.md).

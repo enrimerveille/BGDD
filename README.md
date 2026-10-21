@@ -4,7 +4,7 @@
 
 BGDD est un logiciel **gratuit et propriétaire** qui associe une extension Chrome à un moteur local macOS. Choisissez une publication, un format et un dossier : le téléchargement et le traitement se font sur votre Mac. Aucun compte BGDD, abonnement, serveur de téléchargement ou télémétrie.
 
-**Préversion 0.4.8-rc.4 — Apple Silicon, macOS 27 uniquement.** [Télécharger le DMG ARM](https://github.com/enrimerveille/BGDD-downloads/releases/download/v0.4.8-rc.4/BGDD-macOS-arm64.dmg) · [Release, empreintes et kit tiers](https://github.com/enrimerveille/BGDD-downloads/releases/tag/v0.4.8-rc.4). macOS 26 reste non qualifié pour cette version ; Intel est en préparation. [Preuves et limites](docs/DISTRIBUTION-VALIDATION.md).
+**Préversion 0.4.8-rc.6 — Apple Silicon, macOS 27 uniquement.** [Télécharger le DMG ARM](https://github.com/enrimerveille/BGDD-downloads/releases/download/v0.4.8-rc.6/BGDD-macOS-arm64.dmg) · [Release, empreintes et kit tiers](https://github.com/enrimerveille/BGDD-downloads/releases/tag/v0.4.8-rc.6). macOS 26 reste non qualifié pour cette version ; Intel est en préparation. [Preuves et limites](docs/DISTRIBUTION-VALIDATION.md).
 
 <p align="center"><img src="assets/popup-light.png" width="320" alt="BGDD clair"><img src="assets/popup-dark.png" width="320" alt="BGDD sombre"></p>
 
@@ -20,6 +20,12 @@ Captures du véritable popup avec une publication de démonstration et un histor
 | MP3 | Débit natif lorsqu’un MP3 exploitable existe ; sinon conversion choisie, jusqu’à 320 kb/s |
 
 YouTube, X, Instagram et TikTok ont des adaptateurs dédiés. TikTok propose aussi des carrousels MP4, images ZIP et exports audio. Le bouton **B** sur X lance la qualité maximale. L’accès dépend de la publication, de la région et des changements des plateformes ; aucun accès universel ou privé n’est promis. [Preuves et limites](docs/DISTRIBUTION-VALIDATION.md).
+
+L’installateur suit automatiquement l’apparence claire ou sombre de macOS, y compris pendant son utilisation.
+
+<p align="center"><img src="assets/installer-light.png" width="360" alt="Installateur clair"><img src="assets/installer-dark.png" width="360" alt="Installateur sombre"></p>
+
+Captures de la vraie fenêtre AppKit ; interface identique sur ARM et Intel, dont la qualification reste distincte.
 
 ## Installer
 

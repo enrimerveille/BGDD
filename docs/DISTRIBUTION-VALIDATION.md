@@ -1,4 +1,32 @@
-# Validation de BGDD 0.4.8-rc.4
+# Validation de BGDD 0.4.8-rc.6
+
+**Apple Silicon, macOS 27 uniquement.** La version locale réellement utilisée est macOS 27.0.1. macOS 26 ARM n’est pas qualifié ; aucune simulation ni compilation ne tient lieu de preuve d’exécution de cette version du système.
+
+DMG final : `ad3a04c39568c37a2e11a86a6fc4da6b5b39a367b99aa648d04e69c817a46e61` (34 946 837 octets). Kit tiers inchangé : `11d4bac4db87a45df947a5da11e945c5b1fe1e115408b5c9788ef55eb8a541bb`.
+
+## Vérifications propres à cette livraison
+
+L’installateur 0.4.9 suit l’apparence système AppKit. Clair, sombre et changement d’apparence dans la même fenêtre de production ont été observés. La vérification des composants a réussi et la confirmation native de désinstallation a été ouverte puis annulée. Les deux captures publiées proviennent de cette vraie fenêtre. Tous les fichiers de cette app sont identiques à ceux du conteneur final, dont seule la documentation extérieure avait ensuite été actualisée.
+
+Les essais isolés du même code d’interface couvrent aussi chargement, erreur longue, défilement, focus clavier et confirmation native pendant un changement d’apparence. Ce sont des scénarios visuels de test, distincts de l’installation de production. Aucun flash blanc n’a été observé ; aucune mesure vidéo image par image ni session VoiceOver humaine n’est revendiquée.
+
+Le paquet final passe les contrôles d’inventaire, empreintes, architecture, signatures techniques et sources tierces. La recette isolée du cœur de production utilise son payload exact pour installation, mise à jour, remplacement des codecs, retrait et réinstallation, en vérifiant la conservation des données. Les contrôles ciblés de maintenance, versions et confiance passent (87 assertions/scénarios). Les garanties Gatekeeper et de quarantaine ne changent pas.
+
+**Conteneur final :** le DMG final a été téléchargé avec sa quarantaine normale par Safari, puis ouvert après la décision humaine macOS. La fenêtre de production et sa vérification des composants ont réussi. Les 68 fichiers de l’app en cours d’exécution correspondent exactement à la candidate contrôlée. Aucune quarantaine n’a été supprimée ni aucune protection macOS modifiée.
+
+## Résultats réutilisés des composants inchangés
+
+Les octets de l’extension, du moteur, du host, du gardien, du sélecteur et des codecs sont ceux de la rc.4 qualifiée. Les essais réels des quatre formats ci-dessous sont conservés comme preuves historiques de ces composants ; ils n’ont pas été répétés pour la modification de l’apparence.
+
+## Intel, preuve séparée et candidate privée
+
+La candidate Intel a passé les contrôles statiques, puis une exécution native sur **macOS 26.6.1 x86_64, processeur Intel**, dans un runner public standard gratuit. Inventaire du DMG exact, signatures, versions des codecs et recette isolée du cœur de production ont réussi. Le transport privé temporaire a été supprimé ; aucun code propriétaire source, paquet Intel ou donnée personnelle n’a été publié.
+
+Restent à qualifier sur Intel : véritable interface graphique et décisions Gatekeeper, moteur installé et Native Messaging avec Chrome, puis parcours média complet de la candidate. La compilation croisée ARM et Rosetta ne remplacent pas ces preuves. Intel demeure privé et non qualifié pour distribution.
+
+---
+
+# Preuves historiques de BGDD 0.4.8-rc.4
 
 **Cette préversion ARM prend en charge macOS 27 uniquement ; parcours de production validé sur macOS 27.0.1.** macOS 26 reste non qualifié. Le minimum technique 26 inscrit dans le paquet ne constitue pas une prise en charge de macOS 26. Intel n’est pas qualifié par ces résultats.
 

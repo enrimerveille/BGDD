@@ -4,7 +4,7 @@
 
 BGDD is **free proprietary software** pairing a Chrome extension with a local macOS engine. Choose a publication, format and folder: downloading and processing stay on your Mac. No BGDD account, subscription, download server or telemetry.
 
-**Prerelease 0.4.8-rc.4 — Apple Silicon, macOS 27 only.** [Download the ARM DMG](https://github.com/enrimerveille/BGDD-downloads/releases/download/v0.4.8-rc.4/BGDD-macOS-arm64.dmg) · [Release, checksums and third-party source kit](https://github.com/enrimerveille/BGDD-downloads/releases/tag/v0.4.8-rc.4). macOS 26 is not yet qualified for this version; Intel is in preparation. [Evidence and limitations](docs/DISTRIBUTION-VALIDATION.md).
+**Prerelease 0.4.8-rc.6 — Apple Silicon, macOS 27 only.** [Download the ARM DMG](https://github.com/enrimerveille/BGDD-downloads/releases/download/v0.4.8-rc.6/BGDD-macOS-arm64.dmg) · [Release, checksums and third-party source kit](https://github.com/enrimerveille/BGDD-downloads/releases/tag/v0.4.8-rc.6). macOS 26 is not yet qualified for this version; Intel is in preparation. [Evidence and limitations](docs/DISTRIBUTION-VALIDATION.md).
 
 <p align="center"><img src="assets/popup-light.png" width="320" alt="BGDD light"><img src="assets/popup-dark.png" width="320" alt="BGDD dark"></p>
 
@@ -20,6 +20,12 @@ Actual popup screenshots using a demonstration post and empty history.
 | MP3 | Native bitrate when usable MP3 exists; otherwise a chosen conversion up to 320 kb/s |
 
 YouTube, X, Instagram and TikTok have dedicated adapters. TikTok also offers photo slideshows, original images as ZIP and audio exports. The **B** shortcut on X starts maximum quality. Availability depends on the publication, region and platform changes; universal or private-content access is not promised. [Evidence and limitations](docs/DISTRIBUTION-VALIDATION.md).
+
+The installer automatically follows the macOS light or dark appearance, including changes while it is open.
+
+<p align="center"><img src="assets/installer-light.png" width="360" alt="Light installer"><img src="assets/installer-dark.png" width="360" alt="Dark installer"></p>
+
+Actual AppKit window captures. ARM and Intel share the interface; Intel qualification remains separate.
 
 ## Install
 

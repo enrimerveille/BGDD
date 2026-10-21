@@ -1,7 +1,7 @@
 {
   "schemaVersion": 4,
   "reviewedAt": "2026-10-21",
-  "releaseVersion": "0.4.8-rc.4",
+  "releaseVersion": "0.4.8-rc.6",
   "strategy": "hybrid-direct-upstream",
   "engineLayout": "engine-app-v2",
   "visibility": "public-prerelease",
@@ -13,8 +13,8 @@
   "exactPackageReview": {
     "DMG": {
       "file": "BGDD-macOS-arm64.dmg",
-      "sha256": "e964a235b19866ada1e0ff5d13b5816680516547561fee2931f7db8ee9bc3c56",
-      "bytes": 35359408
+      "sha256": "ad3a04c39568c37a2e11a86a6fc4da6b5b39a367b99aa648d04e69c817a46e61",
+      "bytes": 34946837
     },
     "sourceKit": {
       "file": "BGDD-third-party-sources.zip",
@@ -80,18 +80,14 @@
     }
   ],
   "qualification": {
-    "macOS27ExactGUIInstall": "PASS",
-    "macOS27BrowserQuarantine": "PASS",
-    "macOS27HumanInstallerApproval": "PASS",
-    "macOS27ExactEngineTools": "PASS",
-    "macOS26ChangedCode": "NOT RUN: hosted ARM capacity unavailable twice",
+    "macOS27ProductionAppAppearance": "PASS light/dark/live; exact app bytes",
+    "macOS27FinalContainerHumanOpening": "PASS human approval and exact running app",
+    "macOS27ExactPayloadMaintenance": "PASS isolated production core",
+    "unchangedComponents": "rc4 historical GUI/engine/Chrome/four-format qualification reused after byte equality",
     "AppleDeveloperID": false,
     "AppleNotarization": false,
-    "macOS27ExactNativeMessaging": "PASS isolated Chrome",
-    "macOS27RealButtonFormats": "PASS max/mp4/wav/mp3",
-    "actualInstalledEJS": "PASS four synthetic challenges; no live challenge observed",
-    "cancellationAndParentStop": "PASS",
-    "personalRestoration": "PASS"
+    "macOS26ChangedCode": "NOT QUALIFIED",
+    "macOS27FinalContainerComponentVerification": "PASS"
   },
   "supportedArchitecture": "arm64",
   "supportedMacOS": [

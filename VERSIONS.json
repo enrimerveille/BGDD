@@ -1,7 +1,7 @@
 {
   "formatVersion": 1,
-  "releaseVersion": "0.4.8-rc.4",
-  "legalStatusFile": "licenses-status-rc4.json",
+  "releaseVersion": "0.4.8-rc.6",
+  "legalStatusFile": "licenses-status-rc6.json",
   "extensionVersion": "0.4.8",
   "nativeVersion": "0.3.5",
   "protocolVersion": 2,
@@ -19,7 +19,8 @@
     "host": "0.3.5",
     "guardian": "0.3.5",
     "engine": "0.3.5",
-    "folder": "0.3.4"
+    "folder": "0.3.4",
+    "installer": "0.4.9"
   },
   "legalMaterialsVersion": "rc4",
   "signature": {
@@ -32,22 +33,22 @@
     "signedCodeCount": 7
   },
   "documentation": {
-    "LIRE-MOI.txt": "836ea18772db8398f8e7086b856e5d34b4959cec8e72c99968c7a4aefedbbded",
-    "Installation BGDD.md": "8a6db198c3e848610e2b5ba5302adf683b0cb799654c38c92b410aa691d48259",
-    "Présentation BGDD.md": "a3fe80cb3f17f0b84efcfa8a1eeed8bddc1de5ff0cee0b37972d12af0c592537",
-    "Présentation BGDD EN.md": "b3933337955dd84ada0a941de96ef961d2f80a45ea7955fb85d322e5675412b7",
+    "LIRE-MOI.txt": "199e6c029af341f29aa8a6ba0912bc2be7c8b83a1162f64985ef402890a2606d",
+    "Installation BGDD.md": "e4d6f1626c204d754b6b9088d6e6288c62b8f37d2ec2435be5892994c613df59",
+    "Présentation BGDD.md": "26bc300f5129333de327dd392b1c11699cce959d4fc8ef25d9c9417ea7f3305e",
+    "Présentation BGDD EN.md": "27d28427e270f5ca0ba49513df01de76ad47c6b283500890527062626e692d29",
     "Guide Gatekeeper.md": "3396db92218b2be9b489955df4456412a4593c2ba9e7b4d8ab13594583ca8a8a",
     "Licences et notices.md": "bc560166e4062f30b6a6ee25085220111e4764f8b2636f3c96297782126948b1",
     "Frontières de licence.md": "c3047aedd6e8181b330e90203907d03cf8f6c826c5f10d429d355789f9887336",
     "Conditions BGDD.md": "44c64226d023c5e10591c569f0b3b3d7038fe514f8817af8aa65ee1814925e00",
-    "Notes de version.md": "0afa3943efc37a67913226a4c74abefffa8ae12b53296ea784aa50bc621698c5",
-    "Validation BGDD.md": "909a78e92972a9c1c7f749753e61cce723e779275b2a6e4fa1cb84470c757aed",
+    "Notes de version.md": "b1a82503f66ba261ac4c587f896e1031fea1dc42fdad556386147f2df553a858",
+    "Validation BGDD.md": "8d4a4c1de9546f13951cccd9f0212213a1c780696d4650af515f2f401b199572",
     "assets/wordmark-dark.svg": "342c18a9810db301f7e774113e226bfa3f54febde2f2fa56e3caad40408d1bfc",
     "assets/wordmark-light.svg": "b8a686d2ec5610d4d55f3322b60cea850e2decf40acba605f853d334a2ae4110",
     "assets/popup-light.png": "6d6db1be8837a051eefe8abc85f81698a1f0524dace25f0ecdf08ec3a6b1f34f",
     "assets/popup-dark.png": "5e765e69acff504939a055c6c31d8293779c0cdfad2a051b752056b15b72a926",
     "assets/installer.png": "c21466698659aa189530cc8a04c3a34ce1a6d5e39cfff71ec3824b8e8e687be7",
-    "Etat des licences.json": "09d56d879774fe07a09bdfa8b3433f2bee4cd1d589d714b8240b01f72308fd8b"
+    "Etat des licences.json": "fc83f75aaf90757c1434b9c9ba21583e9693b20d4fcd41a747ff7ea707e34cb0"
   },
   "sourceInputs": {
     "ffmpeg-9.0.2.tar.xz": "8c3850283eb25fa026482078a04051e0be17347b09ef81a0849bec15a96e002e",
@@ -249,9 +250,16 @@
   "redistributable": true,
   "publicationAuthorized": false,
   "legalVerdict": {
-    "sha256": "09d56d879774fe07a09bdfa8b3433f2bee4cd1d589d714b8240b01f72308fd8b",
+    "sha256": "fc83f75aaf90757c1434b9c9ba21583e9693b20d4fcd41a747ff7ea707e34cb0",
     "redistributionAllowed": true,
     "publicPublicationAuthorized": false,
     "bundledSnapshot": "The sealed app resource captured the pre-inspection verdict. Its bytes are preserved; the external verdict and root image documents record the current review."
-  }
+  },
+  "supportedMacOS": [
+    "27"
+  ],
+  "testedMacOS": "27.0.1",
+  "macOS26Qualified": false,
+  "distributionQualified": true,
+  "qualificationNote": "arm64 macOS27 only: final browser-downloaded container human opening and GUI component check passed; automatic appearance and isolated production-core maintenance passed; unchanged rc4 component runtime proof reused."
 }
