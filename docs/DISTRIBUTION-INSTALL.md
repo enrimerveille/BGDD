@@ -1,16 +1,17 @@
 # Installer et entretenir BGDD
 
-BGDD gratuit et propriétaire · Angry Thread · candidate **0.4.8-rc.4** · extension **0.4.8** · composant natif **0.3.5** · protocole **2**.
+BGDD gratuit et propriétaire · Angry Thread · extension **0.4.8** · composant natif **0.3.5** · protocole **2**.
 
-Le dépôt de distribution est préparé en privé. La cible est macOS 26 et 27 Apple Silicon ; les résultats effectivement observés sont distingués dans [Validation](DISTRIBUTION-VALIDATION.md). Aucun support Intel. Le paquet est sans Developer ID ni notarisation ; [Gatekeeper](DISTRIBUTION-GATEKEEPER.md) explique le mécanisme manuel officiel lorsqu’il est proposé.
+Choisir le paquet correspondant au processeur :
 
-Cette préversion prend en charge **macOS 27 sur Apple Silicon uniquement**.
+- **Apple Silicon : [0.4.8-rc.6](https://github.com/enrimerveille/BGDD-downloads/releases/tag/v0.4.8-rc.6), macOS 27 uniquement.** macOS 26 ARM reste non qualifié.
+- **Intel x86_64 : [0.4.8-rc.5](https://github.com/enrimerveille/BGDD-downloads/releases/tag/v0.4.8-rc.5), macOS 26**, test physique sous macOS 26.5.2. Installation, moteur, quatre formats réseau, annulation, mise à jour et désinstallation réussis. **Chrome → Native Messaging → téléchargement sur Intel NON TESTÉ** ; cette limite est acceptée pour la préversion.
 
-Le parcours ci-dessous a abouti avec le DMG rc.4 exact sur macOS 27.0.1 : autorisation humaine de l’installateur, installation, autorisation humaine du moteur, quatre outils puis téléchargement depuis Chrome. La validation macOS 26 reste en attente ; voir [Validation](DISTRIBUTION-VALIDATION.md).
+Le paquet Intel exact conserve son numéro rc.5 ; il ne remplace pas la rc.6 ARM. Le paquet est sans Developer ID ni notarisation ; [Gatekeeper](DISTRIBUTION-GATEKEEPER.md) explique le mécanisme manuel officiel lorsqu’il est proposé. [Preuves et limites](DISTRIBUTION-VALIDATION.md).
 
 ## Première installation
 
-1. Télécharger **BGDD-macOS-arm64.dmg** d’une release approuvée sur [BGDD-downloads](https://github.com/enrimerveille/BGDD-downloads/releases).
+1. Télécharger **BGDD-macOS-arm64.dmg** pour Apple Silicon ou **BGDD-macOS-x86_64.dmg** pour Intel d’une release approuvée sur [BGDD-downloads](https://github.com/enrimerveille/BGDD-downloads/releases).
 2. Ouvrir l’image puis **BGDD Installer.app**. Si macOS bloque cette première ouverture, suivre le guide Gatekeeper et confirmer vous-même l’ouverture.
 3. Choisir **Installer / Mettre à jour**. Une connexion Internet est nécessaire pour récupérer yt-dlp **2026.08.19** et Deno **2.9.7** directement depuis leurs releases officielles. Leur version et leur SHA-256 sont fixes. L’installateur affiche la source et les octets réellement reçus ; aucun script distant n’est exécuté.
 4. Choisir **Ouvrir le moteur**. La fenêtre **BGDD — préparer le moteur** vérifie successivement les versions de yt-dlp, Deno, FFmpeg et ffprobe, sans télécharger de média. La séquence s’arrête au premier échec. Si macOS bloque un composant, prendre vous-même la décision d’ouverture officielle décrite dans le guide Gatekeeper, puis rouvrir le moteur pour refaire la vérification.
@@ -34,7 +35,7 @@ Ouvrir une publication accessible, choisir son format et sa destination, puis **
 1. Attendre la fin des transferts et ouvrir l’installateur.
 2. Choisir **Chercher une mise à jour**. La recherche volontaire utilise **BGDD-downloads**, vérifie version, HTTPS, taille, empreintes et contenu attendu. L’absence de Developer ID limite l’authenticité : l’empreinte est fournie par le même compte GitHub que le fichier.
 3. Choisir d’ouvrir le paquet vérifié, confirmer son ouverture si macOS le demande, puis choisir **Installer / Mettre à jour** dans le nouvel installateur.
-4. Choisir **Ouvrir le moteur**, terminer la vérification des trois versions et décider personnellement des éventuelles ouvertures demandées par macOS, puis vérifier les composants.
+4. Choisir **Ouvrir le moteur**, terminer la vérification des quatre outils et décider personnellement des éventuelles ouvertures demandées par macOS, puis vérifier les composants.
 5. Dans Chrome, choisir **Actualiser** sur la carte BGDD existante, puis recharger les publications déjà ouvertes.
 
 Le chemin, l’identité, les préférences, autorisations, historique et médias sont conservés. La réparation peut exiger Internet pour les versions fixes des moteurs. Aucun script distant, installation silencieuse, recherche périodique ni connexion permanente à GitHub. Le canal public sélectionne les préversions compatibles avec l’architecture depuis la liste des releases, avec vérification des empreintes.

@@ -16,7 +16,7 @@ Ce parcours suit la [procédure officielle Apple](https://support.apple.com/fr-f
 
 Après l'installation, **Ouvrir le moteur** lance **BGDD — préparer le moteur**. La séquence vérifie yt-dlp, Deno, FFmpeg et ffprobe, sans média ni connexion réseau. Le gardien et ces outils sont des exécutables distincts contenus dans BGDD Engine.app ; leur regroupement ne constitue pas, à lui seul, une autorisation macOS.
 
-Si macOS bloque **BGDD Engine.app**, fermer l'alerte puis décider personnellement de l'ouverture dans **Confidentialité et sécurité**, lorsque **Ouvrir quand même** est proposé. Aller jusqu'à la confirmation finale **Ouvrir** et l'authentification éventuelle. Le DMG rc.4 exact, téléchargé avec sa quarantaine navigateur normale, a terminé ces quatre vérifications après cette procédure sur macOS 27.0.1. Le détail et les limites, notamment l’historique de confiance du Mac et l’absence de preuve macOS 26 actuelle, figurent dans [Validation](DISTRIBUTION-VALIDATION.md).
+Si macOS bloque **BGDD Engine.app**, fermer l'alerte puis décider personnellement de l'ouverture dans **Confidentialité et sécurité**, lorsque **Ouvrir quand même** est proposé. Aller jusqu'à la confirmation finale **Ouvrir** et l'authentification éventuelle. Le DMG rc.4 exact, téléchargé avec sa quarantaine navigateur normale, a terminé ces quatre vérifications après cette procédure sur macOS 27.0.1. Le détail et les limites, notamment l’historique de confiance du Mac et la qualification distincte des variantes ARM et Intel, figurent dans [Validation](DISTRIBUTION-VALIDATION.md).
 
 Un échec indique désormais si le gardien n'a pas démarré, s'il a reçu un signal, si le lancement de l'outil a échoué ou si l'outil lui-même a échoué. Un signal seul ne suffit pas à affirmer un refus Gatekeeper ; le message système doit le confirmer. La réussite des quatre vérifications prépare le parcours, puis il faut vérifier la communication Chrome et un téléchargement autorisé.
 
@@ -29,3 +29,7 @@ La vérification porte aussi sur les auxiliaires et les moteurs. Si macOS bloque
 Si macOS indique que le logiciel est endommagé, modifié ou dangereux, ou si aucune autorisation officielle n’est proposée, arrêter le parcours et consulter les problèmes connus. L’autorisation manuelle d’une app non identifiée n’est pas une solution générale à toutes les alertes.
 
 BGDD ne retire pas la quarantaine, ne désactive pas Gatekeeper, ne change pas les politiques du Mac ni les réglages de confidentialité. Un Mac géré peut interdire les exceptions. [État des recettes macOS 26 et 27](DISTRIBUTION-VALIDATION.md).
+
+## Préversion Intel rc.5 — macOS 26
+
+Le DMG Intel exact a été ouvert avec sa quarantaine naturelle sur macOS 26.5.2. L’utilisateur a confirmé lui-même l’autorisation officielle de l’installateur ; l’installation et la fenêtre de préparation du moteur ont ensuite abouti. Gatekeeper est resté actif. Ce résultat ne qualifie pas le parcours depuis Chrome, qui demeure **NON TESTÉ** sur Intel dans cette recette.

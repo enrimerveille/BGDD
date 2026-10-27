@@ -4,7 +4,9 @@
 
 BGDD est un logiciel **gratuit et propriétaire** qui associe une extension Chrome à un moteur local macOS. Choisissez une publication, un format et un dossier : le téléchargement et le traitement se font sur votre Mac. Aucun compte BGDD, abonnement, serveur de téléchargement ou télémétrie.
 
-**Préversion 0.4.8-rc.6 — Apple Silicon, macOS 27 uniquement.** [Télécharger le DMG ARM](https://github.com/enrimerveille/BGDD-downloads/releases/download/v0.4.8-rc.6/BGDD-macOS-arm64.dmg) · [Release, empreintes et kit tiers](https://github.com/enrimerveille/BGDD-downloads/releases/tag/v0.4.8-rc.6). macOS 26 reste non qualifié pour cette version ; Intel est en préparation. [Preuves et limites](docs/DISTRIBUTION-VALIDATION.md).
+**Préversion 0.4.8-rc.6 — Apple Silicon, macOS 27 uniquement.** [Télécharger le DMG ARM](https://github.com/enrimerveille/BGDD-downloads/releases/download/v0.4.8-rc.6/BGDD-macOS-arm64.dmg) · [Release, empreintes et kit tiers](https://github.com/enrimerveille/BGDD-downloads/releases/tag/v0.4.8-rc.6). macOS 26 ARM reste non qualifié pour cette version. [Preuves et limites](docs/DISTRIBUTION-VALIDATION.md).
+
+**Préversion 0.4.8-rc.5 — Intel x86_64, macOS 26.** [Télécharger le DMG Intel](https://github.com/enrimerveille/BGDD-downloads/releases/download/v0.4.8-rc.5/BGDD-macOS-x86_64.dmg) · [Release, empreintes et kit tiers](https://github.com/enrimerveille/BGDD-downloads/releases/tag/v0.4.8-rc.5). Test physique sous macOS 26.5.2 : installation, moteur et quatre formats réseau réussis. **Parcours Chrome → Native Messaging → téléchargement Intel NON TESTÉ**, limite acceptée pour cette préversion. Les deux variantes ont des numéros distincts ; choisissez selon votre processeur.
 
 <p align="center"><img src="assets/popup-light.png" width="320" alt="BGDD clair"><img src="assets/popup-dark.png" width="320" alt="BGDD sombre"></p>
 

@@ -1,4 +1,16 @@
-# Validation de BGDD 0.4.8-rc.6
+# Validation des variantes BGDD
+
+## Intel 0.4.8-rc.5 — publication du 27 octobre 2026
+
+Préversion Intel x86_64 pour macOS 26. Le test physique du 22 octobre a été réalisé sur Mac Pro Intel 2019 sous **macOS 26.5.2**. Installation graphique, autorisation Gatekeeper humaine, moteur et ses quatre outils, adaptation clair/sombre en direct, quatre téléchargements réseau autorisés (qualité maximale, MP4, WAV, MP3), annulation, mise à jour de la même candidate et désinstallation : **PASS**. Tous les exécutables disposent de x86_64 ; yt-dlp téléchargé lors de l’installation est universel.
+
+Les essais réseau utilisent le host installé, piloté avec les trames Native Messaging depuis un outil de recette. **Chrome → Native Messaging → téléchargement sur Intel : NON TESTÉ.** Cette limite a été explicitement acceptée pour la publication. Une assertion indépendante du solveur EJS et une couverture exhaustive des erreurs longues/focus n’ont pas été réalisées sur le Mac physique. Aucun échec réseau n’a été remplacé par un résultat simulé.
+
+Médias Coffee Run (Blender Studio, CC BY), sans cookies ni compte : maximum MKV AV1/Opus 2048×858 ; MP4 H.264/AAC 1920×804 ; WAV PCM 24 bits ; MP3 320 kb/s. Le moteur a vérifié les sorties puis effectué une publication atomique exclusive. Les fichiers de recette et l’installation ont été retirés après les essais.
+
+DMG exact, sans reconstruction : `00528e5825058ebb53d4bfc166c0188ea084e842b8baa7bebbd64a22c70584c0`. Les documents et métadonnées embarqués conservent leur état historique de préparation privée ; la décision de publication ci-dessus les complète. [Release Intel](https://github.com/enrimerveille/BGDD-downloads/releases/tag/v0.4.8-rc.5).
+
+## Apple Silicon 0.4.8-rc.6 — résultats conservés
 
 **Apple Silicon, macOS 27 uniquement.** La version locale réellement utilisée est macOS 27.0.1. macOS 26 ARM n’est pas qualifié ; aucune simulation ni compilation ne tient lieu de preuve d’exécution de cette version du système.
 
