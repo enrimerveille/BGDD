@@ -1,30 +1,38 @@
-# Installer et entretenir BGDD 0.4.8-rc.7
+# Installer et utiliser BGDD
 
-Angry Thread · logiciel gratuit et propriétaire · extension 0.4.8 · protocole 2.
+BGDD 0.4.8-rc.7 est disponible pour **Apple Silicon (ARM64) sous macOS 27** et **Intel (x86_64) sous macOS 26**. [Choisir votre DMG](https://github.com/enrimerveille/BGDD-downloads/releases/tag/v0.4.8-rc.7).
 
-Choisissez **BGDD-macOS-arm64.dmg** pour Apple Silicon sous macOS 27 ou **BGDD-macOS-x86_64.dmg** pour Intel sous macOS 26, dans la [même release](https://github.com/enrimerveille/BGDD-downloads/releases/tag/v0.4.8-rc.7). Le minimum technique du paquet est macOS 26 ; ARM sur 26 reste non qualifié. La nouvelle interface RC.7 n’a pas été exécutée sur Intel. [Validation](DISTRIBUTION-VALIDATION.md).
+Une connexion Internet et Google Chrome sont nécessaires. Aucun Terminal, Homebrew, Python ou Node.js à installer. BGDD est distribué **sans certificat Developer ID ni notarisation Apple** : consultez le [guide Gatekeeper](DISTRIBUTION-GATEKEEPER.md) si macOS bloque l’ouverture.
 
-## Les quatre étapes
+## Installer en quatre étapes
 
-Ouvrez le DMG puis son unique application **Installer BGDD.app**. Si macOS bloque son ouverture, suivez personnellement le [guide Gatekeeper](DISTRIBUTION-GATEKEEPER.md). BGDD est distribué sans Developer ID ni notarisation. Aucune protection n’est désactivée.
+Ouvrez le DMG, puis **Installer BGDD.app**.
 
-1. **Installer BGDD** ou **Mettre à jour BGDD** : l’installation transactionnelle conserve préférences, historique et dossier de l’extension. Internet sert à récupérer yt-dlp 2026.08.19 et Deno 2.9.7 depuis leurs releases officielles, avec empreintes fixes.
-2. **Préparer le moteur** : choisir **Ouvrir BGDD Engine**. La fenêtre vérifie yt-dlp, Deno, FFmpeg et ffprobe sans télécharger de média. Une éventuelle décision macOS reste personnelle. Revenir à l’assistant et choisir **Vérifier le résultat**.
-3. **Ajouter à Chrome** : choisir **Ouvrir les extensions Chrome**. Première installation : activer le mode développeur, choisir **Charger l’extension non empaquetée** et sélectionner le dossier montré. Mise à jour : choisir **BGDD est déjà dans Chrome** si nécessaire, puis **Actualiser** sur la carte BGDD existante. Ne pas supprimer cette carte. Dans BGDD → Réglages, choisir **Vérifier l’installation**, fermer le popup, revenir à l’assistant et choisir **Vérifier la connexion**.
-4. **BGDD est prêt** : les étapes affichent **Terminé** seulement après les contrôles d’installation, du moteur et de la connexion Chrome. Choisir **Terminer**.
+1. **Installer BGDD** ou **Mettre à jour BGDD** : l’assistant installe les composants nécessaires et conserve vos réglages, votre historique et le dossier de l’extension. Les moteurs supplémentaires sont téléchargés depuis leurs éditeurs, avec vérification d’intégrité.
+2. **Préparer le moteur** : choisissez **Ouvrir BGDD Engine**. Après la préparation, revenez à l’assistant et choisissez **Vérifier le résultat**. Si macOS bloque un composant, suivez le guide Gatekeeper, puis recommencez cette étape.
+3. **Ajouter à Chrome** : choisissez **Ouvrir les extensions Chrome**. Lors de la première installation, activez **Mode développeur**, cliquez **Charger l’extension non empaquetée** et sélectionnez le dossier indiqué. Pour une mise à jour, choisissez **BGDD est déjà dans Chrome** si nécessaire, puis **Actualiser** sur la carte BGDD existante, sans la supprimer. Dans BGDD → Réglages, choisissez **Vérifier l’installation**, fermez le popup, puis revenez à l’assistant et cliquez **Vérifier la connexion**.
+4. **BGDD est prêt** : lorsque les étapes affichent **Terminé**, cliquez **Terminer**.
 
-L’ID reste **ipjganpibkpndaibhejdcnbdclekogbl** et le dossier **~/Library/Application Support/BGDD/extension**. Aucun Terminal, Homebrew, Python ou Node.js séparé. Le chargement local de Chrome reste manuel et ne fournit pas de mise à jour Chrome Web Store. L’installateur n’édite pas les fichiers internes du profil Chrome.
+Le dossier de l’extension est `~/Library/Application Support/BGDD/extension`. L’extension se charge manuellement et ne reçoit pas les mises à jour du Chrome Web Store.
 
-## Télécharger et mettre à jour
+## Télécharger
 
-Ouvrez une publication compatible, choisissez format et destination, puis **Télécharger**. Un transfert actif à la fois ; la réussite attend ffprobe et la publication sans écrasement. **Annuler** arrête tout le groupe de processus. Aucun média ne transite par Chrome. L’accès facultatif à une session exige un consentement explicite.
+Ouvrez une publication YouTube, X, Instagram ou TikTok, puis BGDD. Choisissez le format et le dossier de destination, puis **Télécharger**. Sur X, le bouton **B** lance directement la qualité maximale.
 
-Dans **Maintenance…**, la recherche de mise à jour est volontaire. L’updater choisit le DMG de l’architecture du Mac dans la release commune et contrôle HTTPS, version, taille, SHA-256 et contenu. Il n’existe ni daemon, ni recherche périodique, ni installation silencieuse. Les empreintes proviennent du même compte GitHub que les fichiers ; elles ne remplacent pas une identité Apple.
+Un téléchargement est actif à la fois. **Annuler** arrête le transfert et son traitement. Fermer le popup laisse le téléchargement continuer ; quitter Chrome l’interrompt sans reprise automatique. Les fichiers existants ne sont jamais écrasés. Sur exFAT, attendez la confirmation de réussite avant d’ouvrir le fichier.
 
-Une mise à jour conserve la carte Chrome, ses autorisations, réglages et historique. Actualisez cette carte et rechargez ensuite les publications déjà ouvertes. Les téléchargements restent en place.
+L’accès à une session de plateforme est facultatif : il se donne et se retire dans les réglages BGDD pour le site concerné. La disponibilité dépend de la publication et des restrictions de la plateforme. Téléchargez uniquement les contenus que vous êtes autorisé à conserver.
 
-## Retirer ou réparer
+## Mettre à jour, réparer ou désinstaller
 
-**Maintenance…** regroupe vérification, réparation et désinstallation. Une erreur de transaction conserve ou restaure l’installation précédente. Ne supprimez pas de dossier personnel pour réparer BGDD.
+**Maintenance…** permet de rechercher volontairement une mise à jour, de vérifier les composants, de réparer l’installation ou de la désinstaller. Les mises à jour ne s’installent pas automatiquement.
 
-Pour désinstaller, retirez BGDD dans Chrome puis utilisez **Maintenance… → Désinstaller**. L’effacement des préférences natives est un choix explicite ; Chrome supprime ses propres données quand sa carte est retirée. Les médias téléchargés sont toujours conservés.
+Après une mise à jour, actualisez la carte BGDD dans Chrome et rechargez les publications déjà ouvertes. Gardez la carte existante pour conserver ses réglages, autorisations et historique.
+
+Pour désinstaller, retirez BGDD dans Chrome puis choisissez **Maintenance… → Désinstaller**. L’effacement des préférences natives est facultatif ; Chrome supprime ses propres données lorsque l’extension est retirée. **Vos fichiers téléchargés sont conservés.**
+
+## Versions rc.4 à rc.6
+
+Ces versions utilisent **BGDD Installer.app**. Choisissez **Installer / Mettre à jour**, puis **Ouvrir le moteur** et **Vérifier les composants**. **Préparer Chrome** indique le dossier à charger. Pour une mise à jour, actualisez la carte BGDD existante. Les compatibilités propres à chaque version sont indiquées sur sa page de téléchargement.
+
+[English installation instructions](../README.en.md#install) · [Licences et sources tierces](DISTRIBUTION-LICENSES.md)

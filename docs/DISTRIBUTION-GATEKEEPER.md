@@ -1,35 +1,30 @@
-# Ouvrir BGDD avec Gatekeeper
+# Autoriser l’ouverture de BGDD sur macOS
 
-BGDD est un logiciel indépendant distribué sans certificat Apple Developer ID et sans notarisation Apple. La signature ad hoc assure une cohérence technique des exécutables ; elle n’identifie pas Angry Thread auprès d’Apple. Les empreintes et HTTPS vérifient les fichiers attendus, sans constituer une approbation Apple ni une protection contre toute compromission du compte de distribution.
+BGDD est distribué **sans certificat Apple Developer ID et sans notarisation Apple**. macOS peut donc demander une autorisation pour l’installateur ou le moteur. Les empreintes SHA-256 permettent de vérifier les fichiers téléchargés ; elles ne constituent pas une approbation Apple.
 
 ## Première ouverture
 
-1. Télécharger le paquet d’une release BGDD approuvée, ouvrir le DMG, puis essayer d’ouvrir **BGDD Installer.app**.
-2. Si une alerte indique qu’Apple ne peut pas vérifier le développeur ou la présence de logiciels malveillants, fermer l’alerte.
-3. Ouvrir **Réglages Système → Confidentialité et sécurité**. Dans Sécurité, choisir **Ouvrir quand même** ou **Autoriser quand même**, selon la version de macOS, pour le composant BGDD nommé dans l’alerte, lorsque ce bouton est proposé.
-4. Confirmer personnellement **Ouvrir**. macOS peut demander une authentification.
-5. Revenir à l’installateur et choisir **Installer / Mettre à jour**, puis **Ouvrir le moteur** et **Vérifier les composants**.
+1. Téléchargez le DMG depuis une [release officielle BGDD](https://github.com/enrimerveille/BGDD-downloads/releases), ouvrez-le et lancez **Installer BGDD.app**.
+2. Si macOS indique qu’Apple ne peut pas vérifier le développeur ou l’absence de logiciels malveillants, fermez l’alerte.
+3. Dans **Réglages Système → Confidentialité et sécurité**, choisissez **Ouvrir quand même** pour le composant BGDD concerné, lorsque cette option est proposée.
+4. Confirmez **Ouvrir** et authentifiez-vous si macOS le demande, puis reprenez l’installation.
 
-Ce parcours suit la [procédure officielle Apple](https://support.apple.com/fr-fr/102445). L’utilisateur prend lui-même la décision ; l’installateur ne simule pas cette autorisation.
+Cette autorisation vous appartient. Elle suit la [procédure officielle Apple](https://support.apple.com/fr-fr/102445). BGDD ne désactive pas Gatekeeper et ne supprime pas automatiquement la quarantaine.
 
-## Préparation du moteur
+## Préparer le moteur
 
-Après l'installation, **Ouvrir le moteur** lance **BGDD — préparer le moteur**. La séquence vérifie yt-dlp, Deno, FFmpeg et ffprobe, sans média ni connexion réseau. Le gardien et ces outils sont des exécutables distincts contenus dans BGDD Engine.app ; leur regroupement ne constitue pas, à lui seul, une autorisation macOS.
+À l’étape **Préparer le moteur**, choisissez **Ouvrir BGDD Engine**. Si macOS bloque le moteur ou un composant, notez le nom indiqué et suivez la même procédure pour cet élément. Relancez ensuite la préparation, puis revenez à l’assistant et choisissez **Vérifier le résultat**.
 
-Si macOS bloque **BGDD Engine.app**, fermer l'alerte puis décider personnellement de l'ouverture dans **Confidentialité et sécurité**, lorsque **Ouvrir quand même** est proposé. Aller jusqu'à la confirmation finale **Ouvrir** et l'authentification éventuelle. Le DMG rc.4 exact, téléchargé avec sa quarantaine navigateur normale, a terminé ces quatre vérifications après cette procédure sur macOS 27.0.1. Le détail et les limites, notamment l’historique de confiance du Mac et la qualification distincte des variantes ARM et Intel, figurent dans [Validation](DISTRIBUTION-VALIDATION.md).
+Pour rc.4 à rc.6, les commandes équivalentes sont **Ouvrir le moteur** puis **Vérifier les composants**, dans **BGDD Installer.app**.
 
-Un échec indique désormais si le gardien n'a pas démarré, s'il a reçu un signal, si le lancement de l'outil a échoué ou si l'outil lui-même a échoué. Un signal seul ne suffit pas à affirmer un refus Gatekeeper ; le message système doit le confirmer. La réussite des quatre vérifications prépare le parcours, puis il faut vérifier la communication Chrome et un téléchargement autorisé.
+## Si l’ouverture reste impossible
 
-## Si un composant reste bloqué
+Si macOS signale un logiciel endommagé, modifié ou dangereux, ou si aucune autorisation n’est proposée, arrêtez l’installation et conservez le message exact. Un Mac géré par une organisation peut interdire ces exceptions. Consultez les [instructions Apple](https://support.apple.com/fr-fr/102445) ou demandez de l’aide à votre administrateur.
 
-La vérification porte aussi sur les auxiliaires et les moteurs. Si macOS bloque un composant après l’installation, conserver le message et son nom, puis vérifier si **Ouvrir quand même** ou **Autoriser quand même** est proposé pour cet élément. Les recettes antérieures ont notamment rencontré des contrôles du host, du gardien, du sélecteur et des outils média. Chaque exception doit être décidée par l’utilisateur pour le composant nommé. Relancer ensuite la préparation du moteur ou l’action Chrome qui a été bloquée.
+[Revenir au guide d’installation](DISTRIBUTION-INSTALL.md)
 
-**Vérifier les composants** contrôle les fichiers, leurs empreintes et l’enregistrement Chrome. Ce contrôle seul ne prouve pas que macOS autorise leur lancement : vérifier ensuite la communication Chrome et un téléchargement autorisé. Un blocage persistant ne doit pas être présenté comme un parcours fonctionnel validé.
+## English
 
-Si macOS indique que le logiciel est endommagé, modifié ou dangereux, ou si aucune autorisation officielle n’est proposée, arrêter le parcours et consulter les problèmes connus. L’autorisation manuelle d’une app non identifiée n’est pas une solution générale à toutes les alertes.
+BGDD has **no Apple Developer ID certificate or Apple notarization**. Download it from the official releases page. If macOS blocks **Installer BGDD.app** or **BGDD Engine.app**, dismiss the alert, open **System Settings → Privacy & Security**, and select **Open Anyway** for the named component when offered. Confirm **Open**, authenticate if requested, then retry the installation step.
 
-BGDD ne retire pas la quarantaine, ne désactive pas Gatekeeper, ne change pas les politiques du Mac ni les réglages de confidentialité. Un Mac géré peut interdire les exceptions. [État des recettes macOS 26 et 27](DISTRIBUTION-VALIDATION.md).
-
-## Préversion Intel rc.5 — macOS 26
-
-Le DMG Intel exact a été ouvert avec sa quarantaine naturelle sur macOS 26.5.2. L’utilisateur a confirmé lui-même l’autorisation officielle de l’installateur ; l’installation et la fenêtre de préparation du moteur ont ensuite abouti. Gatekeeper est resté actif. Ce résultat ne qualifie pas le parcours depuis Chrome, qui demeure **NON TESTÉ** sur Intel dans cette recette.
+The decision is yours; BGDD does not disable Gatekeeper or remove quarantine automatically. Checksums verify downloaded files, not Apple approval. If macOS reports damaged, modified or dangerous software, or offers no exception, stop and keep the exact message. Managed Macs may prohibit exceptions. [Apple’s instructions](https://support.apple.com/en-us/102445).

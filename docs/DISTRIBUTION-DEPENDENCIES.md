@@ -1,11 +1,18 @@
-# BGDD rc4 — inventaire de fourniture
+# Composants de BGDD
 
-BGDD est gratuit et propriétaire pour son code original, copyright © 2026 Angry Thread. Le paquet hybride fournit FFmpeg/ffprobe 9.0.2 avec x264 et LAME, ainsi que Space Grotesk. Leurs licences restent GPL-2.0-or-later, LGPL-2.0-or-later et OFL 1.1 selon le composant. Les archives exactes, licences et recettes de construction/remplacement sont fournies avec le paquet et le kit tiers.
+BGDD est gratuit et propriétaire pour son code original, copyright © 2026 Angry Thread. Les composants tiers conservent leurs propres licences et droits de modification et de redistribution.
 
-yt-dlp 2026.08.19, son bundle Python/EJS, et Deno 2.9.7 sont obtenus directement de leurs releases officielles lors d’une installation volontaire. Leurs archives et exécutables ne sont pas redistribués dans le DMG ou les assets BGDD rc4. L’assemblage local de BGDD Engine.app après acquisition ne redistribue pas ces moteurs dans les assets BGDD. Le host, le gardien, Deno et les codecs rejoignent le même bundle BGDD Engine.app ; ils restent des exécutables distincts, lancés dans des processus séparés. La qualification GPLv3+ du bundle yt-dlp et les licences transitives Deno restent intactes ; les réserves historiques pour leur redistribution autonome ne sont pas présentées comme clôturées.
+| Composant | Version | Fourniture |
+|---|---|---|
+| FFmpeg / ffprobe | 9.0.2 | Inclus, avec sources correspondantes et scripts de reconstruction/remplacement |
+| x264 | 0480cb05 | Inclus dans les codecs, sous GPL-2.0-or-later |
+| LAME | 3.100 | Inclus dans les codecs, sous LGPL-2.0-or-later |
+| Space Grotesk | 2.000 | Police incluse, sous OFL-1.1 |
+| yt-dlp et son runtime Python/EJS | 2026.08.19 | Téléchargés depuis la release officielle pendant l’installation |
+| Deno | 2.9.7 | Téléchargé depuis la release officielle pendant l’installation |
 
-[l’inventaire courant](../licenses/DEPENDENCIES-rc2.json) distingue ces modes de fourniture, sources, versions, architectures et SHA. Les SHA explicitement historiques sont celles du premier build local SDK27 et ne désignent pas les codecs d’une candidate SDK26. Pour la release actuelle, `VERSIONS.json.media` donne le compilateur/SDK et les SHA avant signature ; les empreintes du payload donnent les deux codecs après signature et `SHA256SUMS` identifie les assets finalement livrés. La cible macOS 26.0 est une propriété de compilation et non une qualification de fonctionnement sur ce système.
+Le bundle yt-dlp conserve sa licence GPL-3.0-or-later ; Deno et ses dépendances conservent leurs licences propres. Leurs binaires et archives ne sont pas fournis dans le DMG BGDD.
 
-Voir les [licences actuelles](DISTRIBUTION-LICENSES.md), les [frontières entre programmes](DISTRIBUTION-BOUNDARIES.md) et les [conditions BGDD](../CONDITIONS.md).
+Les métadonnées de la [release](https://github.com/enrimerveille/BGDD-downloads/releases/tag/v0.4.8-rc.7), `VERSIONS-arm64.json` et `VERSIONS-x86_64.json`, décrivent les composants de chaque variante. `SHA256SUMS` contient les empreintes des fichiers téléchargeables. L’[inventaire des dépendances](../licenses/DEPENDENCIES-rc2.json) conserve les références des matériaux amont ; ses relevés de construction historiques ne remplacent pas les métadonnées de la release choisie.
 
-Le nom `DEPENDENCIES-rc2.json` conserve l’origine historique des matériaux amont inchangés. Il ne remplace pas les métadonnées et empreintes de la candidate rc4. L’application installateur contient 68 fichiers réguliers ; l’installation rc4 vérifiée contient 195 fichiers et 22 alias internes. Les essais natifs, les recettes codec et l’ouverture graphique du moteur ont des scopes séparés.
+[Licences et sources](DISTRIBUTION-LICENSES.md) · [Frontières entre programmes](DISTRIBUTION-BOUNDARIES.md) · [Conditions BGDD](../CONDITIONS.md)
