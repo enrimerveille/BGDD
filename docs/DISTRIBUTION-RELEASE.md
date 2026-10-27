@@ -1,7 +1,8 @@
-# BGDD 0.6.1 — Une seule version partout
+# BGDD 0.6.2 — Une sélection vidéo plus compacte
 
-- Le même numéro 0.6.1 identifie BGDD sur GitHub, dans Chrome et sur votre Mac.
-- La numérotation commune sera conservée lors des prochaines mises à jour.
-- Les améliorations de l’interface, des formats et des noms de fichiers de la précédente préversion sont conservées.
+- La durée apparaît une seule fois, dans le choix de vidéo.
+- « Rechercher des vidéos sur cette page » est rapproché du menu.
+- Le compteur de téléchargements utilise un chiffre clair sur fond sombre en mode sombre, et l’inverse en mode clair.
+- Le même numéro 0.6.2 identifie BGDD sur GitHub, dans Chrome et sur votre Mac.
 
 Apple Silicon : macOS 27. Intel : macOS 26. Téléchargez le DMG adapté à votre Mac, mettez à jour BGDD puis actualisez sa carte dans Chrome.
