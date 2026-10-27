@@ -7,4 +7,4 @@
 
 [Télécharger pour Apple Silicon](https://github.com/enrimerveille/BGDD/releases/download/v0.4.8-rc.9/BGDD-macOS-arm64.dmg) · [Télécharger pour Intel](https://github.com/enrimerveille/BGDD/releases/download/v0.4.8-rc.9/BGDD-macOS-x86_64.dmg) · [Empreintes et sources tierces](https://github.com/enrimerveille/BGDD/releases/tag/v0.4.8-rc.9)
 
-**English:** Update checking follows BGDD’s new official address. Available for Apple Silicon on macOS 27 and Intel on macOS 26. Your existing Chrome extension, settings and history are retained.
+**English:** Fixes opening updates on macOS 27. Update checking follows BGDD’s new official address. Available for Apple Silicon on macOS 27 and Intel on macOS 26. Your existing Chrome extension, settings and history are retained.
