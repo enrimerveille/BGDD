@@ -1,6 +1,6 @@
 # BGDD — KEEP THE BYTES.
 
-- Nouvelle présentation : téléchargez vidéos et audio dans la meilleure qualité disponible, directement sur votre Mac.
+- Nouvelle présentation : Téléchargez vidéos et audio dans la meilleure qualité disponible, directement sur votre Mac.
 - Popup Chrome plus stable : largeur identique dans les réglages et défilement adapté aux préférences macOS.
 - Disponible pour Apple Silicon sous macOS 27 et Intel sous macOS 26.
 
