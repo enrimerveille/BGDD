@@ -4,12 +4,12 @@
 
 BGDD est un logiciel **gratuit et propriétaire** qui associe une extension Chrome à un moteur local macOS. Choisissez une publication, un format et un dossier : le téléchargement et le traitement se font sur votre Mac. Aucun compte BGDD, abonnement, serveur de téléchargement ou télémétrie.
 
-**Préversion 0.5.0-rc.2 — Apple Silicon et Intel.** [Notes de version](https://github.com/enrimerveille/BGDD/releases/tag/v0.5.0-rc.2).
+**Version 0.6.1 — Apple Silicon et Intel.** [Notes de version](https://github.com/enrimerveille/BGDD/releases/tag/v0.6.1).
 
 | Votre Mac | Télécharger |
 |---|---|
-| Apple Silicon (ARM64), macOS 27 | [DMG Apple Silicon](https://github.com/enrimerveille/BGDD/releases/download/v0.5.0-rc.2/BGDD-macOS-arm64.dmg) |
-| Intel (x86_64), macOS 26 | [DMG Intel](https://github.com/enrimerveille/BGDD/releases/download/v0.5.0-rc.2/BGDD-macOS-x86_64.dmg) |
+| Apple Silicon (ARM64), macOS 27 | [DMG Apple Silicon](https://github.com/enrimerveille/BGDD/releases/download/v0.6.1/BGDD-macOS-arm64.dmg) |
+| Intel (x86_64), macOS 26 | [DMG Intel](https://github.com/enrimerveille/BGDD/releases/download/v0.6.1/BGDD-macOS-x86_64.dmg) |
 
 <p align="center"><img src="https://github.com/enrimerveille/BGDD/raw/main/assets/popup-light.png" width="320" alt="BGDD clair"><img src="https://github.com/enrimerveille/BGDD/raw/main/assets/popup-dark.png" width="320" alt="BGDD sombre"></p>
 
