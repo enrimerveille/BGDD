@@ -26,10 +26,6 @@ MKV videos may require a compatible player such as VLC. Choose **Compatible MP4*
 
 YouTube, X, Instagram and TikTok have dedicated adapters. TikTok also offers photo slideshows, original images as ZIP and audio exports. The **B** shortcut on X starts maximum quality. Availability depends on the publication, region and platform changes; universal or private-content access is not promised.
 
-The installer automatically follows the macOS light or dark appearance, including changes while it is open.
-
-<p align="center"><img src="assets/installer-light.png" width="360" alt="Light installer"><img src="assets/installer-dark.png" width="360" alt="Dark installer"></p>
-
 ## Install
 
 1. Open the DMG for your Mac and its single visible app, **Installer BGDD.app**.

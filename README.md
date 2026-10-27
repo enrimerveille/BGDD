@@ -26,10 +26,6 @@ Les vidéos MKV peuvent nécessiter un lecteur compatible, comme VLC. Choisissez
 
 YouTube, X, Instagram et TikTok ont des adaptateurs dédiés. TikTok propose aussi des carrousels MP4, images ZIP et exports audio. Le bouton **B** sur X lance la qualité maximale. L’accès dépend de la publication, de la région et des changements des plateformes ; aucun accès universel ou privé n’est promis.
 
-L’installateur suit automatiquement l’apparence claire ou sombre de macOS, y compris pendant son utilisation.
-
-<p align="center"><img src="assets/installer-light.png" width="360" alt="Installateur clair"><img src="assets/installer-dark.png" width="360" alt="Installateur sombre"></p>
-
 ## Installer
 
 1. Ouvrir le DMG adapté à votre Mac, puis son unique application **Installer BGDD.app**.
