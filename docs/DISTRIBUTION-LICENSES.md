@@ -1,4 +1,4 @@
-# Licences et sources de BGDD 0.4.8-rc.9
+# Licences et sources de BGDD 0.4.8-rc.10
 
 27 octobre 2026 · code original gratuit et propriétaire, **Angry Thread**. Le JavaScript compilé nécessaire à l'extension est distribué ; cela n'ouvre pas les sources originales. Les restrictions BGDD excluent expressément les droits accordés par les licences tierces. [Conditions](../CONDITIONS.md).
 

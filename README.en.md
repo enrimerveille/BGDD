@@ -1,15 +1,15 @@
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/wordmark-dark.svg"><img src="assets/wordmark-light.svg" width="220" alt="BGDD"></picture></p>
-<p align="center"><strong>Your videos, in high definition, on your Mac.</strong><br>by Angry Thread</p>
+<p align="center"><strong>KEEP THE BYTES.</strong><br>Download videos and audio at the best available quality, straight to your Mac.<br>by Angry Thread</p>
 <p align="center"><a href="README.md">Français</a> · English</p>
 
 BGDD is **free proprietary software** pairing a Chrome extension with a local macOS engine. Choose a publication, format and folder: downloading and processing stay on your Mac. No BGDD account, subscription, download server or telemetry.
 
-**Prerelease 0.4.8-rc.9 — Apple Silicon and Intel.** [Release notes](https://github.com/enrimerveille/BGDD/releases/tag/v0.4.8-rc.9).
+**Prerelease 0.4.8-rc.10 — Apple Silicon and Intel.** [Release notes](https://github.com/enrimerveille/BGDD/releases/tag/v0.4.8-rc.10).
 
 | Your Mac | Download |
 |---|---|
-| Apple Silicon (ARM64), macOS 27 | [DMG Apple Silicon](https://github.com/enrimerveille/BGDD/releases/download/v0.4.8-rc.9/BGDD-macOS-arm64.dmg) |
-| Intel (x86_64), macOS 26 | [DMG Intel](https://github.com/enrimerveille/BGDD/releases/download/v0.4.8-rc.9/BGDD-macOS-x86_64.dmg) |
+| Apple Silicon (ARM64), macOS 27 | [DMG Apple Silicon](https://github.com/enrimerveille/BGDD/releases/download/v0.4.8-rc.10/BGDD-macOS-arm64.dmg) |
+| Intel (x86_64), macOS 26 | [DMG Intel](https://github.com/enrimerveille/BGDD/releases/download/v0.4.8-rc.10/BGDD-macOS-x86_64.dmg) |
 
 <p align="center"><img src="assets/popup-light.png" width="320" alt="BGDD light"><img src="assets/popup-dark.png" width="320" alt="BGDD dark"></p>
 

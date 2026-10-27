@@ -1,0 +1,4 @@
+# Independent codec redistribution tools; not the BGDD application language.
+# Keep these tools visible and intact, excluding only language statistics.
+sources/install-codecs.pl -linguist-detectable
+sources/build-codecs.sh -linguist-detectable

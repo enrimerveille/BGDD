@@ -4,7 +4,7 @@ BGDD est gratuit et propriétaire pour son code original. Les composants tiers c
 
 ## Ce que contient la distribution
 
-Le DMG fournit BGDD, les codecs FFmpeg/ffprobe avec x264 et LAME, et la police Space Grotesk. Les sources exactes des codecs, leurs licences et les scripts de construction et de remplacement sont disponibles dans les kits tiers de la [release](https://github.com/enrimerveille/BGDD/releases/tag/v0.4.8-rc.9).
+Le DMG fournit BGDD, les codecs FFmpeg/ffprobe avec x264 et LAME, et la police Space Grotesk. Les sources exactes des codecs, leurs licences et les scripts de construction et de remplacement sont disponibles dans les kits tiers de la [release](https://github.com/enrimerveille/BGDD/releases/tag/v0.4.8-rc.10).
 
 yt-dlp, son runtime Python/EJS et Deno sont téléchargés directement depuis leurs releases officielles pendant l’installation. Leurs binaires et archives ne sont pas hébergés dans le DMG BGDD. Ce mode de fourniture ne modifie pas leurs licences.
 

@@ -1,20 +1,20 @@
 {
   "formatVersion": 2,
-  "releaseVersion": "0.4.8-rc.9",
+  "releaseVersion": "0.4.8-rc.10",
   "repository": "enrimerveille/BGDD",
   "publicRepositoryID": 1415495249,
   "architectures": {
     "arm64": {
       "downloadAsset": "BGDD-macOS-arm64.dmg",
-      "sha256": "52373f6be052200eadee1248922e45665042b1863c4bb7c86a931bdcb44169c7",
-      "bytes": 34924178,
+      "sha256": "bfbd704c4176b7c1c43adf31522540a616c6a54eeff7bf0ad734b8cba6c903fc",
+      "bytes": 34924390,
       "metadata": "VERSIONS-arm64.json",
       "thirdPartySources": "BGDD-third-party-sources-arm64.zip"
     },
     "x86_64": {
       "downloadAsset": "BGDD-macOS-x86_64.dmg",
-      "sha256": "e236bda4503209ffa5f1eba80bd1f8524d6aa04c848eb8d257446373ae717a38",
-      "bytes": 37694414,
+      "sha256": "e10eaecb5b04f6a2dd42f4f5d90d9a3ee69d59f90308d10125298d9a1b3143ef",
+      "bytes": 37694627,
       "metadata": "VERSIONS-x86_64.json",
       "thirdPartySources": "BGDD-third-party-sources-x86_64.zip"
     }
