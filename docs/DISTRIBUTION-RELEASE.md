@@ -1,9 +1,8 @@
-# BGDD — KEEP THE BYTES.
+# BGDD 0.5.0-rc.1 — Plus de vidéos, le choix du format
 
-- Nouvelle présentation : Téléchargez vidéos et audio dans la meilleure qualité disponible, directement sur votre Mac.
-- Popup Chrome plus stable : largeur identique dans les réglages et défilement adapté aux préférences macOS.
-- Disponible pour Apple Silicon sous macOS 27 et Intel sous macOS 26.
+- Vimeo rejoint les intégrations optimisées ; détection à la demande de lecteurs reconnus et de vidéos HTML5 directes sur d’autres pages.
+- Choisissez la bonne vidéo lorsque plusieurs lecteurs sont présents.
+- Export MP4 H.265 depuis la meilleure source accessible, proposé sur les Mac disposant d’un encodeur matériel compatible.
+- Un désinstalleur directement dans le DMG, avec conservation de vos téléchargements.
 
-[Apple Silicon](https://github.com/enrimerveille/BGDD/releases/download/v0.4.8-rc.10/BGDD-macOS-arm64.dmg) · [Intel](https://github.com/enrimerveille/BGDD/releases/download/v0.4.8-rc.10/BGDD-macOS-x86_64.dmg)
-
-**English:** KEEP THE BYTES. Download videos and audio at the best available quality, straight to your Mac. A steadier Chrome popup keeps its width in Settings and follows macOS scrolling preferences. Available for Apple Silicon on macOS 27 and Intel on macOS 26.
+Apple Silicon : macOS 27. Intel : macOS 26. Téléchargez le DMG adapté à votre Mac ci-dessous. Depuis RC.10 ou avant, téléchargez-le manuellement, puis actualisez votre extension Chrome existante.

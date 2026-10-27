@@ -11,13 +11,20 @@ CODEC_ARCHIVE_DIR=${1:-$CODEC_SOURCE_DIR}
 CODEC_OUTPUT_DIR=${2:-$CODEC_SOURCE_DIR/build-output}
 case "$CODEC_ARCHIVE_DIR" in /*) ;; *) CODEC_ARCHIVE_DIR="$PWD/$CODEC_ARCHIVE_DIR" ;; esac
 case "$CODEC_OUTPUT_DIR" in /*) ;; *) CODEC_OUTPUT_DIR="$PWD/$CODEC_OUTPUT_DIR" ;; esac
-if [ "$#" -gt 2 ]; then
-    echo 'Usage: build-codecs.sh [directory-containing-source-archives] [empty-output-directory]' >&2
+CODEC_ARCH=${3:-$(/usr/bin/uname -m)}
+if [ "$#" -gt 3 ]; then
+    echo 'Usage: build-codecs.sh [directory-containing-source-archives] [empty-output-directory] [arm64|x86_64]' >&2
     exit 64
 fi
-if [ "$(/usr/bin/uname -m)" != arm64 ]; then
-    echo 'This recipe targets native macOS Apple Silicon arm64.' >&2
-    exit 65
+case "$CODEC_ARCH" in arm64|x86_64) ;; *) echo 'Unsupported architecture' >&2; exit 65 ;; esac
+# Cross-compilation is a build artifact, never native runtime qualification.
+CODEC_CROSS_FLAGS=''
+CODEC_X264_HOST=''
+CODEC_LAME_HOST=''
+if [ "$(/usr/bin/uname -m)" != "$CODEC_ARCH" ]; then
+    CODEC_CROSS_FLAGS='--enable-cross-compile --target-os=darwin'
+    CODEC_X264_HOST='--host=x86_64-apple-darwin'
+    CODEC_LAME_HOST='--host=x86_64-apple-darwin'
 fi
 if [ -L "$CODEC_OUTPUT_DIR" ]; then
     echo 'A symbolic-link output directory is refused.' >&2
@@ -44,16 +51,27 @@ verify_source x264-0480cb05.tar.gz be32b1e787ca8e905c10b956d2a5be0b99847deea2ff5
 verify_source lame-3.100.tar.gz ddfe36cab873794038ae2c1210557ad34857a4b6bdc515785d1da9e175b1da1e
 
 # Only the active Xcode toolchain and macOS system build tools are used.
-PATH=/usr/bin:/bin:/usr/sbin:/sbin
+CODEC_NASM_DIR=''
+CODEC_CPU_FLAGS=''
+CODEC_CPU=generic
+CODEC_ASM_FLAGS=''
+if [ "$CODEC_ARCH" = x86_64 ]; then
+    # Portable C paths keep the cross-build independent of NASM.
+    CODEC_ASM_FLAGS='--disable-x86asm'
+    CODEC_X264_HOST="$CODEC_X264_HOST --disable-asm"
+    CODEC_CPU_FLAGS='-march=x86-64 -mtune=generic'
+    CODEC_CPU=x86-64
+fi
+PATH=${CODEC_NASM_DIR:+$CODEC_NASM_DIR:}/usr/bin:/bin:/usr/sbin:/sbin
 CC=/usr/bin/clang
 CXX=/usr/bin/clang++
 AR=/usr/bin/ar
 RANLIB=/usr/bin/ranlib
 NM=/usr/bin/nm
 MACOSX_DEPLOYMENT_TARGET=26.0
-CFLAGS='-O3 -arch arm64 -mmacosx-version-min=26.0'
-CXXFLAGS='-O3 -arch arm64 -mmacosx-version-min=26.0'
-LDFLAGS='-arch arm64 -mmacosx-version-min=26.0'
+CFLAGS="-O3 -arch $CODEC_ARCH -mmacosx-version-min=26.0 $CODEC_CPU_FLAGS"
+CXXFLAGS="$CFLAGS"
+LDFLAGS="-arch $CODEC_ARCH -mmacosx-version-min=26.0"
 export PATH CC CXX AR RANLIB NM MACOSX_DEPLOYMENT_TARGET CFLAGS CXXFLAGS LDFLAGS
 
 /bin/mkdir "$CODEC_OUTPUT_DIR/x264" "$CODEC_OUTPUT_DIR/bin" "$CODEC_OUTPUT_DIR/licenses" "$CODEC_OUTPUT_DIR/stage"
@@ -63,13 +81,13 @@ export PATH CC CXX AR RANLIB NM MACOSX_DEPLOYMENT_TARGET CFLAGS CXXFLAGS LDFLAGS
 
 (
     cd "$CODEC_OUTPUT_DIR/lame-3.100"
-    ./configure --prefix=/bgdd-build --disable-shared --enable-static --disable-frontend --disable-dependency-tracking
+    ./configure $CODEC_LAME_HOST --prefix=/bgdd-build --disable-shared --enable-static --disable-frontend --disable-dependency-tracking
     /usr/bin/make -j6
     /usr/bin/make install "DESTDIR=$CODEC_OUTPUT_DIR/stage"
 )
 (
     cd "$CODEC_OUTPUT_DIR/x264"
-    ./configure --prefix=/bgdd-build --enable-static --disable-cli --disable-opencl
+    ./configure --prefix=/bgdd-build --enable-static --disable-cli --disable-opencl $CODEC_X264_HOST
     /usr/bin/make -j6
     /usr/bin/make install "DESTDIR=$CODEC_OUTPUT_DIR/stage"
 )
@@ -90,20 +108,20 @@ PKG_CONFIG
 (
     cd "$CODEC_OUTPUT_DIR/ffmpeg-9.0.2"
     ./configure \
-        --prefix=/bgdd-build --arch=arm64 \
+        --prefix=/bgdd-build $CODEC_CROSS_FLAGS $CODEC_ASM_FLAGS --arch="$CODEC_ARCH" --cpu="${CODEC_CPU:-generic}" \
         --cc=/usr/bin/clang --cxx=/usr/bin/clang++ \
         --ar=/usr/bin/ar --nm=/usr/bin/nm --ranlib=/usr/bin/ranlib \
         --disable-autodetect --disable-shared --enable-static \
         --disable-doc --disable-debug --disable-ffplay --disable-avdevice \
         --disable-network --disable-encoders \
-        --enable-encoder=libx264,libmp3lame,pcm_s24le,pcm_s16le,aac,png,wrapped_avframe \
+        --enable-encoder=libx264,libmp3lame,pcm_s24le,pcm_s16le,aac,png,wrapped_avframe,hevc_videotoolbox \
         --disable-filters \
         --enable-filter=scale,pad,format,setsar,fps,aresample,anull,null,rotate,transpose,hflip,vflip \
-        --disable-hwaccels --disable-videotoolbox --disable-audiotoolbox --disable-securetransport \
+        --disable-hwaccels --enable-hwaccel=av1_videotoolbox --enable-videotoolbox --disable-audiotoolbox --disable-securetransport \
         --enable-zlib --enable-gpl --enable-libx264 --enable-libmp3lame \
         --pkg-config=../pkg-config \
-        '--extra-cflags=-I../stage/bgdd-build/include -O3 -arch arm64 -mmacosx-version-min=26.0' \
-        '--extra-ldflags=-L../stage/bgdd-build/lib -arch arm64 -mmacosx-version-min=26.0'
+        "--extra-cflags=-I../stage/bgdd-build/include $CFLAGS" \
+        "--extra-ldflags=-L../stage/bgdd-build/lib $LDFLAGS"
     /usr/bin/make -j6
 )
 
@@ -117,12 +135,13 @@ done
 /bin/cp "$CODEC_OUTPUT_DIR/lame-3.100/COPYING" "$CODEC_OUTPUT_DIR/licenses/LAME-LGPL-2.txt"
 /bin/cp "$CODEC_OUTPUT_DIR/x264/COPYING" "$CODEC_OUTPUT_DIR/licenses/x264-GPL-2.txt"
 {
-    echo 'Corresponding-source build recipe: build-codecs.sh; target macOS 26.0, arm64.'
+    echo "Corresponding-source build recipe: build-codecs.sh; target macOS 26.0, $CODEC_ARCH."
+    echo 'Intel portable C paths; no NASM dependency.'
     echo 'FFmpeg 9.0.2: GPL-2.0-or-later; static x264 GPL and LAME LGPL components.'
     echo 'No original source patches. Logical /bgdd-build prefix is build-only.'
     echo 'All exact source archives, upstream licences and actual recipe accompany the binaries.'
     /usr/bin/clang --version | /usr/bin/head -1
-    "$CODEC_OUTPUT_DIR/bin/ffmpeg" -hide_banner -buildconf 2>&1
+    if [ "$(/usr/bin/uname -m)" = "$CODEC_ARCH" ]; then "$CODEC_OUTPUT_DIR/bin/ffmpeg" -hide_banner -buildconf 2>&1; fi
 } > "$CODEC_OUTPUT_DIR/licenses/FFmpeg-build.txt"
 (
     cd "$CODEC_OUTPUT_DIR"

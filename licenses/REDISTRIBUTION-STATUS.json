@@ -1,31 +1,31 @@
 {
-  "schemaVersion": 4,
-  "reviewedAt": "2026-10-21",
-  "releaseVersion": "0.4.8-rc.6",
+  "schemaVersion": 5,
+  "reviewedAt": "2026-10-27",
+  "releaseVersion": "0.5.0-rc.1",
   "strategy": "hybrid-direct-upstream",
   "engineLayout": "engine-app-v2",
   "visibility": "public-prerelease",
   "redistributionAllowed": true,
   "actualPackageScopeVerified": true,
   "publicPublicationAuthorized": true,
-  "distributionQualified": true,
-  "scope": "Exact assembled hybrid installer and corresponding source kit; separately reviewed original application and bundled codec/font materials only",
+  "scope": "Exact ARM and Intel installer containers and corresponding codec source kits. Original application proprietary; third-party rights unchanged.",
   "exactPackageReview": {
-    "DMG": {
-      "file": "BGDD-macOS-arm64.dmg",
-      "sha256": "ad3a04c39568c37a2e11a86a6fc4da6b5b39a367b99aa648d04e69c817a46e61",
-      "bytes": 34946837
+    "BGDD-macOS-arm64.dmg": {
+      "bytes": 35767540,
+      "sha256": "8e44369f675aee5202e1633971dd3101ea3fcb99bf15d31121ae0ef5ee482bd5"
     },
-    "sourceKit": {
-      "file": "BGDD-third-party-sources.zip",
-      "sha256": "11d4bac4db87a45df947a5da11e945c5b1fe1e115408b5c9788ef55eb8a541bb",
-      "files": 15
+    "BGDD-macOS-x86_64.dmg": {
+      "bytes": 36938756,
+      "sha256": "f4fa8fdb457d3ebf981a5de32475029c738c23e5a323fbcae91338ce3be31560"
     },
-    "installerAppRegularFiles": 68,
-    "exactContainerFileInventory": true,
-    "upstreamRuntimeIncludedInDMG": false,
-    "originalApplicationSourceIncluded": false,
-    "userRebuiltCodecReplacementProductionCoreVerified": true
+    "BGDD-third-party-sources-arm64.zip": {
+      "bytes": 14729730,
+      "sha256": "f954aa41d12e27549f27e42c939c33b23c45dd157427213d1b5657543f547a7f"
+    },
+    "BGDD-third-party-sources-x86_64.zip": {
+      "bytes": 14729526,
+      "sha256": "723c765124e253902627f56cbb1d55d3d8a843eb83de1d22694522ed2a438d80"
+    }
   },
   "bundledComponents": [
     {
@@ -33,71 +33,27 @@
       "version": "9.0.2",
       "license": "GPL-2.0-or-later",
       "sourceMaterial": "../sources/",
-      "sourceSHA256": {
-        "ffmpeg-9.0.2.tar.xz": "8c3850283eb25fa026482078a04051e0be17347b09ef81a0849bec15a96e002e",
-        "x264-0480cb05.tar.gz": "be32b1e787ca8e905c10b956d2a5be0b99847deea2ff53be0cd93e488cd90323",
-        "lame-3.100.tar.gz": "ddfe36cab873794038ae2c1210557ad34857a4b6bdc515785d1da9e175b1da1e"
-      },
-      "buildRecipeSHA256": "b1f25e73c14b57ec976b10b0053a1c3e4ef53be6c656c23dc94cc7619bb7216b",
-      "buildRecipeActuallyExecuted": true,
-      "userReplacementRecipeSHA256": "7765531b747c38eb106c7a3ef3d014a3032f5f423614e427148aced18d83b89e",
-      "sourceMaterialClosure": true,
-      "userReplacementFixtureVerified": true,
-      "userReplacementProductionCoreVerified": true,
-      "historicalFirstLocalBuildReference": {
-        "record": "../sources/build-record.json",
-        "sdk": "27.0",
-        "compiler": "Apple clang version 21.0.0 (clang-2100.3.34.2)",
-        "preSignBinarySHA256": {
-          "ffmpeg": "1de2c5141c755b2e1287f125c343beb5c375e3a051153284581c5cbb3fa45f2e",
-          "ffprobe": "2f21734945cb34941ceffc826fa96985df852dfb5d161be86ea5b6136e23414a"
-        },
-        "currentDistributedBinaryAuthority": false
-      },
-      "actualCandidateBuildAuthority": "../VERSIONS.json:media and the same release checksums; delivered payload integrity/dependencies identify post-sign codecs",
-      "sameCorrespondingSourceInputsVerifiedForPreservedSDK26Build": true
+      "correspondingKits": "https://github.com/enrimerveille/BGDD/releases/tag/v0.5.0-rc.1"
     },
     {
       "name": "x264",
       "version": "0480cb05fa188d37ae87e8f4fd8f1aea3711f7ee",
-      "license": "GPL-2.0-or-later",
-      "staticallyLinkedInto": "FFmpeg/ffprobe"
+      "license": "GPL-2.0-or-later"
     },
     {
       "name": "LAME",
       "version": "3.100",
-      "license": "LGPL-2.0-or-later",
-      "staticallyLinkedInto": "FFmpeg/ffprobe",
-      "originalBGDDObjectsLinkedIntoLibrary": false,
-      "relinkingMaterialsProvided": true
+      "license": "LGPL-2.0-or-later"
     },
     {
       "name": "Space Grotesk",
       "version": "2.000",
-      "license": "OFL-1.1",
-      "originalCopyrightPreserved": true,
-      "sourceTTFSHA256": "acad6de1fc93436f5c0f1f4137751ef04f1aea3063e7036535970ffcfbd79f72"
+      "license": "OFL-1.1"
     }
   ],
-  "qualification": {
-    "macOS27ProductionAppAppearance": "PASS light/dark/live; exact app bytes",
-    "macOS27FinalContainerHumanOpening": "PASS human approval and exact running app",
-    "macOS27ExactPayloadMaintenance": "PASS isolated production core",
-    "unchangedComponents": "rc4 historical GUI/engine/Chrome/four-format qualification reused after byte equality",
-    "AppleDeveloperID": false,
-    "AppleNotarization": false,
-    "macOS26ChangedCode": "NOT QUALIFIED",
-    "macOS27FinalContainerComponentVerification": "PASS",
-    "macOS27ExactGUIUpdate": "PASS rc4 to rc6; 195 files and 22 links",
-    "macOS27ExactEngineTools": "PASS all four tools in production GUI",
-    "macOS27PersonalChromeRefresh": "PASS existing card reloaded; same extension ID and path",
-    "macOS27ExactNativeMessaging": "PASS ready diagnostic; Chrome-parented canonical host, guardian and folder observed",
-    "macOS27PersonalDataPreservation": "PASS native state, downloads inventory, eight extension storage keys and 17 history entries unchanged"
-  },
-  "supportedArchitecture": "arm64",
-  "supportedMacOS": [
-    "27"
-  ],
-  "testedMacOS": "27.0.1",
-  "macOS26Qualified": false
+  "upstreamRuntimeIncludedInDMG": false,
+  "originalApplicationSourceIncluded": false,
+  "independentCodecRecipe": "../sources/build-codecs.sh",
+  "codecReplacementRecipe": "../sources/install-codecs.pl",
+  "systemFrameworksRedistributed": false
 }

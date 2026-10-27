@@ -1,34 +1,25 @@
 {
   "formatVersion": 2,
-  "minimumMacOS": "26.0",
   "architecture": "arm64",
-  "configure": "--prefix=/bgdd-build --arch=arm64 --cc=/usr/bin/clang --cxx=/usr/bin/clang++ --ar=/usr/bin/ar --nm=/usr/bin/nm --ranlib=/usr/bin/ranlib --disable-autodetect --disable-shared --enable-static --disable-doc --disable-debug --disable-ffplay --disable-avdevice --disable-network --disable-encoders --enable-encoder='libx264,libmp3lame,pcm_s24le,pcm_s16le,aac,png,wrapped_avframe' --disable-filters --enable-filter='scale,pad,format,setsar,fps,aresample,anull,null,rotate,transpose,hflip,vflip' --disable-hwaccels --disable-videotoolbox --disable-audiotoolbox --disable-securetransport --enable-zlib --enable-gpl --enable-libx264 --enable-libmp3lame --pkg-config=../pkg-config --extra-cflags='-I../stage/bgdd-build/include -O3 -arch arm64 -mmacosx-version-min=26.0' --extra-ldflags='-L../stage/bgdd-build/lib -arch arm64 -mmacosx-version-min=26.0'",
+  "minimumMacOS": "26.0",
+  "configure": "--prefix=/bgdd-build --arch=arm64 --cpu=generic --cc=/usr/bin/clang --cxx=/usr/bin/clang++ --ar=/usr/bin/ar --nm=/usr/bin/nm --ranlib=/usr/bin/ranlib --disable-autodetect --disable-shared --enable-static --disable-doc --disable-debug --disable-ffplay --disable-avdevice --disable-network --disable-encoders --enable-encoder='libx264,libmp3lame,pcm_s24le,pcm_s16le,aac,png,wrapped_avframe,hevc_videotoolbox' --disable-filters --enable-filter='scale,pad,format,setsar,fps,aresample,anull,null,rotate,transpose,hflip,vflip' --disable-hwaccels --enable-hwaccel=av1_videotoolbox --enable-videotoolbox --disable-audiotoolbox --disable-securetransport --enable-zlib --enable-gpl --enable-libx264 --enable-libmp3lame --pkg-config=../pkg-config --extra-cflags='-I../stage/bgdd-build/include -O3 -arch arm64 -mmacosx-version-min=26.0 ' --extra-ldflags='-L../stage/bgdd-build/lib -arch arm64 -mmacosx-version-min=26.0'",
+  "binaries": {
+    "ffmpeg": "5b537bb9daf031e30966fcde5641bb5891dd2122d6878fa11273f955441e64c3",
+    "ffprobe": "86a1a4fd4f8a9e77f2e3cce11dd8708948e777ab53bac41628193c43d7b3442f"
+  },
   "sourceArchives": {
     "ffmpeg-9.0.2.tar.xz": "8c3850283eb25fa026482078a04051e0be17347b09ef81a0849bec15a96e002e",
     "x264-0480cb05.tar.gz": "be32b1e787ca8e905c10b956d2a5be0b99847deea2ff53be0cd93e488cd90323",
     "lame-3.100.tar.gz": "ddfe36cab873794038ae2c1210557ad34857a4b6bdc515785d1da9e175b1da1e"
   },
-  "binaries": {
-    "ffmpeg": "1de2c5141c755b2e1287f125c343beb5c375e3a051153284581c5cbb3fa45f2e",
-    "ffprobe": "2f21734945cb34941ceffc826fa96985df852dfb5d161be86ea5b6136e23414a"
-  },
   "recipe": {
-    "file": "build-codecs.sh",
-    "sha256": "b1f25e73c14b57ec976b10b0053a1c3e4ef53be6c656c23dc94cc7619bb7216b",
+    "file": "codec-sources/build-codecs.sh",
+    "sha256": "bc80c8dd947d5e67a6fb28751e3f80d63e6a772a24c83922160149d2015ed6b2",
     "executed": true
   },
-  "compiler": "Apple clang version 21.0.0 (clang-2100.3.34.2)",
+  "compiler": "Apple clang version 21.0.0 (clang-2100.3.34.2)\nTarget: arm64-apple-darwin27.2.0\nThread model: posix\nInstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin",
   "sdk": "27.0",
-  "purpose": "Historical record of the FIRST actually executed local rc2 codec recipe on SDK27.0. This is evidence that the unchanged public recipe was genuinely executed, not the build record or binary hash authority for the currently delivered candidate.",
-  "installRecipeSHA256": "647212f56068c064dcb78033547fc3ebb36249d3e2f9511eb8ced51ecdd32e6e",
-  "originalApplicationCodeIncluded": false,
-  "recordType": "historical-local-reference",
-  "historicalReferenceOnly": true,
-  "hashScope": "sourceArchives and recipe identify unchanged corresponding-source inputs. binaries contains ONLY the pre-transport-signing outputs of the historical first local SDK27.0 build. The current release VERSIONS.json media identifies its actual compiler/SDK/pre-sign codec hashes; delivered payload integrity.json and native/dependencies.json identify its post-sign codec bytes. Never compare these historical binary hashes as the expected bytes of a later SDK26 candidate.",
-  "currentCandidateAuthority": {
-    "actualBuild": "VERSIONS.json:media",
-    "deliveredCodecBytes": "payload/native/integrity.json and payload/native/dependencies.json",
-    "containerAndSourceAssetBytes": "SHA256SUMS of that same release",
-    "configurationAndInputs": "The three source archives, public build-codecs.sh and configure flags are unchanged; current SDK/compiler must be read from that release."
-  }
+  "buildArchitecture": "arm64",
+  "crossCompiled": false,
+  "nativeExecution": true
 }

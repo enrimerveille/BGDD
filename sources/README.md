@@ -1,6 +1,4 @@
-> RC.7 : choisissez le kit `BGDD-third-party-sources-arm64.zip` ou `BGDD-third-party-sources-x86_64.zip` correspondant à votre DMG. Les métadonnées de build actuelles se trouvent dans `VERSIONS-arm64.json.media` ou `VERSIONS-x86_64.json.media` ; le manifeste commun `VERSIONS.json` pointe vers ces fichiers. Les références ci-dessous aux anciens kits sont historiques.
-
-# Sources correspondantes des codecs BGDD rc2
+# Sources correspondantes des codecs BGDD 0.5.0
 
 Ce kit concerne uniquement **FFmpeg / ffprobe 9.0.2, x264 et LAME 3.100**, ainsi que leurs recettes indépendantes de construction et d’installation. Il ne contient aucun code Swift, TypeScript, host, gardien, sélecteur ou installateur propriétaire BGDD. Le nom BGDD identifie le build consommateur et ne change pas les droits des sources tierces.
 
@@ -28,11 +26,17 @@ Le **premier build local de référence, conservé comme historique**, a utilis�
 
 La recette réellement exécutée est `build-codecs.sh`. Elle vérifie les trois archives, construit x264/LAME statiques, construit FFmpeg/ffprobe avec les options enregistrées, installe les bibliothèques dans un staging et les exécutables dans `build-output/bin`. Elle génère ses SHA et la notice de configuration. Aucun module privé BGDD n’est requis pour la construction. Le préfixe `/bgdd-build` est logique et utilisé uniquement dans le staging, jamais comme dépendance de runtime.
 
-Les encodeurs H.264, MP3, PCM, AAC, PNG et les décodeurs/parseurs disponibles dans le build sont conservés ; réseau et détection automatique de bibliothèques externes sont désactivés. `build-record.json` est **une référence historique du premier build local SDK27**, avec ses propres sorties avant signature ; `FFmpeg-build.txt` dans ce kit conserve aussi la sortie brute de cette première construction. Ces SHA historiques ne sont pas les SHA attendues des codecs d’une candidate construite ensuite avec SDK26.
+Le build active les encodeurs H.264, HEVC VideoToolbox, MP3, PCM, AAC et PNG, les décodeurs utiles dont VP9 et AV1 VideoToolbox. Le réseau et la détection automatique de bibliothèques externes sont désactivés. HEVC et AV1 matériels restent soumis aux capacités réelles du Mac. Aucun framework Apple n’est redistribué.
 
-Pour le paquet que vous avez réellement téléchargé, **`VERSIONS.json`, champ `media`, fait autorité** sur le SDK, le compilateur, les sources/recette, les options et les empreintes avant signature du build actuel. Le payload `native/integrity.json` et `native/dependencies.json` donne les empreintes des deux exécutables réellement livrés après signature. Le payload `native/licenses/codec-build/FFmpeg-build.txt` conserve la notice de configuration générée par ce build actuel. Les sommes `SHA256SUMS` de la même release identifient le conteneur et le kit de sources.
+`build-record.json` et `FFmpeg-build.txt` décrivent la construction courante pour l’architecture du kit. `VERSIONS-<architecture>.json`, le manifeste du paquet et `SHA256SUMS` lient les sources, la recette et les exécutables après signature. Un autre compilateur ou une nouvelle signature peut produire des empreintes différentes.
 
-La recette publique et les trois archives exactes restent celles qui ont réellement produit ces builds ; seul leur environnement de construction peut différer. La GPL demande les sources correspondantes effectives, sans imposer une identité d’empreinte entre compilateurs différents. [FAQ GNU sur les sources et les SHA binaires](https://www.gnu.org/licenses/gpl-faq.en.html#MustSourceBuildToMatchExactHashOfBinary). La signature de transport change aussi les octets et leurs SHA.
+La recette fonctionne nativement pour l’architecture du Mac. Pour compiler Intel depuis Apple Silicon :
+
+```sh
+/bin/sh ./build-codecs.sh . ./build-output-intel x86_64
+```
+
+La recette Intel utilise les chemins C portables sans dépendance NASM. Une compilation croisée ne prouve pas une exécution native Intel.
 
 Pour modifier LAME, x264 ou FFmpeg, décompacter la source concernée, effectuer les changements, recréer son archive et adapter dans votre copie de `build-codecs.sh` l’empreinte de l’archive modifiée. Les contrôles de SHA du build de référence sont éditables dans cette recette sous GPL ; ils ne retirent pas le droit de modifier les sources. La recette reconstruira et rééditera les liens statiques avec la bibliothèque modifiée.
 

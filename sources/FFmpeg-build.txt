@@ -1,4 +1,5 @@
 Corresponding-source build recipe: build-codecs.sh; target macOS 26.0, arm64.
+Intel portable C paths; no NASM dependency.
 FFmpeg 9.0.2: GPL-2.0-or-later; static x264 GPL and LAME LGPL components.
 No original source patches. Logical /bgdd-build prefix is build-only.
 All exact source archives, upstream licences and actual recipe accompany the binaries.
@@ -7,6 +8,7 @@ Apple clang version 21.0.0 (clang-2100.3.34.2)
   configuration:
     --prefix=/bgdd-build
     --arch=arm64
+    --cpu=generic
     --cc=/usr/bin/clang
     --cxx=/usr/bin/clang++
     --ar=/usr/bin/ar
@@ -21,18 +23,19 @@ Apple clang version 21.0.0 (clang-2100.3.34.2)
     --disable-avdevice
     --disable-network
     --disable-encoders
-    --enable-encoder='libx264,libmp3lame,pcm_s24le,pcm_s16le,aac,png,wrapped_avframe'
+    --enable-encoder='libx264,libmp3lame,pcm_s24le,pcm_s16le,aac,png,wrapped_avframe,hevc_videotoolbox'
     --disable-filters
     --enable-filter='scale,pad,format,setsar,fps,aresample,anull,null,rotate,transpose,hflip,vflip'
     --disable-hwaccels
-    --disable-videotoolbox
+    --enable-hwaccel=av1_videotoolbox
+    --enable-videotoolbox
     --disable-audiotoolbox
     --disable-securetransport
     --enable-zlib
     --enable-gpl
     --enable-libx264
     --enable-libmp3lame
-    --pkg-config=../pkg-config --extra-cflags='-I../stage/bgdd-build/include -O3 -arch arm64 -mmacosx-version-min=26.0'
+    --pkg-config=../pkg-config --extra-cflags='-I../stage/bgdd-build/include -O3 -arch arm64 -mmacosx-version-min=26.0 '
     --extra-ldflags='-L../stage/bgdd-build/lib -arch arm64 -mmacosx-version-min=26.0'
 
 Exiting with exit code 0

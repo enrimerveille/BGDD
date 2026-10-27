@@ -1,6 +1,6 @@
 {
   "formatVersion": 2,
-  "releaseVersion": "0.4.8-rc.10",
+  "releaseVersion": "0.5.0-rc.1",
   "repository": "enrimerveille/BGDD",
   "publicRepositoryID": 1415495249,
   "architectures": {
@@ -18,5 +18,7 @@
       "metadata": "VERSIONS-x86_64.json",
       "thirdPartySources": "BGDD-third-party-sources-x86_64.zip"
     }
-  }
+  },
+  "extensionVersion": "0.5.0",
+  "nativeVersion": "0.4.0"
 }
