@@ -4,9 +4,14 @@
 
 BGDD is **free proprietary software** pairing a Chrome extension with a local macOS engine. Choose a publication, format and folder: downloading and processing stay on your Mac. No BGDD account, subscription, download server or telemetry.
 
-**Prerelease 0.4.8-rc.6 — Apple Silicon, macOS 27 only.** [Download the ARM DMG](https://github.com/enrimerveille/BGDD-downloads/releases/download/v0.4.8-rc.6/BGDD-macOS-arm64.dmg) · [Release, checksums and third-party source kit](https://github.com/enrimerveille/BGDD-downloads/releases/tag/v0.4.8-rc.6). macOS 26 ARM is not yet qualified for this version. [Evidence and limitations](docs/DISTRIBUTION-VALIDATION.md).
+**Common prerelease 0.4.8-rc.7 — Apple Silicon and Intel.** [Release, checksums and third-party sources](https://github.com/enrimerveille/BGDD-downloads/releases/tag/v0.4.8-rc.7).
 
-**Prerelease 0.4.8-rc.5 — Intel x86_64, macOS 26.** [Download the Intel DMG](https://github.com/enrimerveille/BGDD-downloads/releases/download/v0.4.8-rc.5/BGDD-macOS-x86_64.dmg) · [Release, checksums and third-party source kit](https://github.com/enrimerveille/BGDD-downloads/releases/tag/v0.4.8-rc.5). Physical macOS 26.5.2 tests passed for installation, engine and all four network formats. **Chrome → Native Messaging → download on Intel remains UNTESTED**, an accepted limitation of this prerelease. The variants use distinct version numbers; choose by processor.
+| Your Mac | Package | Validation |
+|---|---|---|
+| Apple Silicon, macOS 27 | [ARM64 DMG](https://github.com/enrimerveille/BGDD-downloads/releases/download/v0.4.8-rc.7/BGDD-macOS-arm64.dmg) | ARM recipe; macOS 26 ARM is not qualified |
+| Intel x86_64, macOS 26 | [Intel DMG](https://github.com/enrimerveille/BGDD-downloads/releases/download/v0.4.8-rc.7/BGDD-macOS-x86_64.dmg) | RC.7 static checks; previous physical 26.5.2 evidence reused |
+
+**The new RC.7 interface has not been run on Intel.** The owner confirms previous Chrome operation; no new Intel session is claimed. [Evidence and limitations](docs/DISTRIBUTION-VALIDATION.md).
 
 <p align="center"><img src="assets/popup-light.png" width="320" alt="BGDD light"><img src="assets/popup-dark.png" width="320" alt="BGDD dark"></p>
 
@@ -31,12 +36,11 @@ Actual AppKit window captures. ARM and Intel share the interface; Intel qualific
 
 ## Install
 
-1. Download an approved release DMG and open **BGDD Installer.app**.
-2. If macOS blocks it, use **System Settings → Privacy & Security → Open Anyway**, when offered, and confirm yourself. BGDD has **no Developer ID certificate or Apple notarization**. [Gatekeeper guide](docs/DISTRIBUTION-GATEKEEPER.md).
-3. Choose **Installer / Mettre à jour**. Internet is required: yt-dlp and Deno are downloaded directly from their official releases at fixed versions, with integrity checks.
-4. Choose **Ouvrir le moteur**. The **BGDD — préparer le moteur** window checks the versions of yt-dlp, Deno, FFmpeg and ffprobe without downloading media. It stops at the first failure; read the tool name and message, personally decide any opening offered by macOS, then reopen the engine. Choose **Vérifier les composants** afterwards.
-5. Choose **Préparer Chrome**, open the copied address, enable **Developer mode**, select **Load unpacked**, and choose the shown folder.
-6. Open BGDD and choose **Réglages → Vérifier l’installation**.
+1. Open the DMG for your Mac and its single visible app, **Installer BGDD.app**.
+2. If macOS blocks opening, personally decide whether to use **System Settings → Privacy & Security → Open Anyway**, when offered. BGDD has **no Developer ID certificate or Apple notarization**. [Gatekeeper guide](docs/DISTRIBUTION-GATEKEEPER.md).
+3. Follow the four steps: install/update, prepare the engine, add to Chrome, then ready. Help and licenses are included in the assistant.
+4. For first-time Chrome setup, enable **Developer mode** and choose **Load unpacked** using the displayed folder. For an update, **Reload** the existing BGDD card without removing it.
+5. In BGDD, choose **Réglages → Vérifier l’installation**, close the popup, return to the assistant and choose **Vérifier la connexion**, then **Terminer**.
 
 No Terminal, Homebrew, separate Python or Node.js installation. Chrome loading is manual, normally intended for development, and does not provide Chrome Web Store updates. The interface uses French labels. [Detailed guide](docs/DISTRIBUTION-INSTALL.md).
 
@@ -44,9 +48,9 @@ The candidate groups executables inside BGDD Engine.app and distinguishes guardi
 
 ## Update or uninstall
 
-Update checks are voluntary and use this distribution repository. Choose the package after integrity verification, authorize its opening if macOS requests it, then choose **Installer / Mettre à jour** and **Ouvrir le moteur**. Reload BGDD in Chrome and reload already-open platform pages. Folder, identity, preferences and history stay in place.
+Update checks are voluntary and use this distribution repository. Choose the package after integrity verification, authorize its opening if macOS requests it, then choose **Mettre à jour BGDD** and **Ouvrir BGDD Engine**. Reload BGDD in Chrome and reload already-open platform pages. Folder, identity, preferences and history stay in place.
 
-Remove the extension in Chrome, then choose **Désinstaller** in the installer. Removing native preferences is a separate explicit choice. **Downloaded files are retained.**
+Remove the extension in Chrome, then choose **Maintenance… → Désinstaller** in the installer. Removing native preferences is a separate explicit choice. **Downloaded files are retained.**
 
 ## Limitations and rights
 

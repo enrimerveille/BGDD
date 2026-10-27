@@ -1,5 +1,20 @@
 # Validation des variantes BGDD
 
+## RC.7 commune — 27 octobre 2026
+
+Les deux paquets sont reconstruits depuis la candidate locale RC.7. Les seuls changements d’octets par rapport à cette candidate sont le popup compilé, son inventaire et les sceaux de l’installateur. Les instructions machine de l’installateur et tous les autres composants natifs sont identiques à la candidate UX. Les contrôles de packaging, sept Mach-O par architecture, licences et 15 fichiers de chaque kit tiers ont réussi.
+
+**Tests simulés :** nouveau libellé et accessibilité contrôlés dans le popup rendu, avec maintien des libellés de préparation, conversion, extraction audio et assemblage. Le même contrôle porte sur le JavaScript réellement embarqué dans chaque DMG. Sélection du bon asset dans une release commune et refus de l’autre architecture contrôlés ; le cas Intel simulé sur ARM n’est pas une exécution Intel.
+
+**ARM natif / payload isolé :** installation, mise à jour, remplacement indépendant des codecs et conservation des données de recette vérifiés sur le payload exact. Le harnais utilise un HOME marqué ; ce test est distinct de l’interface de production.
+
+**ARM graphique :** la recette RC.7 antérieure couvre quatre étapes, moteur, Chrome isolé, clair/sombre, défilement et clavier. Le DMG final a été reçu par Safari sous macOS 27.2 avec quarantaine normale ; SHA-256, sceau et octets de l’app transloquée vérifiés, ouverture autorisée personnellement via Gatekeeper. L’installation personnelle et le contrôle final Chrome suivent la publication. Aucun nouveau téléchargement média ; preuves de formats inchangés réutilisées.
+
+**Intel :** contrôles statiques seulement pour RC.7. Le propriétaire autorise explicitement la publication sans nouvelle session physique. Les essais du 22 octobre sous macOS 26.5.2 restent valables dans leur périmètre ; le propriétaire confirme le 27 octobre le fonctionnement antérieur de Chrome. Cette confirmation est déclarative et complète le rapport technique historique ci-dessous sans le transformer en nouvelle observation automatisée. **La nouvelle interface RC.7 n’a pas été exécutée sur Intel.** Aucune preuve Rosetta ou de compilation croisée n’est présentée comme native Intel.
+
+Limites : ARM macOS 26 non qualifié ; interface RC.7 Intel, assertion EJS indépendante Intel et restitution VoiceOver exhaustive non qualifiées. Aucun job Actions lancé. Les anciennes sections sont conservées comme historique daté.
+
+
 ## Intel 0.4.8-rc.5 — publication du 27 octobre 2026
 
 Préversion Intel x86_64 pour macOS 26. Le test physique du 22 octobre a été réalisé sur Mac Pro Intel 2019 sous **macOS 26.5.2**. Installation graphique, autorisation Gatekeeper humaine, moteur et ses quatre outils, adaptation clair/sombre en direct, quatre téléchargements réseau autorisés (qualité maximale, MP4, WAV, MP3), annulation, mise à jour de la même candidate et désinstallation : **PASS**. Tous les exécutables disposent de x86_64 ; yt-dlp téléchargé lors de l’installation est universel.

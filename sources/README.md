@@ -1,3 +1,5 @@
+> RC.7 : choisissez le kit `BGDD-third-party-sources-arm64.zip` ou `BGDD-third-party-sources-x86_64.zip` correspondant à votre DMG. Les métadonnées de build actuelles se trouvent dans `VERSIONS-arm64.json.media` ou `VERSIONS-x86_64.json.media` ; le manifeste commun `VERSIONS.json` pointe vers ces fichiers. Les références ci-dessous aux anciens kits sont historiques.
+
 # Sources correspondantes des codecs BGDD rc2
 
 Ce kit concerne uniquement **FFmpeg / ffprobe 9.0.2, x264 et LAME 3.100**, ainsi que leurs recettes indépendantes de construction et d’installation. Il ne contient aucun code Swift, TypeScript, host, gardien, sélecteur ou installateur propriétaire BGDD. Le nom BGDD identifie le build consommateur et ne change pas les droits des sources tierces.

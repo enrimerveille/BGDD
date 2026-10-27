@@ -4,9 +4,14 @@
 
 BGDD est un logiciel **gratuit et propriétaire** qui associe une extension Chrome à un moteur local macOS. Choisissez une publication, un format et un dossier : le téléchargement et le traitement se font sur votre Mac. Aucun compte BGDD, abonnement, serveur de téléchargement ou télémétrie.
 
-**Préversion 0.4.8-rc.6 — Apple Silicon, macOS 27 uniquement.** [Télécharger le DMG ARM](https://github.com/enrimerveille/BGDD-downloads/releases/download/v0.4.8-rc.6/BGDD-macOS-arm64.dmg) · [Release, empreintes et kit tiers](https://github.com/enrimerveille/BGDD-downloads/releases/tag/v0.4.8-rc.6). macOS 26 ARM reste non qualifié pour cette version. [Preuves et limites](docs/DISTRIBUTION-VALIDATION.md).
+**Préversion commune 0.4.8-rc.7 — Apple Silicon et Intel.** [Release, empreintes et sources tierces](https://github.com/enrimerveille/BGDD-downloads/releases/tag/v0.4.8-rc.7).
 
-**Préversion 0.4.8-rc.5 — Intel x86_64, macOS 26.** [Télécharger le DMG Intel](https://github.com/enrimerveille/BGDD-downloads/releases/download/v0.4.8-rc.5/BGDD-macOS-x86_64.dmg) · [Release, empreintes et kit tiers](https://github.com/enrimerveille/BGDD-downloads/releases/tag/v0.4.8-rc.5). Test physique sous macOS 26.5.2 : installation, moteur et quatre formats réseau réussis. **Parcours Chrome → Native Messaging → téléchargement Intel NON TESTÉ**, limite acceptée pour cette préversion. Les deux variantes ont des numéros distincts ; choisissez selon votre processeur.
+| Votre Mac | Paquet | Validation |
+|---|---|---|
+| Apple Silicon, macOS 27 | [DMG ARM64](https://github.com/enrimerveille/BGDD-downloads/releases/download/v0.4.8-rc.7/BGDD-macOS-arm64.dmg) | Recette ARM ; macOS 26 ARM non qualifié |
+| Intel x86_64, macOS 26 | [DMG Intel](https://github.com/enrimerveille/BGDD-downloads/releases/download/v0.4.8-rc.7/BGDD-macOS-x86_64.dmg) | Contrôles statiques RC.7 ; essais physiques antérieurs sous 26.5.2 réutilisés |
+
+**La nouvelle interface RC.7 n’a pas été exécutée sur Intel.** Le fonctionnement Chrome antérieur est confirmé par le propriétaire ; aucune nouvelle session Intel n’est revendiquée. [Preuves et limites](docs/DISTRIBUTION-VALIDATION.md).
 
 <p align="center"><img src="assets/popup-light.png" width="320" alt="BGDD clair"><img src="assets/popup-dark.png" width="320" alt="BGDD sombre"></p>
 
@@ -31,12 +36,11 @@ Captures de la vraie fenêtre AppKit ; interface identique sur ARM et Intel, don
 
 ## Installer
 
-1. Télécharger le DMG d’une release approuvée et ouvrir **BGDD Installer.app**.
-2. Si macOS bloque l’ouverture, suivre **Réglages Système → Confidentialité et sécurité → Ouvrir quand même**, lorsque cette option est proposée, puis confirmer vous-même. BGDD est distribué **sans certificat Developer ID ni notarisation Apple**. [Guide Gatekeeper](docs/DISTRIBUTION-GATEKEEPER.md).
-3. Choisir **Installer / Mettre à jour**. Une connexion Internet est nécessaire : yt-dlp et Deno sont récupérés directement depuis leurs releases officielles, à versions fixes et après vérification d’intégrité.
-4. Choisir **Ouvrir le moteur**. La fenêtre **BGDD — préparer le moteur** vérifie les versions de yt-dlp, Deno, FFmpeg et ffprobe, sans téléchargement de média. Au premier échec, consulter le nom de l’outil et son message ; décider personnellement de l’ouverture si macOS la propose, puis rouvrir le moteur. Choisir ensuite **Vérifier les composants**.
-5. Choisir **Préparer Chrome**, ouvrir l’adresse copiée, activer **Mode développeur**, puis **Charger l’extension non empaquetée** et sélectionner le dossier indiqué.
-6. Dans BGDD, ouvrir **Réglages → Vérifier l’installation**.
+1. Ouvrir le DMG adapté à votre Mac, puis son unique application **Installer BGDD.app**.
+2. Si macOS bloque l’ouverture, décider personnellement de l’autorisation dans **Réglages Système → Confidentialité et sécurité → Ouvrir quand même**, lorsque proposée. BGDD reste **sans Developer ID ni notarisation Apple**. [Guide Gatekeeper](docs/DISTRIBUTION-GATEKEEPER.md).
+3. Suivre les quatre étapes : **Installer BGDD / Mettre à jour BGDD**, **Préparer le moteur**, **Ajouter à Chrome**, puis **BGDD est prêt**. L’aide et les licences sont intégrées.
+4. Pour une première installation Chrome, activer **Mode développeur** et **Charger l’extension non empaquetée** depuis le dossier montré. Pour une mise à jour, cliquer **Actualiser** sur la carte BGDD existante, sans la supprimer.
+5. Dans BGDD, ouvrir **Réglages → Vérifier l’installation**, fermer le popup, revenir à l’assistant et choisir **Vérifier la connexion**, puis **Terminer**.
 
 Aucun Terminal, Homebrew, Python ou Node.js à installer. Le chargement Chrome est manuel et normalement destiné au développement ; il ne fournit pas les mises à jour du Chrome Web Store. [Guide détaillé](docs/DISTRIBUTION-INSTALL.md).
 
@@ -44,9 +48,9 @@ La candidate regroupe les exécutables dans BGDD Engine.app et distingue les err
 
 ## Mettre à jour ou retirer BGDD
 
-La recherche de mise à jour est volontaire, depuis l’installateur et ce dépôt de distribution. Vous choisissez le nouveau paquet après vérification de son intégrité, autorisez son ouverture si macOS le demande, puis **Installer / Mettre à jour** et **Ouvrir le moteur**. Dans Chrome, cliquez **Actualiser** sur BGDD et rechargez les publications déjà ouvertes. Le dossier, l’identité, les préférences et l’historique sont conservés.
+La recherche de mise à jour est volontaire, depuis l’installateur et ce dépôt de distribution. Vous choisissez le nouveau paquet après vérification de son intégrité, autorisez son ouverture si macOS le demande, puis **Mettre à jour BGDD** et **Ouvrir BGDD Engine**. Dans Chrome, cliquez **Actualiser** sur BGDD et rechargez les publications déjà ouvertes. Le dossier, l’identité, les préférences et l’historique sont conservés.
 
-Pour retirer BGDD, supprimez l’extension dans Chrome, puis choisissez **Désinstaller** dans l’installateur. L’effacement des préférences natives est un choix explicite. **Les fichiers téléchargés sont conservés.**
+Pour retirer BGDD, supprimez l’extension dans Chrome, puis choisissez **Maintenance… → Désinstaller** dans l’installateur. L’effacement des préférences natives est un choix explicite. **Les fichiers téléchargés sont conservés.**
 
 ## Limites et droits
 

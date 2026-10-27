@@ -1,6 +1,6 @@
-# Licences et sources de BGDD 0.4.8-rc.4
+# Licences et sources de BGDD 0.4.8-rc.7
 
-21 octobre 2026 · code original gratuit et propriétaire, **Angry Thread**. Le JavaScript compilé nécessaire à l'extension est distribué ; cela n'ouvre pas les sources originales. Les restrictions BGDD excluent expressément les droits accordés par les licences tierces. [Conditions](../CONDITIONS.md).
+27 octobre 2026 · code original gratuit et propriétaire, **Angry Thread**. Le JavaScript compilé nécessaire à l'extension est distribué ; cela n'ouvre pas les sources originales. Les restrictions BGDD excluent expressément les droits accordés par les licences tierces. [Conditions](../CONDITIONS.md).
 
 ## Matériaux fournis
 
@@ -11,7 +11,7 @@
 | LAME statique | 3.100 | LGPL-2.0-or-later ; sources permettant la modification et la réédition des liens |
 | Space Grotesk | 2.000 | OFL-1.1 ; fonte originale et notice |
 
-Les sources et versions des codecs ARM n'ont pas changé. `VERSIONS.json.media` de la release identifie le build effectivement utilisé ; les inventaires du payload identifient les exécutables après signature. Les premiers relevés de construction conservés dans le kit sont historiques, et ne remplacent pas ces empreintes. Le kit `BGDD-third-party-sources.zip` contient les sources tierces correspondantes, sans code propriétaire BGDD.
+Les sources et versions des codecs ARM n'ont pas changé. `VERSIONS-arm64.json.media` ou `VERSIONS-x86_64.json.media` de la release identifie le build effectivement utilisé ; les inventaires du payload identifient les exécutables après signature. Les premiers relevés de construction conservés dans le kit sont historiques, et ne remplacent pas ces empreintes. Les kits `BGDD-third-party-sources-arm64.zip` et `BGDD-third-party-sources-x86_64.zip` contiennent les sources tierces correspondantes, sans code propriétaire BGDD.
 
 ## Frontière des programmes et remplacement
 
