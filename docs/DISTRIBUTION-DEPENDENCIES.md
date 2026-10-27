@@ -13,6 +13,6 @@ BGDD est gratuit et propriétaire pour son code original, copyright © 2026 Angr
 
 Le bundle yt-dlp conserve sa licence GPL-3.0-or-later ; Deno et ses dépendances conservent leurs licences propres. Leurs binaires et archives ne sont pas fournis dans le DMG BGDD.
 
-Les métadonnées de la [release](https://github.com/enrimerveille/BGDD-downloads/releases/tag/v0.4.8-rc.7), `VERSIONS-arm64.json` et `VERSIONS-x86_64.json`, décrivent les composants de chaque variante. `SHA256SUMS` contient les empreintes des fichiers téléchargeables. L’[inventaire des dépendances](../licenses/DEPENDENCIES-rc2.json) conserve les références des matériaux amont ; ses relevés de construction historiques ne remplacent pas les métadonnées de la release choisie.
+Les métadonnées de la [release](https://github.com/enrimerveille/BGDD/releases/tag/v0.4.8-rc.9), `VERSIONS-arm64.json` et `VERSIONS-x86_64.json`, décrivent les composants de chaque variante. `SHA256SUMS` contient les empreintes des fichiers téléchargeables. L’[inventaire des dépendances](../licenses/DEPENDENCIES-rc2.json) conserve les références des matériaux amont ; ses relevés de construction historiques ne remplacent pas les métadonnées de la release choisie.
 
 [Licences et sources](DISTRIBUTION-LICENSES.md) · [Frontières entre programmes](DISTRIBUTION-BOUNDARIES.md) · [Conditions BGDD](../CONDITIONS.md)

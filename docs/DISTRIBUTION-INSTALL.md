@@ -1,12 +1,12 @@
 # Installer et utiliser BGDD
 
-BGDD 0.4.8-rc.7 est disponible pour **Apple Silicon (ARM64) sous macOS 27** et **Intel (x86_64) sous macOS 26**. [Choisir votre DMG](https://github.com/enrimerveille/BGDD-downloads/releases/tag/v0.4.8-rc.7).
+BGDD 0.4.8-rc.9 est disponible pour **Apple Silicon (ARM64) sous macOS 27** et **Intel (x86_64) sous macOS 26**. [Choisir votre DMG](https://github.com/enrimerveille/BGDD/releases/tag/v0.4.8-rc.9).
 
 Une connexion Internet et Google Chrome sont nécessaires. Aucun Terminal, Homebrew, Python ou Node.js à installer. BGDD est distribué **sans certificat Developer ID ni notarisation Apple** : consultez le [guide Gatekeeper](DISTRIBUTION-GATEKEEPER.md) si macOS bloque l’ouverture.
 
 ## Installer en quatre étapes
 
-Ouvrez le DMG, puis **Installer BGDD.app**.
+Ouvrez le DMG, puis **BGDD Installer.app**.
 
 1. **Installer BGDD** ou **Mettre à jour BGDD** : l’assistant installe les composants nécessaires et conserve vos réglages, votre historique et le dossier de l’extension. Les moteurs supplémentaires sont téléchargés depuis leurs éditeurs, avec vérification d’intégrité.
 2. **Préparer le moteur** : choisissez **Ouvrir BGDD Engine**. Après la préparation, revenez à l’assistant et choisissez **Vérifier le résultat**. Si macOS bloque un composant, suivez le guide Gatekeeper, puis recommencez cette étape.
@@ -30,6 +30,8 @@ L’accès à une session de plateforme est facultatif : il se donne et se retir
 Après une mise à jour, actualisez la carte BGDD dans Chrome et rechargez les publications déjà ouvertes. Gardez la carte existante pour conserver ses réglages, autorisations et historique.
 
 Pour désinstaller, retirez BGDD dans Chrome puis choisissez **Maintenance… → Désinstaller**. L’effacement des préférences natives est facultatif ; Chrome supprime ses propres données lorsque l’extension est retirée. **Vos fichiers téléchargés sont conservés.**
+
+Si la recherche de mises à jour d’une ancienne version ne fonctionne plus, [téléchargez la dernière version manuellement](https://github.com/enrimerveille/BGDD/releases), puis suivez les étapes ci-dessus sans supprimer l’extension.
 
 ## Versions rc.4 à rc.6
 

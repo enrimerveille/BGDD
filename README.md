@@ -4,14 +4,16 @@
 
 BGDD est un logiciel **gratuit et propriétaire** qui associe une extension Chrome à un moteur local macOS. Choisissez une publication, un format et un dossier : le téléchargement et le traitement se font sur votre Mac. Aucun compte BGDD, abonnement, serveur de téléchargement ou télémétrie.
 
-**Préversion 0.4.8-rc.7 — Apple Silicon et Intel.** [Notes de version](https://github.com/enrimerveille/BGDD-downloads/releases/tag/v0.4.8-rc.7).
+**Préversion 0.4.8-rc.9 — Apple Silicon et Intel.** [Notes de version](https://github.com/enrimerveille/BGDD/releases/tag/v0.4.8-rc.9).
 
 | Votre Mac | Télécharger |
 |---|---|
-| Apple Silicon (ARM64), macOS 27 | [DMG Apple Silicon](https://github.com/enrimerveille/BGDD-downloads/releases/download/v0.4.8-rc.7/BGDD-macOS-arm64.dmg) |
-| Intel (x86_64), macOS 26 | [DMG Intel](https://github.com/enrimerveille/BGDD-downloads/releases/download/v0.4.8-rc.7/BGDD-macOS-x86_64.dmg) |
+| Apple Silicon (ARM64), macOS 27 | [DMG Apple Silicon](https://github.com/enrimerveille/BGDD/releases/download/v0.4.8-rc.9/BGDD-macOS-arm64.dmg) |
+| Intel (x86_64), macOS 26 | [DMG Intel](https://github.com/enrimerveille/BGDD/releases/download/v0.4.8-rc.9/BGDD-macOS-x86_64.dmg) |
 
 <p align="center"><img src="assets/popup-light.png" width="320" alt="BGDD clair"><img src="assets/popup-dark.png" width="320" alt="BGDD sombre"></p>
+
+Si la recherche de mises à jour d’une ancienne version ne fonctionne plus, [téléchargez la dernière version](https://github.com/enrimerveille/BGDD/releases), puis mettez à jour BGDD sans supprimer l’extension Chrome.
 
 ## Choisir son format
 
@@ -28,7 +30,7 @@ YouTube, X, Instagram et TikTok ont des adaptateurs dédiés. TikTok propose aus
 
 ## Installer
 
-1. Ouvrir le DMG adapté à votre Mac, puis son unique application **Installer BGDD.app**.
+1. Ouvrir le DMG adapté à votre Mac, puis son unique application **BGDD Installer.app**.
 2. Si macOS bloque l’ouverture, décider personnellement de l’autorisation dans **Réglages Système → Confidentialité et sécurité → Ouvrir quand même**, lorsque proposée. BGDD reste **sans Developer ID ni notarisation Apple**. [Guide Gatekeeper](docs/DISTRIBUTION-GATEKEEPER.md).
 3. Suivre les quatre étapes : **Installer BGDD / Mettre à jour BGDD**, **Préparer le moteur**, **Ajouter à Chrome**, puis **BGDD est prêt**. L’aide et les licences sont intégrées.
 4. Pour une première installation Chrome, activer **Mode développeur** et **Charger l’extension non empaquetée** depuis le dossier montré. Pour une mise à jour, cliquer **Actualiser** sur la carte BGDD existante, sans la supprimer.

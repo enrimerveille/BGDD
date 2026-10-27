@@ -7,7 +7,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   native:
-    if: github.repository == 'enrimerveille/BGDD-downloads' && github.ref == 'refs/heads/main' && github.event_name == 'workflow_dispatch'
+    if: github.repository == 'enrimerveille/BGDD' && github.ref == 'refs/heads/main' && github.event_name == 'workflow_dispatch'
     runs-on: macos-26-intel
     timeout-minutes: 12
     steps:

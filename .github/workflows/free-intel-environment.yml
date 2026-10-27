@@ -4,7 +4,7 @@ on:
 permissions: {}
 jobs:
   environment:
-    if: github.repository == 'enrimerveille/BGDD-downloads' && github.event_name == 'workflow_dispatch'
+    if: github.repository == 'enrimerveille/BGDD' && github.event_name == 'workflow_dispatch'
     runs-on: macos-26-intel
     timeout-minutes: 3
     steps:

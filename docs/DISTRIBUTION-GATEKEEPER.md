@@ -4,7 +4,7 @@ BGDD est distribué **sans certificat Apple Developer ID et sans notarisation Ap
 
 ## Première ouverture
 
-1. Téléchargez le DMG depuis une [release officielle BGDD](https://github.com/enrimerveille/BGDD-downloads/releases), ouvrez-le et lancez **Installer BGDD.app**.
+1. Téléchargez le DMG depuis une [release officielle BGDD](https://github.com/enrimerveille/BGDD/releases), ouvrez-le et lancez **BGDD Installer.app**.
 2. Si macOS indique qu’Apple ne peut pas vérifier le développeur ou l’absence de logiciels malveillants, fermez l’alerte.
 3. Dans **Réglages Système → Confidentialité et sécurité**, choisissez **Ouvrir quand même** pour le composant BGDD concerné, lorsque cette option est proposée.
 4. Confirmez **Ouvrir** et authentifiez-vous si macOS le demande, puis reprenez l’installation.
@@ -25,6 +25,6 @@ Si macOS signale un logiciel endommagé, modifié ou dangereux, ou si aucune aut
 
 ## English
 
-BGDD has **no Apple Developer ID certificate or Apple notarization**. Download it from the official releases page. If macOS blocks **Installer BGDD.app** or **BGDD Engine.app**, dismiss the alert, open **System Settings → Privacy & Security**, and select **Open Anyway** for the named component when offered. Confirm **Open**, authenticate if requested, then retry the installation step.
+BGDD has **no Apple Developer ID certificate or Apple notarization**. Download it from the official releases page. If macOS blocks **BGDD Installer.app** or **BGDD Engine.app**, dismiss the alert, open **System Settings → Privacy & Security**, and select **Open Anyway** for the named component when offered. Confirm **Open**, authenticate if requested, then retry the installation step.
 
 The decision is yours; BGDD does not disable Gatekeeper or remove quarantine automatically. Checksums verify downloaded files, not Apple approval. If macOS reports damaged, modified or dangerous software, or offers no exception, stop and keep the exact message. Managed Macs may prohibit exceptions. [Apple’s instructions](https://support.apple.com/en-us/102445).

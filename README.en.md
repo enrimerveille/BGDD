@@ -4,14 +4,16 @@
 
 BGDD is **free proprietary software** pairing a Chrome extension with a local macOS engine. Choose a publication, format and folder: downloading and processing stay on your Mac. No BGDD account, subscription, download server or telemetry.
 
-**Prerelease 0.4.8-rc.7 — Apple Silicon and Intel.** [Release notes](https://github.com/enrimerveille/BGDD-downloads/releases/tag/v0.4.8-rc.7).
+**Prerelease 0.4.8-rc.9 — Apple Silicon and Intel.** [Release notes](https://github.com/enrimerveille/BGDD/releases/tag/v0.4.8-rc.9).
 
 | Your Mac | Download |
 |---|---|
-| Apple Silicon (ARM64), macOS 27 | [DMG Apple Silicon](https://github.com/enrimerveille/BGDD-downloads/releases/download/v0.4.8-rc.7/BGDD-macOS-arm64.dmg) |
-| Intel (x86_64), macOS 26 | [DMG Intel](https://github.com/enrimerveille/BGDD-downloads/releases/download/v0.4.8-rc.7/BGDD-macOS-x86_64.dmg) |
+| Apple Silicon (ARM64), macOS 27 | [DMG Apple Silicon](https://github.com/enrimerveille/BGDD/releases/download/v0.4.8-rc.9/BGDD-macOS-arm64.dmg) |
+| Intel (x86_64), macOS 26 | [DMG Intel](https://github.com/enrimerveille/BGDD/releases/download/v0.4.8-rc.9/BGDD-macOS-x86_64.dmg) |
 
 <p align="center"><img src="assets/popup-light.png" width="320" alt="BGDD light"><img src="assets/popup-dark.png" width="320" alt="BGDD dark"></p>
+
+If update checking stops working in an older version, [download the latest release](https://github.com/enrimerveille/BGDD/releases) and update BGDD while keeping your existing Chrome extension.
 
 ## Choose a format
 
@@ -28,7 +30,7 @@ YouTube, X, Instagram and TikTok have dedicated adapters. TikTok also offers pho
 
 ## Install
 
-1. Open the DMG for your Mac and its single visible app, **Installer BGDD.app**.
+1. Open the DMG for your Mac and its single visible app, **BGDD Installer.app**.
 2. If macOS blocks opening, personally decide whether to use **System Settings → Privacy & Security → Open Anyway**, when offered. BGDD has **no Developer ID certificate or Apple notarization**. [Gatekeeper guide](docs/DISTRIBUTION-GATEKEEPER.md).
 3. Follow the four steps: install/update, prepare the engine, add to Chrome, then ready. Help and licenses are included in the assistant.
 4. For first-time Chrome setup, enable **Developer mode** and choose **Load unpacked** using the displayed folder. For an update, **Reload** the existing BGDD card without removing it.
