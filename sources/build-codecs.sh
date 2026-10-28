@@ -1,5 +1,5 @@
 #!/bin/sh
-# Independent corresponding-source recipe for FFmpeg/x264/LAME only.
+# Independent corresponding-source recipe for FFmpeg/x264/LAME/dav1d only.
 # Copyright (c) 2026 Angry Thread.
 # SPDX-License-Identifier: GPL-2.0-or-later
 # This recipe is separate from the proprietary BGDD application. It contains
@@ -50,19 +50,22 @@ verify_source ffmpeg-9.0.2.tar.xz 8c3850283eb25fa026482078a04051e0be17347b09ef81
 verify_source x264-0480cb05.tar.gz be32b1e787ca8e905c10b956d2a5be0b99847deea2ff53be0cd93e488cd90323
 verify_source lame-3.100.tar.gz ddfe36cab873794038ae2c1210557ad34857a4b6bdc515785d1da9e175b1da1e
 
+verify_source dav1d-1.5.4.tar.xz 686616b7c69eb88d44459391ab25cac13b6647a3b288835c5784e71c1514a5c5
+
 # Only the active Xcode toolchain and macOS system build tools are used.
-CODEC_NASM_DIR=''
+CODEC_MESON=$(command -v meson)
+CODEC_NINJA=$(command -v ninja)
+CODEC_NASM_DIR='' 
 CODEC_CPU_FLAGS=''
 CODEC_CPU=generic
 CODEC_ASM_FLAGS=''
 if [ "$CODEC_ARCH" = x86_64 ]; then
-    # Portable C paths keep the cross-build independent of NASM.
-    CODEC_ASM_FLAGS='--disable-x86asm'
-    CODEC_X264_HOST="$CODEC_X264_HOST --disable-asm"
+    CODEC_NASM=$(command -v nasm)
+    CODEC_NASM_DIR=$(dirname "$CODEC_NASM")
     CODEC_CPU_FLAGS='-march=x86-64 -mtune=generic'
     CODEC_CPU=x86-64
 fi
-PATH=${CODEC_NASM_DIR:+$CODEC_NASM_DIR:}/usr/bin:/bin:/usr/sbin:/sbin
+PATH=$(dirname "$CODEC_MESON"):$(dirname "$CODEC_NINJA"):${CODEC_NASM_DIR:+$CODEC_NASM_DIR:}/usr/bin:/bin:/usr/sbin:/sbin
 CC=/usr/bin/clang
 CXX=/usr/bin/clang++
 AR=/usr/bin/ar
@@ -92,13 +95,33 @@ export PATH CC CXX AR RANLIB NM MACOSX_DEPLOYMENT_TARGET CFLAGS CXXFLAGS LDFLAGS
     /usr/bin/make install "DESTDIR=$CODEC_OUTPUT_DIR/stage"
 )
 
+/usr/bin/tar -xf "$CODEC_ARCHIVE_DIR/dav1d-1.5.4.tar.xz" -C "$CODEC_OUTPUT_DIR"
+CODEC_FAMILY=$CODEC_ARCH
+if [ "$CODEC_ARCH" = arm64 ]; then CODEC_FAMILY=aarch64; fi
+cat > "$CODEC_OUTPUT_DIR/dav1d-cross.ini" <<CROSS
+[binaries]
+c = ['/usr/bin/clang', '-arch', '$CODEC_ARCH', '-mmacosx-version-min=26.0']
+ar = '/usr/bin/ar'
+strip = '/usr/bin/strip'
+[host_machine]
+system = 'darwin'
+cpu_family = '$CODEC_FAMILY'
+cpu = '$CODEC_FAMILY'
+endian = 'little'
+CROSS
+"$CODEC_MESON" setup "$CODEC_OUTPUT_DIR/dav1d-build" "$CODEC_OUTPUT_DIR/dav1d-1.5.4" --cross-file "$CODEC_OUTPUT_DIR/dav1d-cross.ini" --prefix=/bgdd-build --libdir=lib --buildtype=release --default-library=static -Denable_tools=false -Denable_tests=false
+"$CODEC_NINJA" -C "$CODEC_OUTPUT_DIR/dav1d-build" -j6
+DESTDIR="$CODEC_OUTPUT_DIR/stage" "$CODEC_NINJA" -C "$CODEC_OUTPUT_DIR/dav1d-build" install
+
 cat > "$CODEC_OUTPUT_DIR/pkg-config" <<'PKG_CONFIG'
 #!/bin/sh
 case "$*" in
     *--version*) echo 1.0 ;;
     *--exists*|*--atleast-version*) exit 0 ;;
+    *--modversion*dav1d*) echo 1.5.4 ;;
     *--modversion*) echo 0.165 ;;
     *--cflags*) echo '-I../stage/bgdd-build/include' ;;
+    *--libs*dav1d*) echo '-L../stage/bgdd-build/lib -ldav1d -lpthread -lm' ;;
     *--libs*) echo '-L../stage/bgdd-build/lib -lx264 -lpthread -lm' ;;
     *) exit 1 ;;
 esac
@@ -117,14 +140,15 @@ PKG_CONFIG
         --enable-encoder=libx264,libmp3lame,pcm_s24le,pcm_s16le,aac,png,wrapped_avframe,hevc_videotoolbox \
         --disable-filters \
         --enable-filter=scale,pad,format,setsar,fps,aresample,anull,null,rotate,transpose,hflip,vflip \
-        --disable-hwaccels --enable-hwaccel=av1_videotoolbox --enable-videotoolbox --disable-audiotoolbox --disable-securetransport \
-        --enable-zlib --enable-gpl --enable-libx264 --enable-libmp3lame \
+        --disable-hwaccels --enable-hwaccel=av1_videotoolbox,h264_videotoolbox,hevc_videotoolbox,vp9_videotoolbox --enable-videotoolbox --disable-audiotoolbox --disable-securetransport \
+        --enable-zlib --enable-gpl --enable-libx264 --enable-libmp3lame --enable-libdav1d \
         --pkg-config=../pkg-config \
         "--extra-cflags=-I../stage/bgdd-build/include $CFLAGS" \
         "--extra-ldflags=-L../stage/bgdd-build/lib $LDFLAGS"
     /usr/bin/make -j6
 )
 
+/bin/cp "$CODEC_OUTPUT_DIR/dav1d-1.5.4/COPYING" "$CODEC_OUTPUT_DIR/licenses/dav1d-BSD-2-Clause.txt"
 for codec in ffmpeg ffprobe; do
     /bin/cp "$CODEC_OUTPUT_DIR/ffmpeg-9.0.2/$codec" "$CODEC_OUTPUT_DIR/bin/$codec"
     /bin/chmod 755 "$CODEC_OUTPUT_DIR/bin/$codec"
@@ -136,7 +160,7 @@ done
 /bin/cp "$CODEC_OUTPUT_DIR/x264/COPYING" "$CODEC_OUTPUT_DIR/licenses/x264-GPL-2.txt"
 {
     echo "Corresponding-source build recipe: build-codecs.sh; target macOS 26.0, $CODEC_ARCH."
-    echo 'Intel portable C paths; no NASM dependency.'
+    echo 'dav1d 1.5.4, BSD-2-Clause; SIMD enabled; Intel cross-build is not native qualification.'
     echo 'FFmpeg 9.0.2: GPL-2.0-or-later; static x264 GPL and LAME LGPL components.'
     echo 'No original source patches. Logical /bgdd-build prefix is build-only.'
     echo 'All exact source archives, upstream licences and actual recipe accompany the binaries.'

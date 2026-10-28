@@ -2,24 +2,30 @@
   "formatVersion": 2,
   "architecture": "arm64",
   "minimumMacOS": "26.0",
-  "configure": "--prefix=/bgdd-build --arch=arm64 --cpu=generic --cc=/usr/bin/clang --cxx=/usr/bin/clang++ --ar=/usr/bin/ar --nm=/usr/bin/nm --ranlib=/usr/bin/ranlib --disable-autodetect --disable-shared --enable-static --disable-doc --disable-debug --disable-ffplay --disable-avdevice --disable-network --disable-encoders --enable-encoder='libx264,libmp3lame,pcm_s24le,pcm_s16le,aac,png,wrapped_avframe,hevc_videotoolbox' --disable-filters --enable-filter='scale,pad,format,setsar,fps,aresample,anull,null,rotate,transpose,hflip,vflip' --disable-hwaccels --enable-hwaccel=av1_videotoolbox --enable-videotoolbox --disable-audiotoolbox --disable-securetransport --enable-zlib --enable-gpl --enable-libx264 --enable-libmp3lame --pkg-config=../pkg-config --extra-cflags='-I../stage/bgdd-build/include -O3 -arch arm64 -mmacosx-version-min=26.0 ' --extra-ldflags='-L../stage/bgdd-build/lib -arch arm64 -mmacosx-version-min=26.0'",
+  "configure": "--prefix=/bgdd-build --arch=arm64 --cpu=generic --cc=/usr/bin/clang --cxx=/usr/bin/clang++ --ar=/usr/bin/ar --nm=/usr/bin/nm --ranlib=/usr/bin/ranlib --disable-autodetect --disable-shared --enable-static --disable-doc --disable-debug --disable-ffplay --disable-avdevice --disable-network --disable-encoders --enable-encoder='libx264,libmp3lame,pcm_s24le,pcm_s16le,aac,png,wrapped_avframe,hevc_videotoolbox' --disable-filters --enable-filter='scale,pad,format,setsar,fps,aresample,anull,null,rotate,transpose,hflip,vflip' --disable-hwaccels --enable-hwaccel='av1_videotoolbox,h264_videotoolbox,hevc_videotoolbox,vp9_videotoolbox' --enable-videotoolbox --disable-audiotoolbox --disable-securetransport --enable-zlib --enable-gpl --enable-libx264 --enable-libmp3lame --enable-libdav1d --pkg-config=../pkg-config --extra-cflags='-I../stage/bgdd-build/include -O3 -arch arm64 -mmacosx-version-min=26.0 ' --extra-ldflags='-L../stage/bgdd-build/lib -arch arm64 -mmacosx-version-min=26.0'",
   "binaries": {
-    "ffmpeg": "5b537bb9daf031e30966fcde5641bb5891dd2122d6878fa11273f955441e64c3",
-    "ffprobe": "86a1a4fd4f8a9e77f2e3cce11dd8708948e777ab53bac41628193c43d7b3442f"
+    "ffmpeg": "55efa9e066813d0534102b5c654c920e6845ce8effa523bdd2353fc5195f4f9f",
+    "ffprobe": "48f09ae27b99ff7d705fb927c384c91dc7d9ab7d18587f4aa073bfbc6e33714b"
   },
   "sourceArchives": {
     "ffmpeg-9.0.2.tar.xz": "8c3850283eb25fa026482078a04051e0be17347b09ef81a0849bec15a96e002e",
     "x264-0480cb05.tar.gz": "be32b1e787ca8e905c10b956d2a5be0b99847deea2ff53be0cd93e488cd90323",
-    "lame-3.100.tar.gz": "ddfe36cab873794038ae2c1210557ad34857a4b6bdc515785d1da9e175b1da1e"
+    "lame-3.100.tar.gz": "ddfe36cab873794038ae2c1210557ad34857a4b6bdc515785d1da9e175b1da1e",
+    "dav1d-1.5.4.tar.xz": "686616b7c69eb88d44459391ab25cac13b6647a3b288835c5784e71c1514a5c5"
   },
   "recipe": {
     "file": "codec-sources/build-codecs.sh",
-    "sha256": "bc80c8dd947d5e67a6fb28751e3f80d63e6a772a24c83922160149d2015ed6b2",
+    "sha256": "0d2abb84121deb80306651f9a2b1536862802d20df4a367851403571c50b4b04",
     "executed": true
   },
-  "compiler": "Apple clang version 21.0.0 (clang-2100.3.34.2)\nTarget: arm64-apple-darwin27.2.0\nThread model: posix\nInstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin",
+  "compiler": "Apple clang version 21.0.0 (clang-2100.3.34.2)",
   "sdk": "27.0",
   "buildArchitecture": "arm64",
   "crossCompiled": false,
-  "nativeExecution": true
+  "nativeExecution": true,
+  "buildTools": {
+    "meson": "1.11.2",
+    "ninja": "1.13.2",
+    "nasm": null
+  }
 }

@@ -1,6 +1,6 @@
-# Sources correspondantes des codecs BGDD 0.5.0
+# Sources correspondantes des codecs BGDD 0.6.4
 
-Ce kit concerne uniquement **FFmpeg / ffprobe 9.0.2, x264 et LAME 3.100**, ainsi que leurs recettes indépendantes de construction et d’installation. Il ne contient aucun code Swift, TypeScript, host, gardien, sélecteur ou installateur propriétaire BGDD. Le nom BGDD identifie le build consommateur et ne change pas les droits des sources tierces.
+Ce kit concerne uniquement **FFmpeg / ffprobe 9.0.2, x264, LAME 3.100 et dav1d 1.5.4**, ainsi que leurs recettes indépendantes de construction et d’installation. Il ne contient aucun code Swift, TypeScript, host, gardien, sélecteur ou installateur propriétaire BGDD. Le nom BGDD identifie le build consommateur et ne change pas les droits des sources tierces.
 
 Le programme codec distribué est GPL-2.0-or-later. Les archives conservent leurs licences d’origine : FFmpeg GPL/LGPL selon les fichiers, x264 GPL-2.0-or-later, LAME LGPL-2.0-or-later. Les deux recettes indépendantes portent leur propre en-tête GPL-2.0-or-later. Le copyright propriétaire de l’application BGDD ne leur est pas appliqué.
 
@@ -10,9 +10,10 @@ Le programme codec distribué est GPL-2.0-or-later. Les archives conservent leur
 |---|---|
 | ffmpeg-9.0.2.tar.xz | `8c3850283eb25fa026482078a04051e0be17347b09ef81a0849bec15a96e002e` |
 | x264-0480cb05.tar.gz | `be32b1e787ca8e905c10b956d2a5be0b99847deea2ff53be0cd93e488cd90323` |
+| dav1d-1.5.4.tar.xz | `686616b7c69eb88d44459391ab25cac13b6647a3b288835c5784e71c1514a5c5` |
 | lame-3.100.tar.gz | `ddfe36cab873794038ae2c1210557ad34857a4b6bdc515785d1da9e175b1da1e` |
 
-Origines : [FFmpeg 9.0.2](https://ffmpeg.org/releases/ffmpeg-9.0.2.tar.xz), [x264 VideoLAN](https://code.videolan.org/videolan/x264/-/tree/0480cb05fa188d37ae87e8f4fd8f1aea3711f7ee), [LAME 3.100](https://downloads.sourceforge.net/project/lame/lame/3.100/lame-3.100.tar.gz). Les archives sont fournies entières, avec tous les copyrights, fichiers de configuration et recettes upstream. Aucune modification de leur code source n’a été appliquée au build de référence.
+Origines : [dav1d 1.5.4](https://download.videolan.org/pub/videolan/dav1d/1.5.4/dav1d-1.5.4.tar.xz), [FFmpeg 9.0.2](https://ffmpeg.org/releases/ffmpeg-9.0.2.tar.xz), [x264 VideoLAN](https://code.videolan.org/videolan/x264/-/tree/0480cb05fa188d37ae87e8f4fd8f1aea3711f7ee), [LAME 3.100](https://downloads.sourceforge.net/project/lame/lame/3.100/lame-3.100.tar.gz). Les archives sont fournies entières, avec tous les copyrights, fichiers de configuration et recettes upstream. Aucune modification de leur code source n’a été appliquée au build de référence.
 
 ## Reconstruire
 
@@ -24,9 +25,9 @@ Le **premier build local de référence, conservé comme historique**, a utilis�
 /bin/sh ./build-codecs.sh . ./build-output
 ```
 
-La recette réellement exécutée est `build-codecs.sh`. Elle vérifie les trois archives, construit x264/LAME statiques, construit FFmpeg/ffprobe avec les options enregistrées, installe les bibliothèques dans un staging et les exécutables dans `build-output/bin`. Elle génère ses SHA et la notice de configuration. Aucun module privé BGDD n’est requis pour la construction. Le préfixe `/bgdd-build` est logique et utilisé uniquement dans le staging, jamais comme dépendance de runtime.
+La recette réellement exécutée est `build-codecs.sh`. Elle vérifie les quatre archives, construit x264/LAME/dav1d statiques, construit FFmpeg/ffprobe avec les options enregistrées, installe les bibliothèques dans un staging et les exécutables dans `build-output/bin`. Elle génère ses SHA et la notice de configuration. Aucun module privé BGDD n’est requis pour la construction. Le préfixe `/bgdd-build` est logique et utilisé uniquement dans le staging, jamais comme dépendance de runtime.
 
-Le build active les encodeurs H.264, HEVC VideoToolbox, MP3, PCM, AAC et PNG, les décodeurs utiles dont VP9 et AV1 VideoToolbox. Le réseau et la détection automatique de bibliothèques externes sont désactivés. HEVC et AV1 matériels restent soumis aux capacités réelles du Mac. Aucun framework Apple n’est redistribué.
+Le build active les encodeurs H.264, HEVC VideoToolbox, MP3, PCM, AAC et PNG, les décodeurs utiles dont VP9, AV1 VideoToolbox et AV1 logiciel dav1d. Le réseau et la détection automatique de bibliothèques externes sont désactivés. HEVC et AV1 matériels restent soumis aux capacités réelles du Mac. Aucun framework Apple n’est redistribué.
 
 `build-record.json` et `FFmpeg-build.txt` décrivent la construction courante pour l’architecture du kit. `VERSIONS-<architecture>.json`, le manifeste du paquet et `SHA256SUMS` lient les sources, la recette et les exécutables après signature. Un autre compilateur ou une nouvelle signature peut produire des empreintes différentes.
 
@@ -36,7 +37,7 @@ La recette fonctionne nativement pour l’architecture du Mac. Pour compiler Int
 /bin/sh ./build-codecs.sh . ./build-output-intel x86_64
 ```
 
-La recette Intel utilise les chemins C portables sans dépendance NASM. Une compilation croisée ne prouve pas une exécution native Intel.
+La recette active les optimisations assembleur. Elle requiert Meson 1.11.2 et Ninja 1.13.2 dans PATH ; Intel requiert aussi NASM 3.01. Dav1d conserve sa licence BSD-2-Clause fournie dans ce kit. Aucun de ces outils de compilation n’est nécessaire à l’utilisateur de BGDD. Une compilation croisée ne prouve pas une exécution native Intel.
 
 Pour modifier LAME, x264 ou FFmpeg, décompacter la source concernée, effectuer les changements, recréer son archive et adapter dans votre copie de `build-codecs.sh` l’empreinte de l’archive modifiée. Les contrôles de SHA du build de référence sont éditables dans cette recette sous GPL ; ils ne retirent pas le droit de modifier les sources. La recette reconstruira et rééditera les liens statiques avec la bibliothèque modifiée.
 

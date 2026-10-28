@@ -38,3 +38,7 @@ Le kit codec fournit une recette indépendante de construction, puis `install-co
 Aucun copyright des fontes ou des moteurs n’est transféré à Angry Thread. Les fontes demeurent sous OFL ; les compositions graphiques réalisées avec leurs glyphes n’imposent pas cette licence au code original de l’application.
 
 Les archives, licences et la recette de construction héritées de rc2 sont inchangées. La recette indépendante de remplacement et son guide sont adaptés à engine-app-v2 : nouvelle enveloppe avec quarantaine ordinaire, sauvegarde de l’application initiale et maintien des droits de remplacement. L’assemblage local du moteur après téléchargement direct n’ajoute aucun runtime amont au DMG ou aux assets hébergés par BGDD.
+
+## dav1d 1.5.4
+
+Décodeur AV1 de VideoLAN et des contributeurs dav1d, sous BSD-2-Clause. La licence intégrale, les sources exactes et la recette de construction sont dans les kits de sources tierces de BGDD 0.6.4. Source : https://download.videolan.org/pub/videolan/dav1d/1.5.4/dav1d-1.5.4.tar.xz

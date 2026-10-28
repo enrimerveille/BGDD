@@ -1,5 +1,5 @@
 Corresponding-source build recipe: build-codecs.sh; target macOS 26.0, arm64.
-Intel portable C paths; no NASM dependency.
+dav1d 1.5.4, BSD-2-Clause; SIMD enabled; Intel cross-build is not native qualification.
 FFmpeg 9.0.2: GPL-2.0-or-later; static x264 GPL and LAME LGPL components.
 No original source patches. Logical /bgdd-build prefix is build-only.
 All exact source archives, upstream licences and actual recipe accompany the binaries.
@@ -27,7 +27,7 @@ Apple clang version 21.0.0 (clang-2100.3.34.2)
     --disable-filters
     --enable-filter='scale,pad,format,setsar,fps,aresample,anull,null,rotate,transpose,hflip,vflip'
     --disable-hwaccels
-    --enable-hwaccel=av1_videotoolbox
+    --enable-hwaccel='av1_videotoolbox,h264_videotoolbox,hevc_videotoolbox,vp9_videotoolbox'
     --enable-videotoolbox
     --disable-audiotoolbox
     --disable-securetransport
@@ -35,6 +35,7 @@ Apple clang version 21.0.0 (clang-2100.3.34.2)
     --enable-gpl
     --enable-libx264
     --enable-libmp3lame
+    --enable-libdav1d
     --pkg-config=../pkg-config --extra-cflags='-I../stage/bgdd-build/include -O3 -arch arm64 -mmacosx-version-min=26.0 '
     --extra-ldflags='-L../stage/bgdd-build/lib -arch arm64 -mmacosx-version-min=26.0'
 

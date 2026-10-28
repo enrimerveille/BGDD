@@ -1,9 +1,9 @@
 {
   "formatVersion": 1,
-  "releaseVersion": "0.5.0-rc.2",
+  "releaseVersion": "0.6.4",
   "legalStatusFile": "licenses-status-050.json",
-  "extensionVersion": "0.5.1",
-  "nativeVersion": "0.4.1",
+  "extensionVersion": "0.6.4",
+  "nativeVersion": "0.6.4",
   "protocolVersion": 2,
   "extensionID": "ipjganpibkpndaibhejdcnbdclekogbl",
   "architecture": "arm64",
@@ -16,11 +16,11 @@
   "dependencyStrategy": "official-pinned-download",
   "trustMode": "https-sha256-user-gatekeeper",
   "componentVersions": {
-    "host": "0.4.1",
-    "guardian": "0.3.5",
-    "engine": "0.3.6",
-    "folder": "0.3.4",
-    "installer": "0.6.0"
+    "host": "0.6.4",
+    "guardian": "0.6.4",
+    "engine": "0.6.4",
+    "folder": "0.6.4",
+    "installer": "0.6.4"
   },
   "legalMaterialsVersion": "rc4",
   "installerAppName": "Installer BGDD.app",
@@ -28,32 +28,39 @@
   "sourceInputs": {
     "ffmpeg-9.0.2.tar.xz": "8c3850283eb25fa026482078a04051e0be17347b09ef81a0849bec15a96e002e",
     "x264-0480cb05.tar.gz": "be32b1e787ca8e905c10b956d2a5be0b99847deea2ff53be0cd93e488cd90323",
-    "lame-3.100.tar.gz": "ddfe36cab873794038ae2c1210557ad34857a4b6bdc515785d1da9e175b1da1e"
+    "lame-3.100.tar.gz": "ddfe36cab873794038ae2c1210557ad34857a4b6bdc515785d1da9e175b1da1e",
+    "dav1d-1.5.4.tar.xz": "686616b7c69eb88d44459391ab25cac13b6647a3b288835c5784e71c1514a5c5"
   },
   "media": {
     "formatVersion": 2,
     "architecture": "arm64",
     "minimumMacOS": "26.0",
-    "configure": "--prefix=/bgdd-build --arch=arm64 --cpu=generic --cc=/usr/bin/clang --cxx=/usr/bin/clang++ --ar=/usr/bin/ar --nm=/usr/bin/nm --ranlib=/usr/bin/ranlib --disable-autodetect --disable-shared --enable-static --disable-doc --disable-debug --disable-ffplay --disable-avdevice --disable-network --disable-encoders --enable-encoder='libx264,libmp3lame,pcm_s24le,pcm_s16le,aac,png,wrapped_avframe,hevc_videotoolbox' --disable-filters --enable-filter='scale,pad,format,setsar,fps,aresample,anull,null,rotate,transpose,hflip,vflip' --disable-hwaccels --enable-hwaccel=av1_videotoolbox --enable-videotoolbox --disable-audiotoolbox --disable-securetransport --enable-zlib --enable-gpl --enable-libx264 --enable-libmp3lame --pkg-config=../pkg-config --extra-cflags='-I../stage/bgdd-build/include -O3 -arch arm64 -mmacosx-version-min=26.0 ' --extra-ldflags='-L../stage/bgdd-build/lib -arch arm64 -mmacosx-version-min=26.0'",
+    "configure": "--prefix=/bgdd-build --arch=arm64 --cpu=generic --cc=/usr/bin/clang --cxx=/usr/bin/clang++ --ar=/usr/bin/ar --nm=/usr/bin/nm --ranlib=/usr/bin/ranlib --disable-autodetect --disable-shared --enable-static --disable-doc --disable-debug --disable-ffplay --disable-avdevice --disable-network --disable-encoders --enable-encoder='libx264,libmp3lame,pcm_s24le,pcm_s16le,aac,png,wrapped_avframe,hevc_videotoolbox' --disable-filters --enable-filter='scale,pad,format,setsar,fps,aresample,anull,null,rotate,transpose,hflip,vflip' --disable-hwaccels --enable-hwaccel='av1_videotoolbox,h264_videotoolbox,hevc_videotoolbox,vp9_videotoolbox' --enable-videotoolbox --disable-audiotoolbox --disable-securetransport --enable-zlib --enable-gpl --enable-libx264 --enable-libmp3lame --enable-libdav1d --pkg-config=../pkg-config --extra-cflags='-I../stage/bgdd-build/include -O3 -arch arm64 -mmacosx-version-min=26.0 ' --extra-ldflags='-L../stage/bgdd-build/lib -arch arm64 -mmacosx-version-min=26.0'",
     "binaries": {
-      "ffmpeg": "5b537bb9daf031e30966fcde5641bb5891dd2122d6878fa11273f955441e64c3",
-      "ffprobe": "86a1a4fd4f8a9e77f2e3cce11dd8708948e777ab53bac41628193c43d7b3442f"
+      "ffmpeg": "55efa9e066813d0534102b5c654c920e6845ce8effa523bdd2353fc5195f4f9f",
+      "ffprobe": "48f09ae27b99ff7d705fb927c384c91dc7d9ab7d18587f4aa073bfbc6e33714b"
     },
     "sourceArchives": {
       "ffmpeg-9.0.2.tar.xz": "8c3850283eb25fa026482078a04051e0be17347b09ef81a0849bec15a96e002e",
       "x264-0480cb05.tar.gz": "be32b1e787ca8e905c10b956d2a5be0b99847deea2ff53be0cd93e488cd90323",
-      "lame-3.100.tar.gz": "ddfe36cab873794038ae2c1210557ad34857a4b6bdc515785d1da9e175b1da1e"
+      "lame-3.100.tar.gz": "ddfe36cab873794038ae2c1210557ad34857a4b6bdc515785d1da9e175b1da1e",
+      "dav1d-1.5.4.tar.xz": "686616b7c69eb88d44459391ab25cac13b6647a3b288835c5784e71c1514a5c5"
     },
     "recipe": {
       "file": "codec-sources/build-codecs.sh",
-      "sha256": "bc80c8dd947d5e67a6fb28751e3f80d63e6a772a24c83922160149d2015ed6b2",
+      "sha256": "0d2abb84121deb80306651f9a2b1536862802d20df4a367851403571c50b4b04",
       "executed": true
     },
-    "compiler": "Apple clang version 21.0.0 (clang-2100.3.34.2)\nTarget: arm64-apple-darwin27.2.0\nThread model: posix\nInstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin",
+    "compiler": "Apple clang version 21.0.0 (clang-2100.3.34.2)",
     "sdk": "27.0",
     "buildArchitecture": "arm64",
     "crossCompiled": false,
-    "nativeExecution": true
+    "nativeExecution": true,
+    "buildTools": {
+      "meson": "1.11.2",
+      "ninja": "1.13.2",
+      "nasm": null
+    }
   },
   "downloadedDependencies": {
     "formatVersion": 1,
@@ -222,23 +229,25 @@
     "nativeCodecExecution": true
   },
   "documentation": {
-    ".DS_Store": "88189e348efb0afd561c72c870b0d8ce05a3245cc3ef90e75df122d1db260c89"
+    ".fseventsd/no_log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".DS_Store": "cb6e3fb838e9b7ad035904f5cd323e2f0990628c4f395ddb165a23d8348f09a0",
+    ".background/DMG-background.png": "8d9928555b51a4ee03b3262ea67954d78b5fa29fef4270e18b3edf377cbd2a47"
   },
   "appFiles": {
-    "Contents/_CodeSignature/CodeResources": "2f8fe3f6062fa31ebdea3a6e8b77f3fbec65e9afd3aaa6b0fcde24e700d35be9",
-    "Contents/Info.plist": "7e6d82c61dbe29f7e1f71d2486b01de9d0f4423989f76700938b40a8e8eef0e4",
-    "Contents/MacOS/bgdd-installer": "d9188f5cfb9213d967fe88d48006370e0020acf7fa5bcc842f4dfa538afcd1a3",
-    "Contents/Resources/config.json": "e25ff51e1a495815f449dc148002537aa491b1bd832db1d8bd86d96da1b9ee73",
+    "Contents/_CodeSignature/CodeResources": "13fddc8c3b509158a8d487c6f357658602484dadcc27a5a92b6928c088db31c0",
+    "Contents/Info.plist": "df64268c3813b8a8b4f752e58e9646c4b023badbc45cd4c27b9df091788bc0b2",
+    "Contents/MacOS/bgdd-installer": "b290260d84a29f1d7ec34bdfd81729321d0202ffcc03bae24c5f0c160db9277c",
+    "Contents/Resources/config.json": "31e03f30813fe5932d3ada5752a585f1fe281504d40a29af753001e7503eaab0",
     "Contents/Resources/dependency-downloads.json": "1a3bf32571991c8f897767f93e59b7df7a6b153145244f9988f9d2d47f55ae3a",
     "Contents/Resources/help/Autorisation macOS.md": "874af295c474fec68d69b6c6fc475f462bf09fc2d5a9ad1375bb7e527f20aaf0",
-    "Contents/Resources/help/Bienvenue.md": "b1a11e316d24f5faf13f4ae8c794d67c47d672a5882ffdd663d9c4f629c078b9",
+    "Contents/Resources/help/Bienvenue.md": "c5c0a04327001b1229d49cf1b41413a32f789a9e3e31ea9b4c8706c3daa03f26",
     "Contents/Resources/help/Depannage.md": "803eee12c48cfb5a91abfa882239763069036cdc7a3a0422a26520653af6febb",
     "Contents/Resources/help/Frontieres de licence.md": "43e482c96e7d87534491f192e7f81e5b8adee73fd9b86ca0e34392564ae447e6",
-    "Contents/Resources/help/inventory.json": "b86b98e50d7131cd86adb4e05b721506105d276e02f8a4cddf35a3b2638ffe21",
-    "Contents/Resources/help/Notes de version.md": "01f1daa449ddb423609962aac1af6af0ae812df61bf17727b7cf2005152a5f5a",
-    "Contents/Resources/Installer.icns": "aef3c39c0a3a5352b105b6e4434e06bc8a912f0da191e6a47a0d9e42529b35d2",
+    "Contents/Resources/help/inventory.json": "e188501dbbb0f8a4e6922809cb1075098a7c56e537a181b05bac58158aa9d659",
+    "Contents/Resources/help/Notes de version.md": "ee0f24e06916e451d0fe35c9e50c8a6ca7bf93dde13d8558cacb3c6500fd10fa",
+    "Contents/Resources/Installer.icns": "b4351c5f1da163ca78686fd7e57cf435e4d3ec010a6247e6c71b050c3fedec47",
     "Contents/Resources/OFL-SpaceGrotesk.txt": "c6dec685825f73b18c20926fddc65e8315642e12986f15db0699170940a09efc",
-    "Contents/Resources/payload/distribution-manifest.json": "8f2bd9c91aed5067d52e15f9af8ac0d0ed13ad6c79e45c1a6e167692547f5f6d",
+    "Contents/Resources/payload/distribution-manifest.json": "4322198929b11b0f46fffcbefb4bcd9243a3d23ab6ba28b3b5037e85d222af28",
     "Contents/Resources/payload/extension/brand/symbol-dark.svg": "b60c5dff3197b9e28d6abd6129620df9d1c6c4c67bcab80c8e352a644ec26e66",
     "Contents/Resources/payload/extension/brand/symbol-light.svg": "efd4bdf7b4315cd60f2ff2c704ff683bb0ad691f937b93a05099652852ba1f99",
     "Contents/Resources/payload/extension/brand/symbol.svg": "e80c5f3664b2ef6ebc62960da37b318156d8851ec5ab8d3c410e481589376e46",
@@ -251,33 +260,40 @@
     "Contents/Resources/payload/extension/icon16.png": "dfbc0f22c12b152080b0bfa09baff795e355a62fc35f4eac07a3d6d700576414",
     "Contents/Resources/payload/extension/icon32.png": "34bfd30c2ec7c8fa377fcbfe24a2e80033767acf6a82de1d9413c11593eceb74",
     "Contents/Resources/payload/extension/icon48.png": "c00779316c49e37c046f8cc2c12a10c41c1e9468df60b2f9cb9b759fcb05a11f",
-    "Contents/Resources/payload/extension/manifest.json": "b71851b3e3118a77eeb0a076bd734fccddfb4be1ddfaf705ed6ca614e9796123",
+    "Contents/Resources/payload/extension/manifest.json": "9fd674dad66150e2de06ac169e550ad6b915856dd3e7a6cc1631491d85fb7e33",
     "Contents/Resources/payload/extension/popup.css": "e01657364e3ef174cfde53898cd40f00d987195fcff1080945906e5ca966cda7",
     "Contents/Resources/payload/extension/popup.html": "40cfba6436dcf52d9a60519dcd7a46e8e7621d72f1b838883d3db15f626f2dde",
-    "Contents/Resources/payload/extension/popup.js": "f782100a330815f84a11199fa90be57fe06cae81b33ab4173f8dab0898144196",
-    "Contents/Resources/payload/extension/worker.js": "e5ae509b013565ff5953c388e31a936c3dfbe709739b4321c16fb7a25c21a7f4",
+    "Contents/Resources/payload/extension/popup.js": "a967e28f5f087d83951c4aa010a8d230db1a97168566d226f85535d8dbec3a58",
+    "Contents/Resources/payload/extension/worker.js": "e9466234a800bd5380bf04df17ec77a1dc1dafdd26656f639d025033dad2b1df",
     "Contents/Resources/payload/native/BGDD Folder.app/Contents/_CodeSignature/CodeResources": "6686de10a28a2fe11b36cbb86dcbacc827cfc4ea116b4dabf1845e5aee629e9b",
-    "Contents/Resources/payload/native/BGDD Folder.app/Contents/Info.plist": "c2db4a8d46e40a8c7206fc3c39e01b13cbef1decc195f54b008dea3f46a3075f",
-    "Contents/Resources/payload/native/BGDD Folder.app/Contents/MacOS/bgdd-folder": "12d42b94ae23b08c5aeb9987acec8d3514002c5239fcd1840320a86974397fbd",
-    "Contents/Resources/payload/native/bgdd-host": "36fe8caca4dfd376773827e6e6e982d88f75795f14f00230211f567328c6c7c0",
+    "Contents/Resources/payload/native/BGDD Folder.app/Contents/Info.plist": "542cff2015ad1c2475e8ff5badac2d23eae3e8ec819dbb7b58574f537e66a82f",
+    "Contents/Resources/payload/native/BGDD Folder.app/Contents/MacOS/bgdd-folder": "1be5e1fa6e7c69228745b6f1746e6e1454e068cc36a3e5e53f014608a4752104",
+    "Contents/Resources/payload/native/bgdd-host": "eaf1a9540f545e7e21f7702bc1bbffccbd46ab40537ff0b7e2ee02ec9f8427b8",
     "Contents/Resources/payload/native/bgdd-runner": "90f661e07b733861cab606751d463c3ebffa07b50f6105699a6e7c96e337c12b",
-    "Contents/Resources/payload/native/bin/ffmpeg": "5b537bb9daf031e30966fcde5641bb5891dd2122d6878fa11273f955441e64c3",
-    "Contents/Resources/payload/native/bin/ffprobe": "86a1a4fd4f8a9e77f2e3cce11dd8708948e777ab53bac41628193c43d7b3442f",
-    "Contents/Resources/payload/native/dependencies.json": "329fa8c548fa3529d9e6e9c034f22298a16c3d148609131ad2999f526d464ab0",
-    "Contents/Resources/payload/native/engine-template/bgdd-engine": "38c441356eca399fb96f3117fa5b214dafa6783c2793ed7ebd9a3a1faae8a609",
-    "Contents/Resources/payload/native/engine-template/engine-Info.plist": "ddb7ca850c8d4076b810e86c2e5bd8a1d5925e04385029e1bca4149e9e3e5fc5",
-    "Contents/Resources/payload/native/integrity.json": "d385ef7ce15e114cff158183770a20f25afd94c7985eb51bef0baf4d2590ee84",
+    "Contents/Resources/payload/native/bin/ffmpeg": "55efa9e066813d0534102b5c654c920e6845ce8effa523bdd2353fc5195f4f9f",
+    "Contents/Resources/payload/native/bin/ffprobe": "48f09ae27b99ff7d705fb927c384c91dc7d9ab7d18587f4aa073bfbc6e33714b",
+    "Contents/Resources/payload/native/dependencies.json": "5124ca2070684026dfe35a2d6743666d0842695881c69bacba594270f554f729",
+    "Contents/Resources/payload/native/engine-template/bgdd-engine": "f27684c49228efabe5555036ea6a34b7592ea29b5a55c8d0974bd8ae2dd680ed",
+    "Contents/Resources/payload/native/engine-template/engine-Info.plist": "04b69ca66ffc5ed81cba6a58e14aa9122abad9b9af1b26abdc5c102cee9de67c",
+    "Contents/Resources/payload/native/engine-template/Engine.icns": "8cbcec64c39ece89a402b85b5ff37fe1a10893cf678e7007aac9400376aae4bc",
+    "Contents/Resources/payload/native/engine-template/OFL-SpaceGrotesk.txt": "c6dec685825f73b18c20926fddc65e8315642e12986f15db0699170940a09efc",
+    "Contents/Resources/payload/native/engine-template/SpaceGrotesk.ttf": "acad6de1fc93436f5c0f1f4137751ef04f1aea3063e7036535970ffcfbd79f72",
+    "Contents/Resources/payload/native/integrity.json": "190f0bfd45e528a0b530fc24436a777139c008693a14f1455bdc4a54e5f97b1e",
     "Contents/Resources/payload/native/licenses/BGDD-Proprietary-Freeware.txt": "07c3ef6c9b8338bf1366055bf0fe6cf834661c1f9d020fd31f80160361d0f42d",
-    "Contents/Resources/payload/native/licenses/codec-build/build-codecs.sh": "bc80c8dd947d5e67a6fb28751e3f80d63e6a772a24c83922160149d2015ed6b2",
-    "Contents/Resources/payload/native/licenses/codec-build/build-record.json": "cd20dea451716c7bb635b0ea9cfd1c87d6f07a4d498e0df05acf97fab99a3798",
-    "Contents/Resources/payload/native/licenses/codec-build/FFmpeg-build.txt": "b02380c9cc6ef093e9c62ed39088af0e62791a9585c11e5ebfa59fbe368dabb9",
+    "Contents/Resources/payload/native/licenses/codec-build/build-codecs.sh": "0d2abb84121deb80306651f9a2b1536862802d20df4a367851403571c50b4b04",
+    "Contents/Resources/payload/native/licenses/codec-build/build-record.json": "40fe4c42a326390e3092d348ab94491a93e50d2c77785b54d000ee984cb76548",
+    "Contents/Resources/payload/native/licenses/codec-build/dav1d-BSD-2-Clause.txt": "dd92c3c2247c5651606fc23a5e2d6a1ebc5ace9a3e49cbde0e12f05ad1cb1ee5",
+    "Contents/Resources/payload/native/licenses/codec-build/FFmpeg-build.txt": "a68d453ac860b1788263b8ee22b68caba775877dcc01173189bc99efb574044d",
     "Contents/Resources/payload/native/licenses/codec-build/FFmpeg-GPL-2.txt": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
     "Contents/Resources/payload/native/licenses/codec-build/FFmpeg-LGPL-2.1.txt": "246041b6ecf9bc32d718a62c57877c78b5eb397b6467e74ed7ae2626ab189c30",
     "Contents/Resources/payload/native/licenses/codec-build/LAME-LGPL-2.txt": "bfe4a52dc4645385f356a8e83cc54216a293e3b6f1cb4f79f5fc0277abf937fd",
+    "Contents/Resources/payload/native/licenses/codec-build/README.md": "f0d0c43873a5b9082681996e91a3ff7bcc8420b7183b88c0ce41f54be9c1346e",
     "Contents/Resources/payload/native/licenses/codec-build/x264-GPL-2.txt": "32b1062f7da84967e7019d01ab805935caa7ab7321a7ced0e30ebe75e5df1670",
-    "Contents/Resources/payload/native/licenses/codec-sources/build-codecs.sh": "bc80c8dd947d5e67a6fb28751e3f80d63e6a772a24c83922160149d2015ed6b2",
-    "Contents/Resources/payload/native/licenses/codec-sources/build-record.json": "cd20dea451716c7bb635b0ea9cfd1c87d6f07a4d498e0df05acf97fab99a3798",
+    "Contents/Resources/payload/native/licenses/codec-sources/build-codecs.sh": "0d2abb84121deb80306651f9a2b1536862802d20df4a367851403571c50b4b04",
+    "Contents/Resources/payload/native/licenses/codec-sources/build-record.json": "40fe4c42a326390e3092d348ab94491a93e50d2c77785b54d000ee984cb76548",
     "Contents/Resources/payload/native/licenses/codec-sources/CODEC-LICENSES.txt": "a061f34eab1663a79781548389ce8113ae14716dfecc54ef44226524f2ca72ca",
+    "Contents/Resources/payload/native/licenses/codec-sources/dav1d-1.5.4.tar.xz": "686616b7c69eb88d44459391ab25cac13b6647a3b288835c5784e71c1514a5c5",
+    "Contents/Resources/payload/native/licenses/codec-sources/dav1d-BSD-2-Clause.txt": "dd92c3c2247c5651606fc23a5e2d6a1ebc5ace9a3e49cbde0e12f05ad1cb1ee5",
     "Contents/Resources/payload/native/licenses/codec-sources/ffmpeg-9.0.2.tar.xz": "8c3850283eb25fa026482078a04051e0be17347b09ef81a0849bec15a96e002e",
     "Contents/Resources/payload/native/licenses/codec-sources/FFmpeg-build.txt": "b02380c9cc6ef093e9c62ed39088af0e62791a9585c11e5ebfa59fbe368dabb9",
     "Contents/Resources/payload/native/licenses/codec-sources/FFmpeg-GPL-2.txt": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
@@ -285,7 +301,7 @@
     "Contents/Resources/payload/native/licenses/codec-sources/install-codecs.pl": "7765531b747c38eb106c7a3ef3d014a3032f5f423614e427148aced18d83b89e",
     "Contents/Resources/payload/native/licenses/codec-sources/lame-3.100.tar.gz": "ddfe36cab873794038ae2c1210557ad34857a4b6bdc515785d1da9e175b1da1e",
     "Contents/Resources/payload/native/licenses/codec-sources/LAME-LGPL-2.txt": "bfe4a52dc4645385f356a8e83cc54216a293e3b6f1cb4f79f5fc0277abf937fd",
-    "Contents/Resources/payload/native/licenses/codec-sources/README.md": "aa7178fdf8bc3c3e28898a4676c775a7044cc594fb068c5560d80b90ea1f457c",
+    "Contents/Resources/payload/native/licenses/codec-sources/README.md": "f0d0c43873a5b9082681996e91a3ff7bcc8420b7183b88c0ce41f54be9c1346e",
     "Contents/Resources/payload/native/licenses/codec-sources/x264-0480cb05.tar.gz": "be32b1e787ca8e905c10b956d2a5be0b99847deea2ff53be0cd93e488cd90323",
     "Contents/Resources/payload/native/licenses/codec-sources/x264-GPL-2.txt": "32b1062f7da84967e7019d01ab805935caa7ab7321a7ced0e30ebe75e5df1670",
     "Contents/Resources/payload/native/licenses/CONDITIONS.md": "afac04e7ea9675a404ab338c5f8a3ae9e9ceb9c5c6b39c2927fb2b291c012909",
@@ -303,34 +319,32 @@
     "Contents/Resources/SpaceGrotesk.ttf": "acad6de1fc93436f5c0f1f4137751ef04f1aea3063e7036535970ffcfbd79f72"
   },
   "uninstallerFiles": {
-    "Contents/_CodeSignature/CodeResources": "5e0874da294364c2fd2d1e29f0f594a783d71d04a018f3f658d256c1f4b4b893",
-    "Contents/Info.plist": "c6da66d7861ecaf4996a167ec65cd6d0b502a18756161148f9c8b0e631f32da9",
-    "Contents/MacOS/bgdd-installer": "3b158b7b77d6a75b0c307d96720608c3c64c597298a17a73d5cfdc6eb3ed83fa",
-    "Contents/Resources/config.json": "e25ff51e1a495815f449dc148002537aa491b1bd832db1d8bd86d96da1b9ee73",
+    "Contents/_CodeSignature/CodeResources": "9e621433be4703b0a6febca23ce5eaa001c19b262ff737357327a1ff343c6eff",
+    "Contents/Info.plist": "bb59b2b958da6ef31eb164d5fe9362a0423204758e809418b1390ed7f024d3ff",
+    "Contents/MacOS/bgdd-installer": "7c4ca665671ce74196624409cd6d383dd862c02771e885cbecc8ddc5a9ad66ef",
+    "Contents/Resources/config.json": "31e03f30813fe5932d3ada5752a585f1fe281504d40a29af753001e7503eaab0",
     "Contents/Resources/help/Autorisation macOS.md": "874af295c474fec68d69b6c6fc475f462bf09fc2d5a9ad1375bb7e527f20aaf0",
-    "Contents/Resources/help/Bienvenue.md": "b1a11e316d24f5faf13f4ae8c794d67c47d672a5882ffdd663d9c4f629c078b9",
+    "Contents/Resources/help/Bienvenue.md": "c5c0a04327001b1229d49cf1b41413a32f789a9e3e31ea9b4c8706c3daa03f26",
     "Contents/Resources/help/Depannage.md": "803eee12c48cfb5a91abfa882239763069036cdc7a3a0422a26520653af6febb",
     "Contents/Resources/help/Frontieres de licence.md": "43e482c96e7d87534491f192e7f81e5b8adee73fd9b86ca0e34392564ae447e6",
-    "Contents/Resources/help/inventory.json": "b86b98e50d7131cd86adb4e05b721506105d276e02f8a4cddf35a3b2638ffe21",
-    "Contents/Resources/help/Notes de version.md": "01f1daa449ddb423609962aac1af6af0ae812df61bf17727b7cf2005152a5f5a",
+    "Contents/Resources/help/inventory.json": "e188501dbbb0f8a4e6922809cb1075098a7c56e537a181b05bac58158aa9d659",
+    "Contents/Resources/help/Notes de version.md": "ee0f24e06916e451d0fe35c9e50c8a6ca7bf93dde13d8558cacb3c6500fd10fa",
     "Contents/Resources/Installer.icns": "aef3c39c0a3a5352b105b6e4434e06bc8a912f0da191e6a47a0d9e42529b35d2",
     "Contents/Resources/OFL-SpaceGrotesk.txt": "c6dec685825f73b18c20926fddc65e8315642e12986f15db0699170940a09efc",
-    "Contents/Resources/SpaceGrotesk.ttf": "acad6de1fc93436f5c0f1f4137751ef04f1aea3063e7036535970ffcfbd79f72"
+    "Contents/Resources/SpaceGrotesk.ttf": "acad6de1fc93436f5c0f1f4137751ef04f1aea3063e7036535970ffcfbd79f72",
+    "Contents/Resources/Uninstaller.icns": "7aff760f5e6f4b28980ddde1bcc8724b2270291c09ae147a85ca876ac812f1d0"
   },
   "originalSourceCodeIncluded": false,
   "publicationAuthorized": true,
-  "qualification": {
-    "containers": "Exact final signatures/inventories and corresponding sources verified",
-    "runtime": "Native codec execution and isolated Chrome; direct and Vimeo public network",
-    "hardwareHEVC": "Shown only after actual hardware encoder probe; unsupported sources refused",
-    "manualGatekeeper": "Required human authorization; not bypassed",
-    "patch": "Native Swift filename cases, regression suite and isolated Chrome action popup; inherited RC.1 codecs unchanged"
-  },
   "patch": {
-    "base": "0.5.0-rc.1",
-    "codecAndThirdPartyBytesUnchanged": true,
-    "nativeChange": "Direct-media fallback filename stem only; host 0.4.1",
-    "extensionChange": "Stable refresh/submit, fixed disclosure, structured format help, brand description, shorter choices",
-    "nativeIntelExecution": false
+    "base": "0.6.3",
+    "scope": "H.265 AV1 software decoding, encoding speed, strict verification and diagnostics; DMG panels and assembly wording",
+    "codecAndThirdPartyBytesUnchanged": false,
+    "nativeIntelExecution": true
+  },
+  "qualification": {
+    "scope": "H.265 AV1 decoding, conversion performance, strict output verification, truthful diagnostics, wording and Finder panels",
+    "nativeARM": "Real host and codec runs with controlled extractor; real public source benchmark and Finder light/dark; see private VERSION-064 report",
+    "nativeIntel": "Native Xeon W-3235 macOS 26.7.1: previous AV1 hardware decode fails; dav1d to hardware HEVC succeeds; full decoding completes. Codec test observed over Screen Sharing, not a full Chrome installation test"
   }
 }

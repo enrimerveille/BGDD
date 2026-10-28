@@ -1,8 +1,8 @@
-# BGDD 0.6.3 — Une installation plus soignée
+# BGDD 0.6.4 — H.265 plus rapide et plus fiable
 
-- Un nouveau DMG sombre présente clairement l’installation et la désinstallation.
-- Trois icônes dédiées distinguent l’installateur, le désinstallateur et BGDD Engine.
-- La préparation du moteur affiche l’état de chacun des quatre composants, avec une nouvelle vérification en cas de problème.
-- Après la préparation, Continuer ramène à l’assistant, qui confirme automatiquement le résultat.
+- Conversion H.265 des sources AV1 corrigée sur les Mac Intel compatibles, sans réduire leur définition.
+- Traitement H.265 accéléré sur Apple Silicon, avec contrôle intégral du fichier avant enregistrement.
+- Messages d’échec plus précis et nouvelle indication « Assemblage des pistes… ».
+- Deux encarts clairs réunissent désormais les icônes et leurs noms dans le DMG sombre.
 
 Apple Silicon : macOS 27. Intel : macOS 26. Téléchargez le DMG adapté à votre Mac, mettez à jour BGDD puis actualisez sa carte dans Chrome.
