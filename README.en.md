@@ -1,15 +1,17 @@
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github.com/enrimerveille/BGDD/raw/main/assets/wordmark-dark.svg"><img src="https://github.com/enrimerveille/BGDD/raw/main/assets/wordmark-light.svg" width="220" alt="BGDD"></picture></p>
-<p align="center"><strong>KEEP THE BYTES.</strong><br>Download videos and audio from the web at the best available quality, straight to your Mac.<br>Optimized for YouTube, Instagram, TikTok, X and Vimeo. On-demand detection of recognized players and direct HTML5 videos on other sites.<br>by Angry Thread</p>
+<p align="center"><strong>KEEP THE BYTES.</strong><br>Download videos and audio at the best available quality, straight to your Mac.<br>Optimized for YouTube, Instagram, TikTok, X and Vimeo. On-demand detection of recognized players and direct HTML5 videos on other sites.<br>by Angry Thread</p>
 <p align="center"><a href="README.md">Français</a> · English</p>
 
 BGDD is **free proprietary software** pairing a Chrome extension with a local macOS engine. Choose a publication, format and folder: downloading and processing stay on your Mac. No BGDD account, subscription, download server or telemetry.
 
+<!-- bgdd:release:start -->
 **Version 0.6.4 — Apple Silicon and Intel.** [Release notes](https://github.com/enrimerveille/BGDD/releases/tag/v0.6.4).
 
 | Your Mac | Download |
 |---|---|
 | Apple Silicon (ARM64), macOS 27 | [DMG Apple Silicon](https://github.com/enrimerveille/BGDD/releases/download/v0.6.4/BGDD-macOS-arm64.dmg) |
 | Intel (x86_64), macOS 26 | [DMG Intel](https://github.com/enrimerveille/BGDD/releases/download/v0.6.4/BGDD-macOS-x86_64.dmg) |
+<!-- bgdd:release:end -->
 
 <p align="center"><img src="https://github.com/enrimerveille/BGDD/raw/main/assets/popup-light.png" width="320" alt="BGDD light">&emsp;<img src="https://github.com/enrimerveille/BGDD/raw/main/assets/popup-dark.png" width="320" alt="BGDD dark"></p>
 
@@ -34,7 +36,7 @@ YouTube, Instagram, TikTok, X and Vimeo have dedicated integrations. On another 
 ## Install
 
 1. Open the DMG for your Mac and choose **Installer BGDD.app**.
-2. If macOS blocks opening, personally decide whether to use **System Settings → Privacy & Security → Open Anyway**, when offered. BGDD has **no Developer ID certificate or Apple notarization**. [Gatekeeper guide](https://github.com/enrimerveille/BGDD/blob/main/docs/DISTRIBUTION-GATEKEEPER.md).
+2. Read the guide for macOS security permissions before installing. [Gatekeeper guide](https://github.com/enrimerveille/BGDD/blob/main/docs/DISTRIBUTION-GATEKEEPER.md).
 3. Follow the four steps: install/update, prepare the engine, add to Chrome, then ready. In the engine window, **Continuer** returns to the assistant after the four checks. Help and licenses are included.
 4. For first-time Chrome setup, enable **Developer mode** and choose **Load unpacked** using the displayed folder. For an update, **Reload** the existing BGDD card without removing it.
 5. In BGDD, choose **Réglages → Vérifier l’installation**, close the popup, return to the assistant and choose **Vérifier la connexion**, then **Terminer**.
@@ -51,4 +53,4 @@ Open **Désinstaller BGDD.app** in the DMG, or choose **Maintenance… → Dési
 
 One active download, five queued tasks and 60 history records. Closing the popup lets transfers continue; quitting Chrome stops them without automatic resume. No resident process or periodic update checks. Existing files are never overwritten. On an exFAT drive, wait for the success message before opening a file: it may appear while its final copy is still being written.
 
-BGDD is free proprietary software. [BGDD terms](https://github.com/enrimerveille/BGDD/blob/main/LICENSE-BGDD.txt) preserve third-party license rights. [Licenses and sources](https://github.com/enrimerveille/BGDD/blob/main/docs/DISTRIBUTION-LICENSES.md). Download only content you are authorized to keep.
+BGDD is free proprietary software. [BGDD terms](https://github.com/enrimerveille/BGDD/blob/main/CONDITIONS.md) preserve third-party license rights. [Licenses and sources](https://github.com/enrimerveille/BGDD/blob/main/docs/DISTRIBUTION-LICENSES.md). Download only content you are authorized to keep.

@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 5,
+  "reviewedAt": "2026-10-27",
+  "releaseVersion": "0.5.0-rc.1",
+  "strategy": "hybrid-direct-upstream",
+  "engineLayout": "engine-app-v2",
+  "visibility": "public-prerelease",
+  "redistributionAllowed": true,
+  "actualPackageScopeVerified": true,
+  "publicPublicationAuthorized": true,
+  "scope": "Exact ARM and Intel installer containers and corresponding codec source kits. Original application proprietary; third-party rights unchanged.",
+  "exactPackageReview": {
+    "BGDD-macOS-arm64.dmg": {
+      "bytes": 35767540,
+      "sha256": "8e44369f675aee5202e1633971dd3101ea3fcb99bf15d31121ae0ef5ee482bd5"
+    },
+    "BGDD-macOS-x86_64.dmg": {
+      "bytes": 36938756,
+      "sha256": "f4fa8fdb457d3ebf981a5de32475029c738c23e5a323fbcae91338ce3be31560"
+    },
+    "BGDD-third-party-sources-arm64.zip": {
+      "bytes": 14729730,
+      "sha256": "f954aa41d12e27549f27e42c939c33b23c45dd157427213d1b5657543f547a7f"
+    },
+    "BGDD-third-party-sources-x86_64.zip": {
+      "bytes": 14729526,
+      "sha256": "723c765124e253902627f56cbb1d55d3d8a843eb83de1d22694522ed2a438d80"
+    }
+  },
+  "bundledComponents": [
+    {
+      "name": "FFmpeg/ffprobe",
+      "version": "9.0.2",
+      "license": "GPL-2.0-or-later",
+      "sourceMaterial": "../sources/",
+      "correspondingKits": "https://github.com/enrimerveille/BGDD/releases/tag/v0.5.0-rc.1"
+    },
+    {
+      "name": "x264",
+      "version": "0480cb05fa188d37ae87e8f4fd8f1aea3711f7ee",
+      "license": "GPL-2.0-or-later"
+    },
+    {
+      "name": "LAME",
+      "version": "3.100",
+      "license": "LGPL-2.0-or-later"
+    },
+    {
+      "name": "Space Grotesk",
+      "version": "2.000",
+      "license": "OFL-1.1"
+    }
+  ],
+  "upstreamRuntimeIncludedInDMG": false,
+  "originalApplicationSourceIncluded": false,
+  "independentCodecRecipe": "../sources/build-codecs.sh",
+  "codecReplacementRecipe": "../sources/install-codecs.pl",
+  "systemFrameworksRedistributed": false
+}

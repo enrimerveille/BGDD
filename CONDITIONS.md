@@ -1,8 +1,8 @@
 # BGDD — conditions de distribution et d’utilisation
 
-Version `0.4.8-rc.2` · 12 octobre 2026 · Éditeur : **Angry Thread**.
+Révision documentaire du 28 octobre 2026 · Éditeur : **Angry Thread**.
 
-**BGDD est gratuit et propriétaire.** Aucun compte BGDD, abonnement, paiement, télémétrie ni collecte de données n’est imposé. La gratuité ne place pas le code original sous licence open source.
+**BGDD est gratuit et propriétaire.** Aucun compte BGDD, abonnement ou paiement n’est imposé. BGDD ne comporte pas de télémétrie ni de collecte de données par Angry Thread. La gratuité ne place pas le code original sous licence open source.
 
 ## Code original BGDD
 
@@ -20,9 +20,9 @@ Aucun droit général de modification, de redistribution des sources originales 
 
 Les logiciels et polices tiers conservent intégralement leurs licences, copyrights, conditions, droits d’étude, de copie, de modification et de redistribution. Les limitations concernant le code original BGDD ne leur sont **jamais appliquées**. En cas de conflit, leur licence prévaut pour le composant concerné.
 
-Le paquet rc2 contient FFmpeg / ffprobe avec x264 sous GPL-2.0-or-later, LAME sous LGPL-2.0-or-later, et Space Grotesk sous SIL OFL 1.1. Les sources exactes et la recette réellement utilisée pour les codecs accompagnent les composants concernés. La recette indépendante du kit de sources codec, identifiée par son propre en-tête GPL-2.0-or-later, est un matériau de conformité des codecs ; elle ne met pas le code de l’application BGDD sous GPL.
+Les composants tiers effectivement fournis, leurs versions, leurs licences et leurs sources correspondantes sont identifiés dans les notices et inventaires de la distribution concernée. Les sources exactes et la recette réellement utilisée pour les codecs accompagnent les composants concernés. La recette indépendante du kit de sources codec, identifiée par son propre en-tête GPL-2.0-or-later, est un matériau de conformité des codecs ; elle ne met pas le code de l’application BGDD sous GPL.
 
-yt-dlp, son runtime Python et EJS, ainsi que Deno, sont téléchargés **directement depuis leurs releases officielles**, en versions fixées, à votre demande pendant l’installation. Angry Thread ne les héberge pas dans le paquet rc2 ou dans ses assets de distribution. Ils restent régis par leurs propres licences, dont GPLv3+ pour le bundle macOS yt-dlp combiné. Les notices présentes dans les archives sont conservées et leurs références de licence/source officielles sont disponibles. L’audit historique de leur redistribution dans un paquet autonome reste ouvert ; le téléchargement direct ne prétend pas le clôturer.
+yt-dlp, son runtime Python et EJS, ainsi que Deno, sont téléchargés **directement depuis leurs releases officielles**, en versions fixées, à votre demande pendant l’installation. Angry Thread ne les héberge pas dans le DMG ou dans ses assets de distribution. Ils restent régis par leurs propres licences, dont GPLv3+ pour le bundle macOS yt-dlp combiné. Les notices présentes dans les archives sont conservées et leurs références de licence/source officielles sont disponibles.
 
 Vous pouvez exercer les droits de leurs licences, y compris étudier, modifier, reconstruire, installer, rééditer les liens, effectuer le débogage de versions modifiées et redistribuer les composants tiers. Les droits de rétro-ingénierie permis pour déboguer ces modifications ne sont pas restreints par les conditions propriétaires BGDD. BGDD ne garantit pas son fonctionnement avec des composants modifiés ou remplacés ; les contrôles d’intégrité de la distribution d’origine ne suppriment aucun de ces droits.
 
@@ -34,12 +34,12 @@ Vous pouvez reproduire les instructions publiques d’installation, de maintenan
 
 ## Fonctionnement et responsabilités
 
-L’installation rc2 nécessite Internet pour obtenir les composants officiels. Le traitement des médias se fait ensuite sur votre Mac ; BGDD n’utilise pas de serveur de téléchargement distant et n’installe pas de processus résident. Une recherche de mise à jour est volontaire et ponctuelle.
+L’installation nécessite Internet pour obtenir les composants officiels. Le traitement des médias se fait ensuite sur votre Mac ; BGDD n’utilise pas de serveur de téléchargement distant et n’installe pas de processus résident. Une recherche de mise à jour est volontaire et ponctuelle.
 
-BGDD est fourni sans Developer ID et sans notarisation Apple. La signature ad hoc éventuelle assure une cohérence technique ; elle n’identifie pas Angry Thread auprès d’Apple. L’autorisation manuelle proposée par macOS appartient à l’utilisateur. BGDD ne désactive pas Gatekeeper et ne supprime pas automatiquement la quarantaine. L’absence de notarisation doit être indiquée avant téléchargement et installation.
+BGDD est fourni sans Developer ID et sans notarisation Apple. La signature ad hoc assure une cohérence technique ; elle n’identifie pas Angry Thread auprès d’Apple. L’autorisation manuelle proposée par macOS appartient à l’utilisateur. BGDD ne désactive pas Gatekeeper et ne supprime pas automatiquement la quarantaine. Le [guide d’installation](https://github.com/enrimerveille/BGDD/blob/main/docs/DISTRIBUTION-GATEKEEPER.md) décrit cette situation et la procédure proposée par macOS.
 
 Utilisez BGDD uniquement avec des contenus que vous êtes autorisé à télécharger et dans le respect des droits et conditions applicables. Les plateformes peuvent changer, limiter l’accès ou rendre une publication indisponible. Une qualité maximale ne crée pas d’information absente de la source.
 
 Le logiciel gratuit est fourni en l’état, dans les limites permises par la loi. Aucune garantie de disponibilité de toutes les plateformes ni de compatibilité avec un système non qualifié n’est annoncée. Aucune clause ne retire les droits impératifs de l’utilisateur ou les garanties expressément attachées aux composants tiers.
 
-Les [notices et sources tierces](docs/DISTRIBUTION-LICENSES.md) et la [description des frontières entre programmes](docs/DISTRIBUTION-BOUNDARIES.md) définissent précisément les périmètres concernés.
+Les [notices et sources tierces](https://github.com/enrimerveille/BGDD/blob/main/docs/DISTRIBUTION-LICENSES.md) et la [description des frontières entre programmes](https://github.com/enrimerveille/BGDD/blob/main/docs/DISTRIBUTION-BOUNDARIES.md) définissent précisément les périmètres concernés.

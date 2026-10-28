@@ -1,8 +1,8 @@
-# Sources correspondantes des codecs BGDD 0.6.4
+# Sources correspondantes des codecs BGDD
 
 Ce kit concerne uniquement **FFmpeg / ffprobe 9.0.2, x264, LAME 3.100 et dav1d 1.5.4**, ainsi que leurs recettes indépendantes de construction et d’installation. Il ne contient aucun code Swift, TypeScript, host, gardien, sélecteur ou installateur propriétaire BGDD. Le nom BGDD identifie le build consommateur et ne change pas les droits des sources tierces.
 
-Le programme codec distribué est GPL-2.0-or-later. Les archives conservent leurs licences d’origine : FFmpeg GPL/LGPL selon les fichiers, x264 GPL-2.0-or-later, LAME LGPL-2.0-or-later. Les deux recettes indépendantes portent leur propre en-tête GPL-2.0-or-later. Le copyright propriétaire de l’application BGDD ne leur est pas appliqué.
+Le programme codec distribué est GPL-2.0-or-later. Les archives conservent leurs licences d’origine : FFmpeg GPL/LGPL selon les fichiers, x264 GPL-2.0-or-later, LAME LGPL-2.0-or-later, dav1d BSD-2-Clause. Les deux recettes indépendantes portent leur propre en-tête GPL-2.0-or-later. Le copyright propriétaire de l’application BGDD ne leur est pas appliqué.
 
 ## Sources exactes
 
@@ -39,7 +39,7 @@ La recette fonctionne nativement pour l’architecture du Mac. Pour compiler Int
 
 La recette active les optimisations assembleur. Elle requiert Meson 1.11.2 et Ninja 1.13.2 dans PATH ; Intel requiert aussi NASM 3.01. Dav1d conserve sa licence BSD-2-Clause fournie dans ce kit. Aucun de ces outils de compilation n’est nécessaire à l’utilisateur de BGDD. Une compilation croisée ne prouve pas une exécution native Intel.
 
-Pour modifier LAME, x264 ou FFmpeg, décompacter la source concernée, effectuer les changements, recréer son archive et adapter dans votre copie de `build-codecs.sh` l’empreinte de l’archive modifiée. Les contrôles de SHA du build de référence sont éditables dans cette recette sous GPL ; ils ne retirent pas le droit de modifier les sources. La recette reconstruira et rééditera les liens statiques avec la bibliothèque modifiée.
+Pour modifier LAME, x264, dav1d ou FFmpeg, décompacter la source concernée, effectuer les changements, recréer son archive et adapter dans votre copie de `build-codecs.sh` l’empreinte de l’archive modifiée. Les contrôles de SHA du build de référence sont éditables dans cette recette sous GPL ; ils ne retirent pas le droit de modifier les sources. La recette reconstruira et rééditera les liens statiques avec la bibliothèque modifiée.
 
 ## Installer des codecs reconstruits dans sa copie locale
 
@@ -51,7 +51,7 @@ Après avoir terminé les opérations BGDD actives, la recette indépendante sui
 
 Cette recette pour la disposition `engine-app-v2` utilise les outils système et les modules core du Perl. Elle verrouille la maintenance et le host, vérifie l'identité et l'intégrité de l'installation, prépare une nouvelle enveloppe du moteur puis remplace FFmpeg/ffprobe dans `BGDD Engine.app/Contents/MacOS`. Elle renouvelle le sceau ad hoc de l'enveloppe et les empreintes locales. Le code fonctionnel original et les signatures des autres composants restent conservés ; les octets de signature de l'entrée du moteur changent avec son sceau de ressources.
 
-La sauvegarde extérieure conserve l'application originale entière et les trois métadonnées. Les préférences, l'historique, l'identité Chrome et les médias restent à leur place. Le remplacement et son acceptation par le vérificateur de production rc4 ont été testés dans une installation isolée. Cela n'est pas une qualification Gatekeeper d'un codec modifié par vous.
+La sauvegarde extérieure conserve l'application originale entière et les trois métadonnées. Les préférences, l'historique, l'identité Chrome et les médias restent à leur place. La recette ne garantit pas l’acceptation Gatekeeper d’un codec modifié par vous.
 
 Aucune clé privée, identité Apple ni source propriétaire n'est requise. La nouvelle enveloppe et la nouvelle entrée reçoivent une quarantaine ordinaire sans autorisation ; une autorisation attachée à l'ancien code n'est pas recopiée sur le code remplacé. Les codecs conservent la quarantaine de leur source ; un codec construit localement sans cet attribut reçoit également une quarantaine ordinaire. Aucun attribut de l'original sauvegardé ni réglage Gatekeeper/TCC n'est supprimé. Une nouvelle décision humaine d'ouverture peut être nécessaire dans Réglages Système. Les nouvelles empreintes sont locales : elles ne certifient pas le build modifié au nom d'Angry Thread.
 

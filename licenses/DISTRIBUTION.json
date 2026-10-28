@@ -1,0 +1,122 @@
+{
+  "formatVersion": 1,
+  "releaseVersion": "0.6.4",
+  "repository": "enrimerveille/BGDD",
+  "components": [
+    {
+      "key": "ffmpeg",
+      "name": "FFmpeg / ffprobe",
+      "license": "GPL-2.0-or-later",
+      "delivery": "included",
+      "version": "9.0.2"
+    },
+    {
+      "key": "x264",
+      "name": "x264",
+      "license": "GPL-2.0-or-later",
+      "delivery": "included",
+      "version": "0480cb05fa188d37ae87e8f4fd8f1aea3711f7ee"
+    },
+    {
+      "key": "lame",
+      "name": "LAME",
+      "license": "LGPL-2.0-or-later",
+      "delivery": "included",
+      "version": "3.100"
+    },
+    {
+      "key": "dav1d",
+      "name": "dav1d",
+      "license": "BSD-2-Clause",
+      "delivery": "included",
+      "version": "1.5.4"
+    },
+    {
+      "key": "font",
+      "name": "Space Grotesk",
+      "version": "2.000",
+      "license": "OFL-1.1",
+      "delivery": "included"
+    },
+    {
+      "key": "yt",
+      "name": "yt-dlp (bundle macOS)",
+      "license": "GPL-3.0-or-later",
+      "delivery": "upstream",
+      "version": "2026.08.19"
+    },
+    {
+      "key": "python",
+      "name": "Python (runtime yt-dlp)",
+      "version": "3.14.6",
+      "license": "PSF-2.0 et licences associées",
+      "delivery": "upstream"
+    },
+    {
+      "key": "ejs",
+      "name": "EJS (yt-dlp)",
+      "version": "0.8.0",
+      "license": "Unlicense ; Meriyah ISC et Astring MIT",
+      "delivery": "upstream"
+    },
+    {
+      "key": "deno",
+      "name": "Deno",
+      "license": "MIT et licences des dépendances",
+      "delivery": "upstream",
+      "version": "2.9.7"
+    }
+  ],
+  "targets": {
+    "arm64": {
+      "architecture": "arm64",
+      "minimumMacOS": "26.0",
+      "supportedMacOS": "27",
+      "downloadAsset": "BGDD-macOS-arm64.dmg",
+      "codecSources": {
+        "ffmpeg-9.0.2.tar.xz": "8c3850283eb25fa026482078a04051e0be17347b09ef81a0849bec15a96e002e",
+        "x264-0480cb05.tar.gz": "be32b1e787ca8e905c10b956d2a5be0b99847deea2ff53be0cd93e488cd90323",
+        "lame-3.100.tar.gz": "ddfe36cab873794038ae2c1210557ad34857a4b6bdc515785d1da9e175b1da1e",
+        "dav1d-1.5.4.tar.xz": "686616b7c69eb88d44459391ab25cac13b6647a3b288835c5784e71c1514a5c5"
+      },
+      "recipeSHA256": "0d2abb84121deb80306651f9a2b1536862802d20df4a367851403571c50b4b04",
+      "downloads": [
+        {
+          "file": "yt-dlp_macos.zip",
+          "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2026.08.19/yt-dlp_macos.zip",
+          "sha256": "07e54b0865303c864006925913bce2604f8ee8cc6f18699bac9c309f9328a6d8"
+        },
+        {
+          "file": "deno.zip",
+          "url": "https://github.com/denoland/deno/releases/download/v2.9.7/deno-aarch64-apple-darwin.zip",
+          "sha256": "5cd46d6268f6f78f5d88bdc7159d20bd44cdaa4b3303474839f87ec6fe7ae25c"
+        }
+      ]
+    },
+    "x86_64": {
+      "architecture": "x86_64",
+      "minimumMacOS": "26.0",
+      "supportedMacOS": "26",
+      "downloadAsset": "BGDD-macOS-x86_64.dmg",
+      "codecSources": {
+        "ffmpeg-9.0.2.tar.xz": "8c3850283eb25fa026482078a04051e0be17347b09ef81a0849bec15a96e002e",
+        "x264-0480cb05.tar.gz": "be32b1e787ca8e905c10b956d2a5be0b99847deea2ff53be0cd93e488cd90323",
+        "lame-3.100.tar.gz": "ddfe36cab873794038ae2c1210557ad34857a4b6bdc515785d1da9e175b1da1e",
+        "dav1d-1.5.4.tar.xz": "686616b7c69eb88d44459391ab25cac13b6647a3b288835c5784e71c1514a5c5"
+      },
+      "recipeSHA256": "0d2abb84121deb80306651f9a2b1536862802d20df4a367851403571c50b4b04",
+      "downloads": [
+        {
+          "file": "yt-dlp_macos.zip",
+          "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2026.08.19/yt-dlp_macos.zip",
+          "sha256": "07e54b0865303c864006925913bce2604f8ee8cc6f18699bac9c309f9328a6d8"
+        },
+        {
+          "file": "deno.zip",
+          "url": "https://github.com/denoland/deno/releases/download/v2.9.7/deno-x86_64-apple-darwin.zip",
+          "sha256": "95daaff11c116a52ad54785e7914c8e9c9cdcaba793c5ed929c74ca2d8e6259a"
+        }
+      ]
+    }
+  }
+}

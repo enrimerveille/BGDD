@@ -1,6 +1,6 @@
 # Installer et utiliser BGDD
 
-BGDD 0.6.3 est disponible pour **Apple Silicon (ARM64) sous macOS 27** et **Intel (x86_64) sous macOS 26**. [Choisir votre DMG](https://github.com/enrimerveille/BGDD/releases/tag/v0.6.3).
+BGDD est disponible pour **Apple Silicon (ARM64) sous macOS 27** et **Intel (x86_64) sous macOS 26**. [Choisir votre DMG](https://github.com/enrimerveille/BGDD/releases/latest).
 
 Une connexion Internet et Google Chrome sont nécessaires. Aucun Terminal, Homebrew, Python ou Node.js à installer. BGDD est distribué **sans certificat Developer ID ni notarisation Apple** : consultez le [guide Gatekeeper](DISTRIBUTION-GATEKEEPER.md) si macOS bloque l’ouverture.
 
@@ -17,7 +17,7 @@ Le dossier de l’extension est `~/Library/Application Support/BGDD/extension`. 
 
 ## Télécharger
 
-Ouvrez une publication YouTube, X, Instagram ou TikTok, puis BGDD. Choisissez le format et le dossier de destination, puis **Télécharger**. Sur X, le bouton **B** lance directement la qualité maximale.
+Ouvrez une publication YouTube, X, Instagram, TikTok ou Vimeo, puis BGDD. Choisissez le format et le dossier de destination, puis **Télécharger**. Sur les autres pages, ouvrez BGDD pour rechercher les lecteurs reconnus et vidéos HTTPS directes ; choisissez explicitement si plusieurs vidéos sont proposées. Sur X, le bouton **B** lance directement la qualité maximale.
 
 Un téléchargement est actif à la fois. **Annuler** arrête le transfert et son traitement. Fermer le popup laisse le téléchargement continuer ; quitter Chrome l’interrompt sans reprise automatique. Les fichiers existants ne sont jamais écrasés. Sur exFAT, attendez la confirmation de réussite avant d’ouvrir le fichier.
 
@@ -29,18 +29,12 @@ L’accès à une session de plateforme est facultatif : il se donne et se retir
 
 Après une mise à jour, actualisez la carte BGDD dans Chrome et rechargez les publications déjà ouvertes. Gardez la carte existante pour conserver ses réglages, autorisations et historique.
 
-Pour désinstaller, retirez BGDD dans Chrome puis choisissez **Maintenance… → Désinstaller**. L’effacement des préférences natives est facultatif ; Chrome supprime ses propres données lorsque l’extension est retirée. **Vos fichiers téléchargés sont conservés.**
+Pour désinstaller, ouvrez **Désinstaller BGDD.app** dans le DMG ou choisissez **Maintenance… → Désinstaller**, puis retirez la carte BGDD dans Chrome. L’effacement des préférences natives est facultatif ; Chrome supprime ses propres données lorsque l’extension est retirée. **Vos fichiers téléchargés sont conservés.**
 
 Si la recherche de mises à jour d’une ancienne version ne fonctionne plus, [téléchargez la dernière version manuellement](https://github.com/enrimerveille/BGDD/releases), puis suivez les étapes ci-dessus sans supprimer l’extension.
 
-## Versions rc.4 à rc.6
-
-Ces versions utilisent **Installer BGDD.app**. Choisissez **Installer / Mettre à jour**, puis **Ouvrir le moteur** et **Vérifier les composants**. **Préparer Chrome** indique le dossier à charger. Pour une mise à jour, actualisez la carte BGDD existante. Les compatibilités propres à chaque version sont indiquées sur sa page de téléchargement.
-
 [English installation instructions](../README.en.md#install) · [Licences et sources tierces](DISTRIBUTION-LICENSES.md)
 
-## Désinstaller et mettre à jour depuis une ancienne version
-
-Ouvrez **Désinstaller BGDD.app** dans le DMG. Attendez la fin des transferts, puis confirmez la suppression. Les téléchargements restent conservés ; la case facultative efface uniquement les réglages et l’historique natifs. Retirez ensuite BGDD dans Chrome pour gérer ses données navigateur.
+## Anciennes versions
 
 Depuis **0.4.8-rc.10 ou avant**, téléchargez manuellement le dernier DMG : l’ancien assistant refuse les paquets avec deux applications. Installez la mise à jour, puis actualisez la carte Chrome existante sans la supprimer.
