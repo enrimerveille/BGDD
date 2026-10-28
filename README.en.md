@@ -4,12 +4,12 @@
 
 BGDD is **free proprietary software** pairing a Chrome extension with a local macOS engine. Choose a publication, format and folder: downloading and processing stay on your Mac. No BGDD account, subscription, download server or telemetry.
 
-**Version 0.6.2 — Apple Silicon and Intel.** [Release notes](https://github.com/enrimerveille/BGDD/releases/tag/v0.6.2).
+**Version 0.6.3 — Apple Silicon and Intel.** [Release notes](https://github.com/enrimerveille/BGDD/releases/tag/v0.6.3).
 
 | Your Mac | Download |
 |---|---|
-| Apple Silicon (ARM64), macOS 27 | [DMG Apple Silicon](https://github.com/enrimerveille/BGDD/releases/download/v0.6.2/BGDD-macOS-arm64.dmg) |
-| Intel (x86_64), macOS 26 | [DMG Intel](https://github.com/enrimerveille/BGDD/releases/download/v0.6.2/BGDD-macOS-x86_64.dmg) |
+| Apple Silicon (ARM64), macOS 27 | [DMG Apple Silicon](https://github.com/enrimerveille/BGDD/releases/download/v0.6.3/BGDD-macOS-arm64.dmg) |
+| Intel (x86_64), macOS 26 | [DMG Intel](https://github.com/enrimerveille/BGDD/releases/download/v0.6.3/BGDD-macOS-x86_64.dmg) |
 
 <p align="center"><img src="https://github.com/enrimerveille/BGDD/raw/main/assets/popup-light.png" width="320" alt="BGDD light">&emsp;<img src="https://github.com/enrimerveille/BGDD/raw/main/assets/popup-dark.png" width="320" alt="BGDD dark"></p>
 
@@ -35,7 +35,7 @@ YouTube, Instagram, TikTok, X and Vimeo have dedicated integrations. On another 
 
 1. Open the DMG for your Mac and choose **Installer BGDD.app**.
 2. If macOS blocks opening, personally decide whether to use **System Settings → Privacy & Security → Open Anyway**, when offered. BGDD has **no Developer ID certificate or Apple notarization**. [Gatekeeper guide](https://github.com/enrimerveille/BGDD/blob/main/docs/DISTRIBUTION-GATEKEEPER.md).
-3. Follow the four steps: install/update, prepare the engine, add to Chrome, then ready. Help and licenses are included in the assistant.
+3. Follow the four steps: install/update, prepare the engine, add to Chrome, then ready. In the engine window, **Continuer** returns to the assistant after the four checks. Help and licenses are included.
 4. For first-time Chrome setup, enable **Developer mode** and choose **Load unpacked** using the displayed folder. For an update, **Reload** the existing BGDD card without removing it.
 5. In BGDD, choose **Réglages → Vérifier l’installation**, close the popup, return to the assistant and choose **Vérifier la connexion**, then **Terminer**.
 
@@ -43,7 +43,7 @@ Internet is required during installation. No Terminal, Homebrew, separate Python
 
 ## Update or uninstall
 
-To upgrade from **0.4.8-rc.10 or earlier**, download the DMG manually; older assistants cannot open this new package. For later versions, check for updates from the installer. Open the new package, then choose **Mettre à jour BGDD** and **Ouvrir BGDD Engine**. Reload BGDD in Chrome and reload already-open platform pages. Folder, identity, preferences and history stay in place.
+To upgrade from **0.4.8-rc.10 or earlier**, download the DMG manually; older assistants cannot open this new package. For later versions, check for updates from the installer. Open the new package, then choose **Mettre à jour BGDD** and **Préparer le moteur**. Reload BGDD in Chrome and reload already-open platform pages. Folder, identity, preferences and history stay in place.
 
 Open **Désinstaller BGDD.app** in the DMG, or choose **Maintenance… → Désinstaller** in the installer. Native settings/history removal is optional and unchecked by default. **Downloaded files are retained.** Remove the BGDD card in Chrome afterward.
 

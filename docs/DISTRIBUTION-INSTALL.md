@@ -1,6 +1,6 @@
 # Installer et utiliser BGDD
 
-BGDD 0.4.8-rc.9 est disponible pour **Apple Silicon (ARM64) sous macOS 27** et **Intel (x86_64) sous macOS 26**. [Choisir votre DMG](https://github.com/enrimerveille/BGDD/releases/tag/v0.4.8-rc.9).
+BGDD 0.6.3 est disponible pour **Apple Silicon (ARM64) sous macOS 27** et **Intel (x86_64) sous macOS 26**. [Choisir votre DMG](https://github.com/enrimerveille/BGDD/releases/tag/v0.6.3).
 
 Une connexion Internet et Google Chrome sont nécessaires. Aucun Terminal, Homebrew, Python ou Node.js à installer. BGDD est distribué **sans certificat Developer ID ni notarisation Apple** : consultez le [guide Gatekeeper](DISTRIBUTION-GATEKEEPER.md) si macOS bloque l’ouverture.
 
@@ -9,7 +9,7 @@ Une connexion Internet et Google Chrome sont nécessaires. Aucun Terminal, Homeb
 Ouvrez le DMG, puis **Installer BGDD.app**.
 
 1. **Installer BGDD** ou **Mettre à jour BGDD** : l’assistant installe les composants nécessaires et conserve vos réglages, votre historique et le dossier de l’extension. Les moteurs supplémentaires sont téléchargés depuis leurs éditeurs, avec vérification d’intégrité.
-2. **Préparer le moteur** : choisissez **Ouvrir BGDD Engine**. Après la préparation, revenez à l’assistant et choisissez **Vérifier le résultat**. Si macOS bloque un composant, suivez le guide Gatekeeper, puis recommencez cette étape.
+2. **Préparer le moteur** : choisissez **Préparer le moteur**. BGDD Engine affiche les quatre contrôles. Lorsque **Moteur prêt** apparaît, choisissez **Continuer** : l’assistant confirme automatiquement le résultat et passe à Chrome. Si macOS bloque un composant, suivez le guide Gatekeeper, puis recommencez cette étape.
 3. **Ajouter à Chrome** : choisissez **Ouvrir les extensions Chrome**. Lors de la première installation, activez **Mode développeur**, cliquez **Charger l’extension non empaquetée** et sélectionnez le dossier indiqué. Pour une mise à jour, choisissez **BGDD est déjà dans Chrome** si nécessaire, puis **Actualiser** sur la carte BGDD existante, sans la supprimer. Dans BGDD → Réglages, choisissez **Vérifier l’installation**, fermez le popup, puis revenez à l’assistant et cliquez **Vérifier la connexion**.
 4. **BGDD est prêt** : lorsque les étapes affichent **Terminé**, cliquez **Terminer**.
 
@@ -43,4 +43,4 @@ Ces versions utilisent **Installer BGDD.app**. Choisissez **Installer / Mettre �
 
 Ouvrez **Désinstaller BGDD.app** dans le DMG. Attendez la fin des transferts, puis confirmez la suppression. Les téléchargements restent conservés ; la case facultative efface uniquement les réglages et l’historique natifs. Retirez ensuite BGDD dans Chrome pour gérer ses données navigateur.
 
-Depuis **0.4.8-rc.10 ou avant**, téléchargez manuellement le DMG de 0.5.0 : l’ancien assistant refuse les paquets avec deux applications. Installez la mise à jour, puis actualisez la carte Chrome existante sans la supprimer.
+Depuis **0.4.8-rc.10 ou avant**, téléchargez manuellement le dernier DMG : l’ancien assistant refuse les paquets avec deux applications. Installez la mise à jour, puis actualisez la carte Chrome existante sans la supprimer.

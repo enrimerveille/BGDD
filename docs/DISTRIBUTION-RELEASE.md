@@ -1,8 +1,8 @@
-# BGDD 0.6.2 — Une sélection vidéo plus compacte
+# BGDD 0.6.3 — Une installation plus soignée
 
-- La durée apparaît une seule fois, dans le choix de vidéo.
-- « Rechercher des vidéos sur cette page » est rapproché du menu.
-- Le compteur de téléchargements utilise un chiffre clair sur fond sombre en mode sombre, et l’inverse en mode clair.
-- Le même numéro 0.6.2 identifie BGDD sur GitHub, dans Chrome et sur votre Mac.
+- Un nouveau DMG sombre présente clairement l’installation et la désinstallation.
+- Trois icônes dédiées distinguent l’installateur, le désinstallateur et BGDD Engine.
+- La préparation du moteur affiche l’état de chacun des quatre composants, avec une nouvelle vérification en cas de problème.
+- Après la préparation, Continuer ramène à l’assistant, qui confirme automatiquement le résultat.
 
 Apple Silicon : macOS 27. Intel : macOS 26. Téléchargez le DMG adapté à votre Mac, mettez à jour BGDD puis actualisez sa carte dans Chrome.

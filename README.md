@@ -1,15 +1,15 @@
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github.com/enrimerveille/BGDD/raw/main/assets/wordmark-dark.svg"><img src="https://github.com/enrimerveille/BGDD/raw/main/assets/wordmark-light.svg" width="220" alt="BGDD"></picture></p>
-<p align="center"><strong>KEEP THE BYTES.</strong><br>Téléchargez vidéos et audio du web dans la meilleure qualité disponible, directement sur votre Mac.<br>Optimisé pour YouTube, Instagram, TikTok, X et Vimeo. Détection à la demande de lecteurs reconnus et de vidéos HTML5 directes sur d’autres sites.<br>by Angry Thread</p>
+<p align="center"><strong>KEEP THE BYTES.</strong><br>Téléchargez vidéos et audio dans la meilleure qualité disponible, directement sur votre Mac.<br>Optimisé pour YouTube, Instagram, TikTok, X et Vimeo. Détection à la demande de lecteurs reconnus et de vidéos HTML5 directes sur d’autres sites.<br>by Angry Thread</p>
 <p align="center">Français · <a href="README.en.md">English</a></p>
 
 BGDD est un logiciel **gratuit et propriétaire** qui associe une extension Chrome à un moteur local macOS. Choisissez une publication, un format et un dossier : le téléchargement et le traitement se font sur votre Mac. Aucun compte BGDD, abonnement, serveur de téléchargement ou télémétrie.
 
-**Version 0.6.2 — Apple Silicon et Intel.** [Notes de version](https://github.com/enrimerveille/BGDD/releases/tag/v0.6.2).
+**Version 0.6.3 — Apple Silicon et Intel.** [Notes de version](https://github.com/enrimerveille/BGDD/releases/tag/v0.6.3).
 
 | Votre Mac | Télécharger |
 |---|---|
-| Apple Silicon (ARM64), macOS 27 | [DMG Apple Silicon](https://github.com/enrimerveille/BGDD/releases/download/v0.6.2/BGDD-macOS-arm64.dmg) |
-| Intel (x86_64), macOS 26 | [DMG Intel](https://github.com/enrimerveille/BGDD/releases/download/v0.6.2/BGDD-macOS-x86_64.dmg) |
+| Apple Silicon (ARM64), macOS 27 | [DMG Apple Silicon](https://github.com/enrimerveille/BGDD/releases/download/v0.6.3/BGDD-macOS-arm64.dmg) |
+| Intel (x86_64), macOS 26 | [DMG Intel](https://github.com/enrimerveille/BGDD/releases/download/v0.6.3/BGDD-macOS-x86_64.dmg) |
 
 <p align="center"><img src="https://github.com/enrimerveille/BGDD/raw/main/assets/popup-light.png" width="320" alt="BGDD clair">&emsp;<img src="https://github.com/enrimerveille/BGDD/raw/main/assets/popup-dark.png" width="320" alt="BGDD sombre"></p>
 
@@ -35,7 +35,7 @@ YouTube, X, Instagram, TikTok et Vimeo ont des intégrations dédiées. Sur une 
 
 1. Ouvrir le DMG adapté à votre Mac, puis **Installer BGDD.app**.
 2. Si macOS bloque l’ouverture, décider personnellement de l’autorisation dans **Réglages Système → Confidentialité et sécurité → Ouvrir quand même**, lorsque proposée. BGDD reste **sans Developer ID ni notarisation Apple**. [Guide Gatekeeper](https://github.com/enrimerveille/BGDD/blob/main/docs/DISTRIBUTION-GATEKEEPER.md).
-3. Suivre les quatre étapes : **Installer BGDD / Mettre à jour BGDD**, **Préparer le moteur**, **Ajouter à Chrome**, puis **BGDD est prêt**. L’aide et les licences sont intégrées.
+3. Suivre les quatre étapes : **Installer BGDD / Mettre à jour BGDD**, **Préparer le moteur**, **Ajouter à Chrome**, puis **BGDD est prêt**. Dans le moteur, **Continuer** ramène à l’assistant après les quatre contrôles. L’aide et les licences sont intégrées.
 4. Pour une première installation Chrome, activer **Mode développeur** et **Charger l’extension non empaquetée** depuis le dossier montré. Pour une mise à jour, cliquer **Actualiser** sur la carte BGDD existante, sans la supprimer.
 5. Dans BGDD, ouvrir **Réglages → Vérifier l’installation**, fermer le popup, revenir à l’assistant et choisir **Vérifier la connexion**, puis **Terminer**.
 
@@ -43,7 +43,7 @@ Une connexion Internet est nécessaire à l’installation. Aucun Terminal, Home
 
 ## Mettre à jour ou retirer BGDD
 
-Depuis **0.4.8-rc.10 ou avant**, téléchargez le DMG manuellement : l’ancien assistant ne peut pas ouvrir ce nouveau paquet. Pour les versions suivantes, recherchez les mises à jour depuis l’installateur. Ouvrez le nouveau paquet, puis choisissez **Mettre à jour BGDD** et **Ouvrir BGDD Engine**. Dans Chrome, cliquez **Actualiser** sur BGDD et rechargez les publications déjà ouvertes. Le dossier, l’identité, les préférences et l’historique sont conservés.
+Depuis **0.4.8-rc.10 ou avant**, téléchargez le DMG manuellement : l’ancien assistant ne peut pas ouvrir ce nouveau paquet. Pour les versions suivantes, recherchez les mises à jour depuis l’installateur. Ouvrez le nouveau paquet, puis choisissez **Mettre à jour BGDD** et **Préparer le moteur**. Dans Chrome, cliquez **Actualiser** sur BGDD et rechargez les publications déjà ouvertes. Le dossier, l’identité, les préférences et l’historique sont conservés.
 
 Ouvrez **Désinstaller BGDD.app** dans le DMG, ou choisissez **Maintenance… → Désinstaller** dans l’installateur. L’effacement des réglages et de l’historique natifs est facultatif et décoché par défaut. **Les fichiers téléchargés sont conservés.** Retirez ensuite la carte BGDD dans Chrome.
 
