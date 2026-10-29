@@ -1,4 +1,4 @@
-BGDD codec components: FFmpeg / ffprobe 9.0.2 (GPL-2.0-or-later); x264 0480cb05fa188d37ae87e8f4fd8f1aea3711f7ee (GPL-2.0-or-later); LAME 3.100 (LGPL-2.0-or-later); dav1d 1.5.4 (BSD-2-Clause).
+BGDD codec components: FFmpeg / ffprobe 9.0.2 (GPL-2.0-or-later); x264 0480cb05fa188d37ae87e8f4fd8f1aea3711f7ee (GPL-2.0-or-later); LAME 4.0 (LGPL-2.0-or-later); dav1d 1.5.4 (BSD-2-Clause).
 Original licence texts follow verbatim; BGDD proprietary terms do not apply to them.
 
 
@@ -860,7 +860,8 @@ LAME-LGPL-2.txt
 		       Version 2, June 1991
 
  Copyright (C) 1991 Free Software Foundation, Inc.
-    		    59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA
+
  Everyone is permitted to copy and distribute verbatim copies
  of this license document, but changing it is not allowed.
 

@@ -48,7 +48,7 @@ verify_source() {
 }
 verify_source ffmpeg-9.0.2.tar.xz 8c3850283eb25fa026482078a04051e0be17347b09ef81a0849bec15a96e002e
 verify_source x264-0480cb05.tar.gz be32b1e787ca8e905c10b956d2a5be0b99847deea2ff53be0cd93e488cd90323
-verify_source lame-3.100.tar.gz ddfe36cab873794038ae2c1210557ad34857a4b6bdc515785d1da9e175b1da1e
+verify_source lame-4.0.tar.gz 3df5124d5ad3a98312ffd7ba6a9b36230e4f8a3e66d3ce0f425e336c32d216eb
 
 verify_source dav1d-1.5.4.tar.xz 686616b7c69eb88d44459391ab25cac13b6647a3b288835c5784e71c1514a5c5
 
@@ -79,12 +79,24 @@ export PATH CC CXX AR RANLIB NM MACOSX_DEPLOYMENT_TARGET CFLAGS CXXFLAGS LDFLAGS
 
 /bin/mkdir "$CODEC_OUTPUT_DIR/x264" "$CODEC_OUTPUT_DIR/bin" "$CODEC_OUTPUT_DIR/licenses" "$CODEC_OUTPUT_DIR/stage"
 /usr/bin/tar -xf "$CODEC_ARCHIVE_DIR/ffmpeg-9.0.2.tar.xz" -C "$CODEC_OUTPUT_DIR"
-/usr/bin/tar -xf "$CODEC_ARCHIVE_DIR/lame-3.100.tar.gz" -C "$CODEC_OUTPUT_DIR"
+/usr/bin/tar -xf "$CODEC_ARCHIVE_DIR/lame-4.0.tar.gz" -C "$CODEC_OUTPUT_DIR"
 /usr/bin/tar -xf "$CODEC_ARCHIVE_DIR/x264-0480cb05.tar.gz" -C "$CODEC_OUTPUT_DIR/x264"
 
+# LAME 4 requires pkg-config even when its optional decoder is disabled.
+# This restricted adapter reports no external package; mpg123 is never linked.
+cat > "$CODEC_OUTPUT_DIR/lame-pkg-config" <<'LAME_PKG'
+#!/bin/sh
+case "$*" in
+    --atleast-pkgconfig-version*) exit 0 ;;
+    --version) echo 1.0 ;;
+    *) exit 1 ;;
+esac
+LAME_PKG
+/bin/chmod 755 "$CODEC_OUTPUT_DIR/lame-pkg-config"
+
 (
-    cd "$CODEC_OUTPUT_DIR/lame-3.100"
-    ./configure $CODEC_LAME_HOST --prefix=/bgdd-build --disable-shared --enable-static --disable-frontend --disable-dependency-tracking
+    cd "$CODEC_OUTPUT_DIR/lame-4.0"
+    PKG_CONFIG="$CODEC_OUTPUT_DIR/lame-pkg-config" ./configure $CODEC_LAME_HOST --disable-decoder --prefix=/bgdd-build --disable-shared --enable-static --disable-frontend --disable-dependency-tracking
     /usr/bin/make -j6
     /usr/bin/make install "DESTDIR=$CODEC_OUTPUT_DIR/stage"
 )
@@ -156,7 +168,7 @@ done
 /bin/cp "$CODEC_SOURCE_DIR/build-codecs.sh" "$CODEC_OUTPUT_DIR/licenses/build-codecs.sh"
 /bin/cp "$CODEC_OUTPUT_DIR/ffmpeg-9.0.2/COPYING.GPLv2" "$CODEC_OUTPUT_DIR/licenses/FFmpeg-GPL-2.txt"
 /bin/cp "$CODEC_OUTPUT_DIR/ffmpeg-9.0.2/COPYING.LGPLv2.1" "$CODEC_OUTPUT_DIR/licenses/FFmpeg-LGPL-2.1.txt"
-/bin/cp "$CODEC_OUTPUT_DIR/lame-3.100/COPYING" "$CODEC_OUTPUT_DIR/licenses/LAME-LGPL-2.txt"
+/bin/cp "$CODEC_OUTPUT_DIR/lame-4.0/COPYING" "$CODEC_OUTPUT_DIR/licenses/LAME-LGPL-2.txt"
 /bin/cp "$CODEC_OUTPUT_DIR/x264/COPYING" "$CODEC_OUTPUT_DIR/licenses/x264-GPL-2.txt"
 {
     echo "Corresponding-source build recipe: build-codecs.sh; target macOS 26.0, $CODEC_ARCH."

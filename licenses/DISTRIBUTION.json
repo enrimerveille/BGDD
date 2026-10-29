@@ -1,6 +1,6 @@
 {
   "formatVersion": 1,
-  "releaseVersion": "0.6.5",
+  "releaseVersion": "0.6.6",
   "repository": "enrimerveille/BGDD",
   "components": [
     {
@@ -22,7 +22,7 @@
       "name": "LAME",
       "license": "LGPL-2.0-or-later",
       "delivery": "included",
-      "version": "3.100"
+      "version": "4.0"
     },
     {
       "key": "dav1d",
@@ -43,12 +43,12 @@
       "name": "yt-dlp (bundle macOS)",
       "license": "GPL-3.0-or-later",
       "delivery": "upstream",
-      "version": "2026.08.19"
+      "version": "2026.10.26"
     },
     {
       "key": "python",
       "name": "Python (runtime yt-dlp)",
-      "version": "3.14.6",
+      "version": "3.14.7",
       "license": "PSF-2.0 et licences associées",
       "delivery": "upstream"
     },
@@ -64,7 +64,7 @@
       "name": "Deno",
       "license": "MIT et licences des dépendances",
       "delivery": "upstream",
-      "version": "2.9.7"
+      "version": "2.9.8"
     }
   ],
   "targets": {
@@ -76,20 +76,20 @@
       "codecSources": {
         "ffmpeg-9.0.2.tar.xz": "8c3850283eb25fa026482078a04051e0be17347b09ef81a0849bec15a96e002e",
         "x264-0480cb05.tar.gz": "be32b1e787ca8e905c10b956d2a5be0b99847deea2ff53be0cd93e488cd90323",
-        "lame-3.100.tar.gz": "ddfe36cab873794038ae2c1210557ad34857a4b6bdc515785d1da9e175b1da1e",
+        "lame-4.0.tar.gz": "3df5124d5ad3a98312ffd7ba6a9b36230e4f8a3e66d3ce0f425e336c32d216eb",
         "dav1d-1.5.4.tar.xz": "686616b7c69eb88d44459391ab25cac13b6647a3b288835c5784e71c1514a5c5"
       },
-      "recipeSHA256": "0d2abb84121deb80306651f9a2b1536862802d20df4a367851403571c50b4b04",
+      "recipeSHA256": "e5f2081497fc865d33d10b3a2aa70f2412c4231463097d4972488246278964e0",
       "downloads": [
         {
           "file": "yt-dlp_macos.zip",
-          "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2026.08.19/yt-dlp_macos.zip",
-          "sha256": "07e54b0865303c864006925913bce2604f8ee8cc6f18699bac9c309f9328a6d8"
+          "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2026.10.26/yt-dlp_macos.zip",
+          "sha256": "20d98fa608998eff87d1d35a6e9fb65e4b874639a6cc89addc19da3becde3ef1"
         },
         {
           "file": "deno.zip",
-          "url": "https://github.com/denoland/deno/releases/download/v2.9.7/deno-aarch64-apple-darwin.zip",
-          "sha256": "5cd46d6268f6f78f5d88bdc7159d20bd44cdaa4b3303474839f87ec6fe7ae25c"
+          "url": "https://github.com/denoland/deno/releases/download/v2.9.8/deno-aarch64-apple-darwin.zip",
+          "sha256": "9f0bf660393da2eaff044cdc7444cb08c73f235849b61d224d825a194ce7c98e"
         }
       ]
     },
@@ -101,20 +101,20 @@
       "codecSources": {
         "ffmpeg-9.0.2.tar.xz": "8c3850283eb25fa026482078a04051e0be17347b09ef81a0849bec15a96e002e",
         "x264-0480cb05.tar.gz": "be32b1e787ca8e905c10b956d2a5be0b99847deea2ff53be0cd93e488cd90323",
-        "lame-3.100.tar.gz": "ddfe36cab873794038ae2c1210557ad34857a4b6bdc515785d1da9e175b1da1e",
+        "lame-4.0.tar.gz": "3df5124d5ad3a98312ffd7ba6a9b36230e4f8a3e66d3ce0f425e336c32d216eb",
         "dav1d-1.5.4.tar.xz": "686616b7c69eb88d44459391ab25cac13b6647a3b288835c5784e71c1514a5c5"
       },
-      "recipeSHA256": "0d2abb84121deb80306651f9a2b1536862802d20df4a367851403571c50b4b04",
+      "recipeSHA256": "e5f2081497fc865d33d10b3a2aa70f2412c4231463097d4972488246278964e0",
       "downloads": [
         {
           "file": "yt-dlp_macos.zip",
-          "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2026.08.19/yt-dlp_macos.zip",
-          "sha256": "07e54b0865303c864006925913bce2604f8ee8cc6f18699bac9c309f9328a6d8"
+          "url": "https://github.com/yt-dlp/yt-dlp/releases/download/2026.10.26/yt-dlp_macos.zip",
+          "sha256": "20d98fa608998eff87d1d35a6e9fb65e4b874639a6cc89addc19da3becde3ef1"
         },
         {
           "file": "deno.zip",
-          "url": "https://github.com/denoland/deno/releases/download/v2.9.7/deno-x86_64-apple-darwin.zip",
-          "sha256": "95daaff11c116a52ad54785e7914c8e9c9cdcaba793c5ed929c74ca2d8e6259a"
+          "url": "https://github.com/denoland/deno/releases/download/v2.9.8/deno-x86_64-apple-darwin.zip",
+          "sha256": "4b2f5edd2639b7470f034238b321d7002d8dfb4726d8558f52c17afac370eb2c"
         }
       ]
     }

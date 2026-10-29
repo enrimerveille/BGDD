@@ -9,7 +9,7 @@
 |---|---|---|---|
 | FFmpeg / ffprobe | 9.0.2 | GPL-2.0-or-later | Inclus ; sources et notices conservées |
 | x264 | 0480cb05fa188d37ae87e8f4fd8f1aea3711f7ee | GPL-2.0-or-later | Inclus ; sources et notices conservées |
-| LAME | 3.100 | LGPL-2.0-or-later | Inclus ; sources et notices conservées |
+| LAME | 4.0 | LGPL-2.0-or-later | Inclus ; sources et notices conservées |
 | dav1d | 1.5.4 | BSD-2-Clause | Inclus ; sources et notices conservées |
 | Space Grotesk | 2.000 | OFL-1.1 | Inclus ; sources et notices conservées |
 <!-- bgdd:licenses:end -->
@@ -24,7 +24,7 @@ La recette indépendante `install-codecs.pl`, sous GPL-2.0-or-later, prépare un
 
 ## Moteurs obtenus directement
 
-L'installation récupère yt-dlp **2026.08.19**, son runtime Python/EJS et Deno **2.9.7** depuis les releases officielles fixées, à la demande de l'utilisateur. Le DMG et le kit BGDD ne contiennent pas leurs binaires ou archives. Le bundle yt-dlp conserve sa licence GPL-3.0-or-later ; Deno et ses dépendances conservent leurs licences propres. Ce mode de livraison ne change aucun droit amont.
+L'installation récupère yt-dlp **2026.10.26**, son runtime Python/EJS et Deno **2.9.8** depuis les releases officielles fixées, à la demande de l'utilisateur. Le DMG et le kit BGDD ne contiennent pas leurs binaires ou archives. Le bundle yt-dlp conserve sa licence GPL-3.0-or-later ; Deno et ses dépendances conservent leurs licences propres. Ce mode de livraison ne change aucun droit amont.
 
 
 [Notices tierces](../THIRD-PARTY-NOTICES.md) · [Reconstruire et remplacer les codecs](https://github.com/enrimerveille/BGDD/blob/main/sources/README.md).

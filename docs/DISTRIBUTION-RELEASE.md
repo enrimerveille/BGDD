@@ -1,8 +1,8 @@
-# BGDD 0.6.5 — Un H.265 plus compact
+# BGDD 0.6.6 — Moteur actualisé et diagnostic YouTube clarifié
 
-- Réglage H.265 rééquilibré pour conserver une très bonne image dans un fichier plus raisonnable.
-- Choix proposé entre la source et le H.265 lorsque la conversion produit un fichier nettement plus volumineux.
-- Progression distincte pendant la vérification intégrale, avant l’enregistrement du fichier.
-- Aide H.265 clarifiée.
+- Moteur de téléchargement actualisé pour suivre les évolutions des plateformes.
+- Messages YouTube plus précis lorsqu’un accès est limité ou qu’une session n’est pas disponible.
+- Accès aux cookies YouTube corrigé, après autorisation explicite dans les réglages de BGDD.
+- Encodeur MP3 actualisé ; les réglages H.265 sont conservés.
 
 Apple Silicon : macOS 27. Intel : macOS 26. Téléchargez le DMG adapté à votre Mac, mettez à jour BGDD puis actualisez sa carte dans Chrome.

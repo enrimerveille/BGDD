@@ -1,37 +1,48 @@
 {
   "schemaVersion": 1,
-  "strategy": "Direct download by the user from official releases; these runtime archives are absent from the rc2 BGDD DMG and release assets.",
+  "strategy": "Direct download by the user from official releases; these runtime archives are absent from the BGDD DMG and release assets.",
   "archives": [
     {
       "component": "yt-dlp macOS onedir with private Python/EJS",
-      "version": "2026.08.19",
-      "officialURL": "https://github.com/yt-dlp/yt-dlp/releases/download/2026.08.19/yt-dlp_macos.zip",
-      "sha256": "07e54b0865303c864006925913bce2604f8ee8cc6f18699bac9c309f9328a6d8",
+      "version": "2026.10.26",
+      "officialURL": "https://github.com/yt-dlp/yt-dlp/releases/download/2026.10.26/yt-dlp_macos.zip",
+      "sha256": "20d98fa608998eff87d1d35a6e9fb65e4b874639a6cc89addc19da3becde3ef1",
       "license": "GPL-3.0-or-later for the combined frozen bundle; Unlicense for the standalone project source",
-      "licensingURL": "https://github.com/yt-dlp/yt-dlp/blob/2026.08.19/README.md#licensing",
-      "thirdPartyNoticesURL": "https://github.com/yt-dlp/yt-dlp/blob/2026.08.19/THIRD_PARTY_LICENSES.txt",
-      "sourceReleaseURL": "https://github.com/yt-dlp/yt-dlp/releases/tag/2026.08.19",
+      "licensingURL": "https://github.com/yt-dlp/yt-dlp/blob/2026.10.26/README.md#licensing",
+      "thirdPartyNoticesURL": "https://github.com/yt-dlp/yt-dlp/blob/2026.10.26/THIRD_PARTY_LICENSES.txt",
+      "sourceReleaseURL": "https://github.com/yt-dlp/yt-dlp/releases/tag/2026.10.26",
       "archiveNoticeHandling": "Preserve _internal/THIRD_PARTY_LICENSES.txt and license files already in the downloaded archive; original modules are not incorporated into BGDD sources."
     },
     {
       "component": "Deno arm64",
-      "version": "2.9.7",
-      "officialURL": "https://github.com/denoland/deno/releases/download/v2.9.7/deno-aarch64-apple-darwin.zip",
-      "sha256": "5cd46d6268f6f78f5d88bdc7159d20bd44cdaa4b3303474839f87ec6fe7ae25c",
+      "version": "2.9.8",
+      "officialURL": "https://github.com/denoland/deno/releases/download/v2.9.8/deno-aarch64-apple-darwin.zip",
+      "sha256": "9f0bf660393da2eaff044cdc7444cb08c73f235849b61d224d825a194ce7c98e",
       "license": "MIT for Deno original code, plus independent third-party licenses",
-      "licenseURL": "https://github.com/denoland/deno/blob/v2.9.7/LICENSE.md",
-      "sourceURL": "https://github.com/denoland/deno/tree/v2.9.7",
-      "sourceLockURL": "https://github.com/denoland/deno/blob/v2.9.7/Cargo.lock",
+      "licenseURL": "https://github.com/denoland/deno/blob/v2.9.8/LICENSE.md",
+      "sourceURL": "https://github.com/denoland/deno/tree/v2.9.8",
+      "sourceLockURL": "https://github.com/denoland/deno/blob/v2.9.8/Cargo.lock",
       "noticeLimitation": "The historical BGDD audit of redistributing the complete Deno binary is not closed. No assertion that top-level MIT covers its entire dependency set is made."
     },
     {
       "component": "EJS local from official yt-dlp archive",
       "version": "0.8.0",
       "license": "Unlicense, plus Meriyah6.1.4 ISC and Astring1.9.0 MIT",
-      "origin": "Included in the user-downloaded official yt-dlp2026.08.19 macOS onedir archive; no separate BGDD mirror or remote-component update",
+      "origin": "Included in the user-downloaded official yt-dlp2026.10.26 macOS onedir archive; no separate BGDD mirror or remote-component update",
       "sourceURL": "https://pypi.org/project/yt-dlp-ejs/0.8.0/",
       "sourceArchiveURL": "https://files.pythonhosted.org/packages/d3/e6/cceb9530e8f4e5940f6f7822d90e9d94f1b85343329a16baaf47bbbb3de1/yt_dlp_ejs-0.8.0.tar.gz",
       "sourceArchiveSHA256": "d5fa1639f63b5c4af8d932495f60689d5370f1a095782c944f7f62a303eb104e"
+    },
+    {
+      "component": "Deno x86_64",
+      "version": "2.9.8",
+      "officialURL": "https://github.com/denoland/deno/releases/download/v2.9.8/deno-x86_64-apple-darwin.zip",
+      "sha256": "4b2f5edd2639b7470f034238b321d7002d8dfb4726d8558f52c17afac370eb2c",
+      "license": "MIT for Deno original code, plus independent third-party licenses",
+      "licenseURL": "https://github.com/denoland/deno/blob/v2.9.8/LICENSE.md",
+      "sourceURL": "https://github.com/denoland/deno/tree/v2.9.8",
+      "sourceLockURL": "https://github.com/denoland/deno/blob/v2.9.8/Cargo.lock",
+      "noticeLimitation": "The historical BGDD audit of redistributing the complete Deno binary is not closed. No assertion that top-level MIT covers its entire dependency set is made."
     }
   ]
 }

@@ -1,31 +1,68 @@
 {
-  "formatVersion": 2,
-  "architecture": "arm64",
-  "minimumMacOS": "26.0",
-  "configure": "--prefix=/bgdd-build --arch=arm64 --cpu=generic --cc=/usr/bin/clang --cxx=/usr/bin/clang++ --ar=/usr/bin/ar --nm=/usr/bin/nm --ranlib=/usr/bin/ranlib --disable-autodetect --disable-shared --enable-static --disable-doc --disable-debug --disable-ffplay --disable-avdevice --disable-network --disable-encoders --enable-encoder='libx264,libmp3lame,pcm_s24le,pcm_s16le,aac,png,wrapped_avframe,hevc_videotoolbox' --disable-filters --enable-filter='scale,pad,format,setsar,fps,aresample,anull,null,rotate,transpose,hflip,vflip' --disable-hwaccels --enable-hwaccel='av1_videotoolbox,h264_videotoolbox,hevc_videotoolbox,vp9_videotoolbox' --enable-videotoolbox --disable-audiotoolbox --disable-securetransport --enable-zlib --enable-gpl --enable-libx264 --enable-libmp3lame --enable-libdav1d --pkg-config=../pkg-config --extra-cflags='-I../stage/bgdd-build/include -O3 -arch arm64 -mmacosx-version-min=26.0 ' --extra-ldflags='-L../stage/bgdd-build/lib -arch arm64 -mmacosx-version-min=26.0'",
-  "binaries": {
-    "ffmpeg": "55efa9e066813d0534102b5c654c920e6845ce8effa523bdd2353fc5195f4f9f",
-    "ffprobe": "48f09ae27b99ff7d705fb927c384c91dc7d9ab7d18587f4aa073bfbc6e33714b"
-  },
-  "sourceArchives": {
-    "ffmpeg-9.0.2.tar.xz": "8c3850283eb25fa026482078a04051e0be17347b09ef81a0849bec15a96e002e",
-    "x264-0480cb05.tar.gz": "be32b1e787ca8e905c10b956d2a5be0b99847deea2ff53be0cd93e488cd90323",
-    "lame-3.100.tar.gz": "ddfe36cab873794038ae2c1210557ad34857a4b6bdc515785d1da9e175b1da1e",
-    "dav1d-1.5.4.tar.xz": "686616b7c69eb88d44459391ab25cac13b6647a3b288835c5784e71c1514a5c5"
-  },
-  "recipe": {
-    "file": "codec-sources/build-codecs.sh",
-    "sha256": "0d2abb84121deb80306651f9a2b1536862802d20df4a367851403571c50b4b04",
-    "executed": true
-  },
-  "compiler": "Apple clang version 21.0.0 (clang-2100.3.34.2)",
-  "sdk": "27.0",
-  "buildArchitecture": "arm64",
-  "crossCompiled": false,
-  "nativeExecution": true,
-  "buildTools": {
-    "meson": "1.11.2",
-    "ninja": "1.13.2",
-    "nasm": null
+  "formatVersion": 3,
+  "recordType": "architecture-specific-builds",
+  "targets": {
+    "arm64": {
+      "formatVersion": 2,
+      "architecture": "arm64",
+      "minimumMacOS": "26.0",
+      "configure": "--prefix=/bgdd-build --arch=arm64 --cpu=generic --cc=/usr/bin/clang --cxx=/usr/bin/clang++ --ar=/usr/bin/ar --nm=/usr/bin/nm --ranlib=/usr/bin/ranlib --disable-autodetect --disable-shared --enable-static --disable-doc --disable-debug --disable-ffplay --disable-avdevice --disable-network --disable-encoders --enable-encoder='libx264,libmp3lame,pcm_s24le,pcm_s16le,aac,png,wrapped_avframe,hevc_videotoolbox' --disable-filters --enable-filter='scale,pad,format,setsar,fps,aresample,anull,null,rotate,transpose,hflip,vflip' --disable-hwaccels --enable-hwaccel='av1_videotoolbox,h264_videotoolbox,hevc_videotoolbox,vp9_videotoolbox' --enable-videotoolbox --disable-audiotoolbox --disable-securetransport --enable-zlib --enable-gpl --enable-libx264 --enable-libmp3lame --enable-libdav1d --pkg-config=../pkg-config --extra-cflags='-I../stage/bgdd-build/include -O3 -arch arm64 -mmacosx-version-min=26.0 ' --extra-ldflags='-L../stage/bgdd-build/lib -arch arm64 -mmacosx-version-min=26.0'",
+      "binaries": {
+        "ffmpeg": "cd0e358b5b298f18d989ab750164337cbea7b27ff216a180d799250140451b18",
+        "ffprobe": "f6f105041a77c020a31dac3c94bfceec05cd73ebe045b1fb4b0f221e5d3fe1d2"
+      },
+      "sourceArchives": {
+        "ffmpeg-9.0.2.tar.xz": "8c3850283eb25fa026482078a04051e0be17347b09ef81a0849bec15a96e002e",
+        "x264-0480cb05.tar.gz": "be32b1e787ca8e905c10b956d2a5be0b99847deea2ff53be0cd93e488cd90323",
+        "lame-4.0.tar.gz": "3df5124d5ad3a98312ffd7ba6a9b36230e4f8a3e66d3ce0f425e336c32d216eb",
+        "dav1d-1.5.4.tar.xz": "686616b7c69eb88d44459391ab25cac13b6647a3b288835c5784e71c1514a5c5"
+      },
+      "recipe": {
+        "file": "codec-sources/build-codecs.sh",
+        "sha256": "e5f2081497fc865d33d10b3a2aa70f2412c4231463097d4972488246278964e0",
+        "executed": true
+      },
+      "compiler": "Apple clang version 21.0.0 (clang-2100.3.34.2)",
+      "sdk": "27.0",
+      "buildArchitecture": "arm64",
+      "crossCompiled": false,
+      "nativeExecution": false,
+      "buildTools": {
+        "meson": "1.11.2",
+        "ninja": "1.13.2",
+        "nasm": null
+      }
+    },
+    "x86_64": {
+      "formatVersion": 2,
+      "architecture": "x86_64",
+      "minimumMacOS": "26.0",
+      "configure": "--prefix=/bgdd-build --enable-cross-compile --target-os=darwin --arch=x86_64 --cpu=x86-64 --cc=/usr/bin/clang --cxx=/usr/bin/clang++ --ar=/usr/bin/ar --nm=/usr/bin/nm --ranlib=/usr/bin/ranlib --disable-autodetect --disable-shared --enable-static --disable-doc --disable-debug --disable-ffplay --disable-avdevice --disable-network --disable-encoders --enable-encoder='libx264,libmp3lame,pcm_s24le,pcm_s16le,aac,png,wrapped_avframe,hevc_videotoolbox' --disable-filters --enable-filter='scale,pad,format,setsar,fps,aresample,anull,null,rotate,transpose,hflip,vflip' --disable-hwaccels --enable-hwaccel='av1_videotoolbox,h264_videotoolbox,hevc_videotoolbox,vp9_videotoolbox' --enable-videotoolbox --disable-audiotoolbox --disable-securetransport --enable-zlib --enable-gpl --enable-libx264 --enable-libmp3lame --enable-libdav1d --pkg-config=../pkg-config --extra-cflags='-I../stage/bgdd-build/include -O3 -arch x86_64 -mmacosx-version-min=26.0 -march=x86-64 -mtune=generic' --extra-ldflags='-L../stage/bgdd-build/lib -arch x86_64 -mmacosx-version-min=26.0'",
+      "binaries": {
+        "ffmpeg": "5efc31d8f8ceaf925c2f19a446b36c77fab94f90dccb88f552b6bcf110528ff3",
+        "ffprobe": "1985935949ac85e4f4959000a2f254c5099e8a423ef52af673cff46065512000"
+      },
+      "sourceArchives": {
+        "ffmpeg-9.0.2.tar.xz": "8c3850283eb25fa026482078a04051e0be17347b09ef81a0849bec15a96e002e",
+        "x264-0480cb05.tar.gz": "be32b1e787ca8e905c10b956d2a5be0b99847deea2ff53be0cd93e488cd90323",
+        "lame-4.0.tar.gz": "3df5124d5ad3a98312ffd7ba6a9b36230e4f8a3e66d3ce0f425e336c32d216eb",
+        "dav1d-1.5.4.tar.xz": "686616b7c69eb88d44459391ab25cac13b6647a3b288835c5784e71c1514a5c5"
+      },
+      "recipe": {
+        "file": "codec-sources/build-codecs.sh",
+        "sha256": "e5f2081497fc865d33d10b3a2aa70f2412c4231463097d4972488246278964e0",
+        "executed": true
+      },
+      "compiler": "Apple clang version 21.0.0 (clang-2100.3.34.2)",
+      "sdk": "27.0",
+      "buildArchitecture": "arm64",
+      "crossCompiled": true,
+      "nativeExecution": false,
+      "buildTools": {
+        "meson": "1.11.2",
+        "ninja": "1.13.2",
+        "nasm": "3.01"
+      }
+    }
   }
 }

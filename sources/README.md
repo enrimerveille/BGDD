@@ -1,6 +1,6 @@
 # Sources correspondantes des codecs BGDD
 
-Ce kit concerne uniquement **FFmpeg / ffprobe 9.0.2, x264, LAME 3.100 et dav1d 1.5.4**, ainsi que leurs recettes indépendantes de construction et d’installation. Il ne contient aucun code Swift, TypeScript, host, gardien, sélecteur ou installateur propriétaire BGDD. Le nom BGDD identifie le build consommateur et ne change pas les droits des sources tierces.
+Ce kit concerne uniquement **FFmpeg / ffprobe 9.0.2, x264, LAME 4.0 et dav1d 1.5.4**, ainsi que leurs recettes indépendantes de construction et d’installation. Il ne contient aucun code Swift, TypeScript, host, gardien, sélecteur ou installateur propriétaire BGDD. Le nom BGDD identifie le build consommateur et ne change pas les droits des sources tierces.
 
 Le programme codec distribué est GPL-2.0-or-later. Les archives conservent leurs licences d’origine : FFmpeg GPL/LGPL selon les fichiers, x264 GPL-2.0-or-later, LAME LGPL-2.0-or-later, dav1d BSD-2-Clause. Les deux recettes indépendantes portent leur propre en-tête GPL-2.0-or-later. Le copyright propriétaire de l’application BGDD ne leur est pas appliqué.
 
@@ -11,9 +11,9 @@ Le programme codec distribué est GPL-2.0-or-later. Les archives conservent leur
 | ffmpeg-9.0.2.tar.xz | `8c3850283eb25fa026482078a04051e0be17347b09ef81a0849bec15a96e002e` |
 | x264-0480cb05.tar.gz | `be32b1e787ca8e905c10b956d2a5be0b99847deea2ff53be0cd93e488cd90323` |
 | dav1d-1.5.4.tar.xz | `686616b7c69eb88d44459391ab25cac13b6647a3b288835c5784e71c1514a5c5` |
-| lame-3.100.tar.gz | `ddfe36cab873794038ae2c1210557ad34857a4b6bdc515785d1da9e175b1da1e` |
+| lame-4.0.tar.gz | `3df5124d5ad3a98312ffd7ba6a9b36230e4f8a3e66d3ce0f425e336c32d216eb` |
 
-Origines : [dav1d 1.5.4](https://download.videolan.org/pub/videolan/dav1d/1.5.4/dav1d-1.5.4.tar.xz), [FFmpeg 9.0.2](https://ffmpeg.org/releases/ffmpeg-9.0.2.tar.xz), [x264 VideoLAN](https://code.videolan.org/videolan/x264/-/tree/0480cb05fa188d37ae87e8f4fd8f1aea3711f7ee), [LAME 3.100](https://downloads.sourceforge.net/project/lame/lame/3.100/lame-3.100.tar.gz). Les archives sont fournies entières, avec tous les copyrights, fichiers de configuration et recettes upstream. Aucune modification de leur code source n’a été appliquée au build de référence.
+Origines : [dav1d 1.5.4](https://download.videolan.org/pub/videolan/dav1d/1.5.4/dav1d-1.5.4.tar.xz), [FFmpeg 9.0.2](https://ffmpeg.org/releases/ffmpeg-9.0.2.tar.xz), [x264 VideoLAN](https://code.videolan.org/videolan/x264/-/tree/0480cb05fa188d37ae87e8f4fd8f1aea3711f7ee), [LAME 4.0](https://downloads.sourceforge.net/project/lame/lame/4.0/lame-4.0.tar.gz). Les archives sont fournies entières, avec tous les copyrights, fichiers de configuration et recettes upstream. Aucune modification de leur code source n’a été appliquée au build de référence.
 
 ## Reconstruire
 
