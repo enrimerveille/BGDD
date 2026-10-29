@@ -38,3 +38,13 @@ Si la recherche de mises à jour d’une ancienne version ne fonctionne plus, [t
 ## Anciennes versions
 
 Depuis **0.4.8-rc.10 ou avant**, téléchargez manuellement le dernier DMG : l’ancien assistant refuse les paquets avec deux applications. Installez la mise à jour, puis actualisez la carte Chrome existante sans la supprimer.
+
+## Formats locaux, file et notifications
+
+Depuis un résultat terminé, **Autre format…** réutilise le fichier local et crée une nouvelle sortie sans écraser l’original. Les fichiers enregistrés avant 0.7.0 restent accessibles dans le Finder mais ne portent pas l’identité nécessaire au réexport sécurisé. Un fichier supprimé, modifié ou remplacé est refusé, sans téléchargement de remplacement. Audio original copie la piste de ce fichier ; sur une plateforme, il copie la meilleure piste accessible, pas un master de l’auteur. AAC est conservé en M4A, Opus dans un conteneur Opus/Ogg adapté ; un codec sans conteneur pris en charge est refusé sans conversion cachée.
+
+L’avertissement de doublon compare publication, élément et format ; **Télécharger à nouveau** reste possible. Effacer l’historique conserve les fichiers et les opérations déjà autorisées, mais retire les anciennes références de réutilisation.
+
+**Mettre la file en pause** laisse finir l’opération en cours. **Reprendre la file** autorise les suivantes. Une limitation HTTP 429 suspend seulement les prochains téléchargements du site concerné ; la reprise du site reste manuelle et respecte un éventuel délai serveur. Fermer Chrome interrompt les opérations sans reprise automatique.
+
+Les réglages donnent accès à la page des raccourcis Chrome : attribuez votre combinaison à **Ouvrir BGDD**. Aucun raccourci global n’est imposé. Les notifications sont facultatives, désactivées par défaut, silencieuses lorsque Chrome et macOS le permettent. Leur activation demande la permission Chrome ; un refus laisse BGDD silencieux. Elles indiquent une fin de série ou une attention requise, sans dévoiler les titres. Un clic ouvre BGDD sans lancer d’opération.
