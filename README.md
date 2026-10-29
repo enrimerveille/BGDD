@@ -5,12 +5,12 @@
 BGDD est un logiciel **gratuit et propriétaire** qui associe une extension Chrome à un moteur local macOS. Choisissez une publication, un format et un dossier : le téléchargement et le traitement se font sur votre Mac. Aucun compte BGDD, abonnement, serveur de téléchargement ou télémétrie.
 
 <!-- bgdd:release:start -->
-**Version 0.6.4 — Apple Silicon et Intel.** [Notes de version](https://github.com/enrimerveille/BGDD/releases/tag/v0.6.4).
+**Version 0.6.5 — Apple Silicon et Intel.** [Notes de version](https://github.com/enrimerveille/BGDD/releases/tag/v0.6.5).
 
 | Votre Mac | Télécharger |
 |---|---|
-| Apple Silicon (ARM64), macOS 27 | [DMG Apple Silicon](https://github.com/enrimerveille/BGDD/releases/download/v0.6.4/BGDD-macOS-arm64.dmg) |
-| Intel (x86_64), macOS 26 | [DMG Intel](https://github.com/enrimerveille/BGDD/releases/download/v0.6.4/BGDD-macOS-x86_64.dmg) |
+| Apple Silicon (ARM64), macOS 27 | [DMG Apple Silicon](https://github.com/enrimerveille/BGDD/releases/download/v0.6.5/BGDD-macOS-arm64.dmg) |
+| Intel (x86_64), macOS 26 | [DMG Intel](https://github.com/enrimerveille/BGDD/releases/download/v0.6.5/BGDD-macOS-x86_64.dmg) |
 <!-- bgdd:release:end -->
 
 <p align="center"><img src="https://github.com/enrimerveille/BGDD/raw/main/assets/popup-light.png" width="320" alt="BGDD clair">&emsp;<img src="https://github.com/enrimerveille/BGDD/raw/main/assets/popup-dark.png" width="320" alt="BGDD sombre"></p>
@@ -27,7 +27,7 @@ Si la recherche de mises à jour d’une ancienne version ne fonctionne plus, [t
 | WAV | Export PCM 24 bits, fréquence et canaux de la source |
 | MP3 | Débit natif lorsqu’un MP3 exploitable existe ; sinon conversion choisie, jusqu’à 320 kb/s |
 
-H.265 peut nécessiter une conversion avec perte. Les sources HDR et 10 bits ne sont pas prises en charge dans ce mode : choisissez Qualité maximale pour les conserver.
+H.265 recherche un compromis entre qualité visuelle, taille et temps de traitement. Il peut nécessiter une conversion avec perte et ne garantit pas un fichier plus petit qu’une source AV1 ou VP9. Si le résultat est nettement plus volumineux, vous pouvez conserver la source en Qualité maximale ou garder le H.265 vérifié. Les sources HDR et 10 bits ne sont pas prises en charge dans ce mode : choisissez Qualité maximale pour les conserver.
 
 Les vidéos MKV peuvent nécessiter un lecteur compatible, comme VLC. Choisissez **H.264 compatible** pour faciliter la lecture.
 

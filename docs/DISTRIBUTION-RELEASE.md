@@ -1,8 +1,8 @@
-# BGDD 0.6.4 — H.265 plus rapide et plus fiable
+# BGDD 0.6.5 — Un H.265 plus compact
 
-- Conversion H.265 des sources AV1 corrigée sur les Mac Intel compatibles, sans réduire leur définition.
-- Traitement H.265 accéléré sur Apple Silicon, avec contrôle intégral du fichier avant enregistrement.
-- Messages d’échec plus précis et nouvelle indication « Assemblage des pistes… ».
-- Deux encarts clairs réunissent désormais les icônes et leurs noms dans le DMG sombre.
+- Réglage H.265 rééquilibré pour conserver une très bonne image dans un fichier plus raisonnable.
+- Choix proposé entre la source et le H.265 lorsque la conversion produit un fichier nettement plus volumineux.
+- Progression distincte pendant la vérification intégrale, avant l’enregistrement du fichier.
+- Aide H.265 clarifiée.
 
 Apple Silicon : macOS 27. Intel : macOS 26. Téléchargez le DMG adapté à votre Mac, mettez à jour BGDD puis actualisez sa carte dans Chrome.

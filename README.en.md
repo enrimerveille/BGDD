@@ -5,12 +5,12 @@
 BGDD is **free proprietary software** pairing a Chrome extension with a local macOS engine. Choose a publication, format and folder: downloading and processing stay on your Mac. No BGDD account, subscription, download server or telemetry.
 
 <!-- bgdd:release:start -->
-**Version 0.6.4 — Apple Silicon and Intel.** [Release notes](https://github.com/enrimerveille/BGDD/releases/tag/v0.6.4).
+**Version 0.6.5 — Apple Silicon and Intel.** [Release notes](https://github.com/enrimerveille/BGDD/releases/tag/v0.6.5).
 
 | Your Mac | Download |
 |---|---|
-| Apple Silicon (ARM64), macOS 27 | [DMG Apple Silicon](https://github.com/enrimerveille/BGDD/releases/download/v0.6.4/BGDD-macOS-arm64.dmg) |
-| Intel (x86_64), macOS 26 | [DMG Intel](https://github.com/enrimerveille/BGDD/releases/download/v0.6.4/BGDD-macOS-x86_64.dmg) |
+| Apple Silicon (ARM64), macOS 27 | [DMG Apple Silicon](https://github.com/enrimerveille/BGDD/releases/download/v0.6.5/BGDD-macOS-arm64.dmg) |
+| Intel (x86_64), macOS 26 | [DMG Intel](https://github.com/enrimerveille/BGDD/releases/download/v0.6.5/BGDD-macOS-x86_64.dmg) |
 <!-- bgdd:release:end -->
 
 <p align="center"><img src="https://github.com/enrimerveille/BGDD/raw/main/assets/popup-light.png" width="320" alt="BGDD light">&emsp;<img src="https://github.com/enrimerveille/BGDD/raw/main/assets/popup-dark.png" width="320" alt="BGDD dark"></p>
@@ -27,7 +27,7 @@ If update checking stops working in an older version, [download the latest relea
 | WAV | 24-bit PCM, preserving source sample rate and channels |
 | MP3 | Native bitrate when usable MP3 exists; otherwise a chosen conversion up to 320 kb/s |
 
-H.265 may involve lossy conversion. HDR and 10-bit sources are not supported in this mode: choose Maximum quality to preserve them.
+H.265 balances visual quality, file size and processing time. It may involve lossy conversion and does not guarantee a smaller file than an AV1 or VP9 source. If the result is substantially larger, you can keep the source with Maximum quality or keep the verified H.265 file. HDR and 10-bit sources are not supported in this mode: choose Maximum quality to preserve them.
 
 MKV videos may require a compatible player such as VLC. Choose **Compatible H.264** for broader playback support.
 
