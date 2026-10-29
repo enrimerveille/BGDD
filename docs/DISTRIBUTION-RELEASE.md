@@ -1,8 +1,6 @@
-# BGDD 0.6.6 — Moteur actualisé et diagnostic YouTube clarifié
+# BGDD 0.6.7 — H.265 en 10 bits et HDR
 
-- Moteur de téléchargement actualisé pour suivre les évolutions des plateformes.
-- Messages YouTube plus précis lorsqu’un accès est limité ou qu’une session n’est pas disponible.
-- Accès aux cookies YouTube corrigé, après autorisation explicite dans les réglages de BGDD.
-- Encodeur MP3 actualisé ; les réglages H.265 sont conservés.
-
-Apple Silicon : macOS 27. Intel : macOS 26. Téléchargez le DMG adapté à votre Mac, mettez à jour BGDD puis actualisez sa carte dans Chrome.
+- Conversion SDR 10 bits, HDR10 et HLG sur les Mac Apple Silicon compatibles, en conservant la profondeur et la couleur de la source.
+- Copie sans réencodage des vidéos H.265 Main/Main 10 compatibles, sur Apple Silicon et Intel.
+- Progression audio plus claire et messages simplifiés en cas de limitation temporaire de YouTube.
+- Téléchargements macOS ARM et Intel. Sur Intel, la conversion H.265 reste SDR 8 bits ; pour Dolby Vision et HDR10+, choisissez Qualité maximale.
