@@ -50,3 +50,7 @@ Dans **En attente**, **Mettre en pause** laisse finir l’opération en cours et
 Les réglages donnent accès à `chrome://extensions/shortcuts`. **Ouvrir BGDD** affiche le popup. **Télécharger avec BGDD** ajoute directement la vidéo unique de l’onglet actif avec le dernier format choisi. En cas de plusieurs vidéos, choix requis, format indisponible, permission manquante, doublon ou navigation modifiée, BGDD s’ouvre pour laisser choisir. Aucun raccourci global ni combinaison de touches n’est imposé.
 
 **M’avertir** est désactivé par défaut. Une notification silencieuse signale la fin de la file, un échec ou un choix nécessaire, sans titre de vidéo. L’activation volontaire demande la permission Chrome ; un refus laisse BGDD silencieux. Les événements sont regroupés, sans répétition au redémarrage. Un clic ouvre BGDD sans lancer d’opération.
+
+## Si une mise à jour refuse un lien symbolique
+
+Si l’assistant indique « Lien symbolique non autorisé », il arrête la mise à jour en conservant les fichiers. Un cache de travail créé par Deno peut provoquer ce refus. Ne supprimez pas la carte Chrome ni vos données : faites vérifier ce cache avant de reprendre l’installation. Les réglages, l’historique et les fichiers téléchargés doivent être conservés.
