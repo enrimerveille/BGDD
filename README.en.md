@@ -5,12 +5,12 @@
 BGDD is **free proprietary software** pairing a Chrome extension with a local macOS engine. Choose a publication, format and folder: downloading and processing stay on your Mac. No BGDD account, subscription, download server or telemetry.
 
 <!-- bgdd:release:start -->
-**Version 0.7.2 — Apple Silicon and Intel.** [Release notes](https://github.com/enrimerveille/BGDD/releases/tag/v0.7.2).
+**Version 0.7.3 — Apple Silicon and Intel.** [Release notes](https://github.com/enrimerveille/BGDD/releases/tag/v0.7.3).
 
 | Your Mac | Download |
 |---|---|
-| Apple Silicon (ARM64), macOS 27 | [DMG Apple Silicon](https://github.com/enrimerveille/BGDD/releases/download/v0.7.2/BGDD-macOS-arm64.dmg) |
-| Intel (x86_64), macOS 26 | [DMG Intel](https://github.com/enrimerveille/BGDD/releases/download/v0.7.2/BGDD-macOS-x86_64.dmg) |
+| Apple Silicon (ARM64), macOS 27 | [DMG Apple Silicon](https://github.com/enrimerveille/BGDD/releases/download/v0.7.3/BGDD-macOS-arm64.dmg) |
+| Intel (x86_64), macOS 26 | [DMG Intel](https://github.com/enrimerveille/BGDD/releases/download/v0.7.3/BGDD-macOS-x86_64.dmg) |
 <!-- bgdd:release:end -->
 
 <p align="center"><img src="https://github.com/enrimerveille/BGDD/raw/main/assets/popup-light.png" width="320" alt="BGDD light">&emsp;<img src="https://github.com/enrimerveille/BGDD/raw/main/assets/popup-dark.png" width="320" alt="BGDD dark"></p>
@@ -28,7 +28,7 @@ If update checking stops working in an older version, [download the latest relea
 | WAV | 24-bit PCM, preserving source sample rate and channels |
 | MP3 | Native bitrate when usable MP3 exists; otherwise a chosen conversion up to 320 kb/s |
 
-H.265 balances visual quality, file size and processing time. It may involve lossy conversion and does not guarantee a smaller file than an AV1 or VP9 source. If the result is substantially larger, BGDD shows both actual file sizes so you can choose which file to keep. Compatible Apple Silicon Macs can convert 4:2:0 SDR 10-bit, HDR10 (PQ) and HLG sources, preserving 10-bit depth and HDR. Compatible H.265 Main/Main 10 sources retain their compressed video without re-encoding on both ARM and Intel. Intel conversion remains limited to 8-bit SDR. For Dolby Vision, HDR10+, 12-bit, 4:2:2/4:4:4 or ambiguous colour information, choose Maximum quality.
+H.265 balances visual quality, file size and processing time. It may involve lossy conversion and does not guarantee a smaller file than an AV1 or VP9 source. If the result is at least 70% larger and adds at least 20 MB, excluding differences mainly due to audio, BGDD shows both actual file sizes so you can choose which file to keep. Compatible Apple Silicon Macs can convert 4:2:0 SDR 10-bit, HDR10 (PQ) and HLG sources, preserving 10-bit depth and HDR. Compatible H.265 Main/Main 10 sources retain their compressed video without re-encoding on both ARM and Intel. Intel conversion remains limited to 8-bit SDR. For Dolby Vision, HDR10+, 12-bit, 4:2:2/4:4:4 or ambiguous colour information, choose Maximum quality.
 
 MKV videos may require a compatible player such as VLC. Choose **Compatible H.264** for broader playback support.
 
