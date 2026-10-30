@@ -5,12 +5,12 @@
 BGDD est un logiciel **gratuit et propriétaire** qui associe une extension Chrome à un moteur local macOS. Choisissez une publication, un format et un dossier : le téléchargement et le traitement se font sur votre Mac. Aucun compte BGDD, abonnement, serveur de téléchargement ou télémétrie.
 
 <!-- bgdd:release:start -->
-**Version 0.7.0 — Apple Silicon et Intel.** [Notes de version](https://github.com/enrimerveille/BGDD/releases/tag/v0.7.0).
+**Version 0.7.1 — Apple Silicon et Intel.** [Notes de version](https://github.com/enrimerveille/BGDD/releases/tag/v0.7.1).
 
 | Votre Mac | Télécharger |
 |---|---|
-| Apple Silicon (ARM64), macOS 27 | [DMG Apple Silicon](https://github.com/enrimerveille/BGDD/releases/download/v0.7.0/BGDD-macOS-arm64.dmg) |
-| Intel (x86_64), macOS 26 | [DMG Intel](https://github.com/enrimerveille/BGDD/releases/download/v0.7.0/BGDD-macOS-x86_64.dmg) |
+| Apple Silicon (ARM64), macOS 27 | [DMG Apple Silicon](https://github.com/enrimerveille/BGDD/releases/download/v0.7.1/BGDD-macOS-arm64.dmg) |
+| Intel (x86_64), macOS 26 | [DMG Intel](https://github.com/enrimerveille/BGDD/releases/download/v0.7.1/BGDD-macOS-x86_64.dmg) |
 <!-- bgdd:release:end -->
 
 <p align="center"><img src="https://github.com/enrimerveille/BGDD/raw/main/assets/popup-light.png" width="320" alt="BGDD clair">&emsp;<img src="https://github.com/enrimerveille/BGDD/raw/main/assets/popup-dark.png" width="320" alt="BGDD sombre"></p>
@@ -24,7 +24,7 @@ Si la recherche de mises à jour d’une ancienne version ne fonctionne plus, [t
 | Qualité maximale | Meilleurs flux accessibles, sans réencodage vidéo ; MKV si nécessaire |
 | H.265 | MP4 HEVC depuis la meilleure source accessible ; conversion matérielle si nécessaire. Affiché seulement sur les Mac compatibles |
 | H.264 compatible | Flux H.264/AAC disponibles, sans transcodage ; résolution parfois inférieure |
-| Audio original | Meilleure piste accessible, copiée sans réencodage dans un conteneur adapté |
+| Audio original | Piste AAC/M4A privilégiée, sans réencodage ; autre piste source si nécessaire |
 | WAV | Export PCM 24 bits, fréquence et canaux de la source |
 | MP3 | Débit natif lorsqu’un MP3 exploitable existe ; sinon conversion choisie, jusqu’à 320 kb/s |
 
@@ -35,15 +35,15 @@ Les vidéos MKV peuvent nécessiter un lecteur compatible, comme VLC. Choisissez
 YouTube, X, Instagram, TikTok et Vimeo ont des intégrations dédiées. Sur une autre page, ouvrez BGDD pour détecter les lecteurs reconnus et les fichiers vidéo HTTPS directs ; choisissez explicitement si plusieurs vidéos sont présentes. TikTok propose aussi des carrousels MP4, images ZIP et exports audio. Le bouton **B** sur X lance la qualité maximale. L’accès dépend de la publication, de la région et des changements des plateformes ; aucun accès universel ou privé n’est promis.
 
 
-## Réutiliser ses fichiers
+## Audio, file et raccourcis
 
-Sur un résultat terminé, **Autre format…** crée un export à partir du fichier local : H.265, Audio original, WAV ou MP3, et H.264 compatible si les pistes permettent une copie. L’original reste intact. Le réexport utilise la qualité et la piste audio de ce fichier ; il ne retrouve pas les détails perdus lors d’une conversion. Sur une plateforme, « Audio original » désigne la piste accessible, pas le master de l’auteur. Le réexport sécurisé nécessite un fichier enregistré par BGDD 0.7.0 ou plus récent ; les anciens résultats restent accessibles dans le Finder.
+**Audio original** privilégie la meilleure piste AAC adaptée, enregistrée en M4A sans réencodage. À défaut, BGDD conserve une autre piste source, notamment Opus, dans son conteneur adapté. Cette préférence favorise la compatibilité et préserve les canaux connus ; elle ne désigne pas le master de l’auteur.
 
-Avant un téléchargement, BGDD vérifie les entrées correspondantes de son historique borné. Vous pouvez afficher le fichier, choisir un autre format ou télécharger à nouveau si la publication a changé. Effacer l’historique conserve les fichiers mais retire leurs références de réutilisation.
+Avant un téléchargement, BGDD vérifie les entrées correspondantes de son historique. Vous pouvez afficher le fichier, télécharger à nouveau ou fermer le choix. Les anciens fichiers et résultats restent accessibles dans le Finder, y compris ceux produits par les anciens réexports.
 
-**Mettre la file en pause** laisse l’opération courante terminer. Lorsqu’un site répond HTTP 429, ses tâches suivantes attendent ; les autres plateformes et les exports locaux peuvent continuer. La reprise est explicite et respecte le délai du serveur lorsqu’il est fourni. Aucune relance automatique ni vérification réseau en arrière-plan.
+La ligne **En attente** permet de **Mettre en pause** les tâches suivantes sans interrompre le téléchargement actif, puis de **Reprendre**. Une limitation HTTP 429 suspend seulement les prochaines tâches du site concerné ; la reprise est manuelle et respecte le délai du serveur. Aucune relance automatique ni vérification réseau en arrière-plan.
 
-Dans les réglages, personnalisez **Ouvrir BGDD** via les raccourcis Chrome. Les notifications sont désactivées par défaut et demandent une permission à leur activation ; elles regroupent fin de série et événements demandant une attention, sans titre de contenu. La synthèse source/sortie apparaît quand le fichier sélectionné est connu, sans promettre un poids H.265 à l’avance.
+Dans les réglages, personnalisez les deux raccourcis Chrome : **Ouvrir BGDD** et **Télécharger avec BGDD**. Le second utilise le dernier format choisi lorsqu’une vidéo unique est détectée ; sinon, BGDD s’ouvre pour vous laisser choisir. Les notifications **M’avertir**, désactivées par défaut, signalent silencieusement la fin de la file, un échec ou un choix nécessaire, sans titre de vidéo. Leur activation demande la permission Chrome.
 
 ## Installer
 
