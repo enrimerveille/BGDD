@@ -5,12 +5,12 @@
 BGDD est un logiciel **gratuit et propriétaire** qui associe une extension Chrome à un moteur local macOS. Choisissez une publication, un format et un dossier : le téléchargement et le traitement se font sur votre Mac. Aucun compte BGDD, abonnement, serveur de téléchargement ou télémétrie.
 
 <!-- bgdd:release:start -->
-**Version 0.7.1 — Apple Silicon et Intel.** [Notes de version](https://github.com/enrimerveille/BGDD/releases/tag/v0.7.1).
+**Version 0.7.2 — Apple Silicon et Intel.** [Notes de version](https://github.com/enrimerveille/BGDD/releases/tag/v0.7.2).
 
 | Votre Mac | Télécharger |
 |---|---|
-| Apple Silicon (ARM64), macOS 27 | [DMG Apple Silicon](https://github.com/enrimerveille/BGDD/releases/download/v0.7.1/BGDD-macOS-arm64.dmg) |
-| Intel (x86_64), macOS 26 | [DMG Intel](https://github.com/enrimerveille/BGDD/releases/download/v0.7.1/BGDD-macOS-x86_64.dmg) |
+| Apple Silicon (ARM64), macOS 27 | [DMG Apple Silicon](https://github.com/enrimerveille/BGDD/releases/download/v0.7.2/BGDD-macOS-arm64.dmg) |
+| Intel (x86_64), macOS 26 | [DMG Intel](https://github.com/enrimerveille/BGDD/releases/download/v0.7.2/BGDD-macOS-x86_64.dmg) |
 <!-- bgdd:release:end -->
 
 <p align="center"><img src="https://github.com/enrimerveille/BGDD/raw/main/assets/popup-light.png" width="320" alt="BGDD clair">&emsp;<img src="https://github.com/enrimerveille/BGDD/raw/main/assets/popup-dark.png" width="320" alt="BGDD sombre"></p>
@@ -28,16 +28,18 @@ Si la recherche de mises à jour d’une ancienne version ne fonctionne plus, [t
 | WAV | Export PCM 24 bits, fréquence et canaux de la source |
 | MP3 | Débit natif lorsqu’un MP3 exploitable existe ; sinon conversion choisie, jusqu’à 320 kb/s |
 
-H.265 recherche un compromis entre qualité visuelle, taille et temps de traitement. Il peut nécessiter une conversion avec perte et ne garantit pas un fichier plus petit qu’une source AV1 ou VP9. Si le résultat est nettement plus volumineux, vous pouvez conserver la source en Qualité maximale ou garder le H.265 vérifié. Les sources SDR 10 bits, HDR10 (PQ) et HLG en 4:2:0 peuvent être converties sur un Mac Apple Silicon compatible, sans passage en 8 bits ni conversion HDR vers SDR. Les sources déjà H.265 Main/Main 10 compatibles sont conservées sans réencodage vidéo, sur ARM comme sur Intel. Sur Intel, la conversion reste limitée au SDR 8 bits. Pour Dolby Vision, HDR10+, les formats 12 bits, 4:2:2/4:4:4 ou une colorimétrie ambiguë, choisissez Qualité maximale.
+H.265 recherche un compromis entre qualité visuelle, taille et temps de traitement. Il peut nécessiter une conversion avec perte et ne garantit pas un fichier plus petit qu’une source AV1 ou VP9. Si le résultat est nettement plus volumineux, BGDD affiche les tailles des deux fichiers : choisissez **Conserver la source** ou **Conserver le H.265**. Les sources SDR 10 bits, HDR10 (PQ) et HLG en 4:2:0 peuvent être converties sur un Mac Apple Silicon compatible, sans passage en 8 bits ni conversion HDR vers SDR. Les sources déjà H.265 Main/Main 10 compatibles sont conservées sans réencodage vidéo, sur ARM comme sur Intel. Sur Intel, la conversion reste limitée au SDR 8 bits. Pour Dolby Vision, HDR10+, les formats 12 bits, 4:2:2/4:4:4 ou une colorimétrie ambiguë, choisissez Qualité maximale.
 
 Les vidéos MKV peuvent nécessiter un lecteur compatible, comme VLC. Choisissez **H.264 compatible** pour faciliter la lecture.
 
 YouTube, X, Instagram, TikTok et Vimeo ont des intégrations dédiées. Sur une autre page, ouvrez BGDD pour détecter les lecteurs reconnus et les fichiers vidéo HTTPS directs ; choisissez explicitement si plusieurs vidéos sont présentes. TikTok propose aussi des carrousels MP4, images ZIP et exports audio. Le bouton **B** sur X lance la qualité maximale. L’accès dépend de la publication, de la région et des changements des plateformes ; aucun accès universel ou privé n’est promis.
 
 
+Pendant une opération, la source et le résultat attendu sont résumés une seule fois. Après enregistrement, les caractéristiques affichées sont celles du fichier vérifié ; **Détails** conserve les informations complémentaires.
+
 ## Audio, file et raccourcis
 
-**Audio original** privilégie la meilleure piste AAC adaptée, enregistrée en M4A sans réencodage. À défaut, BGDD conserve une autre piste source, notamment Opus, dans son conteneur adapté. Cette préférence favorise la compatibilité et préserve les canaux connus ; elle ne désigne pas le master de l’auteur.
+**Audio original** privilégie la meilleure piste AAC adaptée, enregistrée en M4A sans réencodage. À défaut, BGDD conserve une autre piste source, notamment Opus, dans son conteneur adapté. Cette préférence favorise la compatibilité et préserve les canaux connus.
 
 Avant un téléchargement, BGDD vérifie les entrées correspondantes de son historique. Vous pouvez afficher le fichier, télécharger à nouveau ou fermer le choix. Les anciens fichiers et résultats restent accessibles dans le Finder, y compris ceux produits par les anciens réexports.
 
