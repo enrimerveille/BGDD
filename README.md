@@ -1,70 +1,45 @@
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="https://github.com/enrimerveille/BGDD/raw/main/assets/wordmark-dark.svg"><img src="https://github.com/enrimerveille/BGDD/raw/main/assets/wordmark-light.svg" width="220" alt="BGDD"></picture></p>
-<p align="center"><strong>KEEP THE BYTES.</strong><br>Téléchargez vidéos et audio dans la meilleure qualité disponible, directement sur votre Mac.<br>Optimisé pour YouTube, Instagram, TikTok, X et Vimeo. Détection à la demande de lecteurs reconnus et de vidéos HTML5 directes sur d’autres sites.<br>by Angry Thread</p>
+<p align="center"><strong>KEEP THE BYTES.</strong><br>by Angry Thread</p>
 <p align="center">Français · <a href="README.en.md">English</a></p>
 
-BGDD est un logiciel **gratuit et propriétaire** qui associe une extension Chrome à un moteur local macOS. Choisissez une publication, un format et un dossier : le téléchargement et le traitement se font sur votre Mac. Aucun compte BGDD, abonnement, serveur de téléchargement ou télémétrie.
+Téléchargez vidéos et audio dans la meilleure qualité disponible, directement sur votre Mac.
+
+BGDD associe une extension Chrome à un moteur local pour télécharger des contenus depuis YouTube, Instagram, TikTok, X, Vimeo et d’autres sites compatibles.
+
+Plusieurs formats vidéo et audio, une interface simple et un traitement directement sur votre Mac. Ouvrez une publication dans Chrome, choisissez le format et le dossier de destination : retrouvez ensuite votre fichier sur votre Mac, prêt à être utilisé.
+
+**Gratuit, sans abonnement et sans télémétrie.** Aucun compte BGDD n’est nécessaire. BGDD est un logiciel propriétaire.
+
+## Télécharger
+
+Choisissez le téléchargement correspondant au processeur de votre Mac et vérifiez la version de macOS indiquée ci-dessous. Les deux éditions proposent la même interface.
 
 <!-- bgdd:release:start -->
-**Version 0.7.3 — Apple Silicon et Intel.** [Notes de version](https://github.com/enrimerveille/BGDD/releases/tag/v0.7.3).
+**Version 0.7.4 — Apple Silicon et Intel.** [Notes de version](https://github.com/enrimerveille/BGDD/releases/tag/v0.7.4).
 
 | Votre Mac | Télécharger |
 |---|---|
-| Apple Silicon (ARM64), macOS 27 | [DMG Apple Silicon](https://github.com/enrimerveille/BGDD/releases/download/v0.7.3/BGDD-macOS-arm64.dmg) |
-| Intel (x86_64), macOS 26 | [DMG Intel](https://github.com/enrimerveille/BGDD/releases/download/v0.7.3/BGDD-macOS-x86_64.dmg) |
+| Apple Silicon (ARM64), macOS 27 | [DMG Apple Silicon](https://github.com/enrimerveille/BGDD/releases/download/v0.7.4/BGDD-macOS-arm64.dmg) |
+| Intel (x86_64), macOS 26 | [DMG Intel](https://github.com/enrimerveille/BGDD/releases/download/v0.7.4/BGDD-macOS-x86_64.dmg) |
 <!-- bgdd:release:end -->
+
+## Captures d’écran
 
 <p align="center"><img src="https://github.com/enrimerveille/BGDD/raw/main/assets/popup-light.png" width="320" alt="BGDD clair">&emsp;<img src="https://github.com/enrimerveille/BGDD/raw/main/assets/popup-dark.png" width="320" alt="BGDD sombre"></p>
 
-Si la recherche de mises à jour d’une ancienne version ne fonctionne plus, [téléchargez la dernière version](https://github.com/enrimerveille/BGDD/releases), puis mettez à jour BGDD sans supprimer l’extension Chrome.
+## Installation
 
-## Choisir son format
+1. Téléchargez et ouvrez le DMG adapté à votre Mac.
+2. Lancez **Installer BGDD** et suivez l’assistant.
+3. Ajoutez l’extension à Chrome selon les indications de l’assistant.
 
-| Format | Résultat |
-|---|---|
-| Qualité maximale | Meilleurs flux accessibles, sans réencodage vidéo ; MKV si nécessaire |
-| H.265 | MP4 HEVC depuis la meilleure source accessible ; conversion matérielle si nécessaire. Affiché seulement sur les Mac compatibles |
-| H.264 compatible | Flux H.264/AAC disponibles, sans transcodage ; résolution parfois inférieure |
-| Audio original | Piste AAC/M4A privilégiée, sans réencodage ; autre piste source si nécessaire |
-| WAV | Export PCM 24 bits, fréquence et canaux de la source |
-| MP3 | Débit natif lorsqu’un MP3 exploitable existe ; sinon conversion choisie, jusqu’à 320 kb/s |
+Google Chrome et une connexion Internet sont nécessaires à l’installation. BGDD n’est pas notarisé par Apple : suivez la [procédure d’autorisation macOS](https://github.com/enrimerveille/BGDD/blob/main/docs/DISTRIBUTION-GATEKEEPER.md) si son ouverture est bloquée.
 
-H.265 recherche un compromis entre qualité visuelle, taille et temps de traitement. Il peut nécessiter une conversion avec perte et ne garantit pas un fichier plus petit qu’une source AV1 ou VP9. Si le résultat est au moins 70 % plus volumineux avec au moins 20 Mo supplémentaires, hors différence principalement due à l’audio, BGDD affiche les tailles des deux fichiers : choisissez **Conserver la source** ou **Conserver le H.265**. Les sources SDR 10 bits, HDR10 (PQ) et HLG en 4:2:0 peuvent être converties sur un Mac Apple Silicon compatible, sans passage en 8 bits ni conversion HDR vers SDR. Les sources déjà H.265 Main/Main 10 compatibles sont conservées sans réencodage vidéo, sur ARM comme sur Intel. Sur Intel, la conversion reste limitée au SDR 8 bits. Pour Dolby Vision, HDR10+, les formats 12 bits, 4:2:2/4:4:4 ou une colorimétrie ambiguë, choisissez Qualité maximale.
+## Liens utiles
 
-Les vidéos MKV peuvent nécessiter un lecteur compatible, comme VLC. Choisissez **H.264 compatible** pour faciliter la lecture.
+- [Guide d’installation et de mise à jour](https://github.com/enrimerveille/BGDD/blob/main/docs/DISTRIBUTION-INSTALL.md)
+- [Dernières notes de version](https://github.com/enrimerveille/BGDD/releases/latest)
+- [Conditions d’utilisation](https://github.com/enrimerveille/BGDD/blob/main/CONDITIONS.md)
+- [Licences et composants tiers](https://github.com/enrimerveille/BGDD/blob/main/docs/DISTRIBUTION-LICENSES.md)
 
-YouTube, X, Instagram, TikTok et Vimeo ont des intégrations dédiées. Sur une autre page, ouvrez BGDD pour détecter les lecteurs reconnus et les fichiers vidéo HTTPS directs ; choisissez explicitement si plusieurs vidéos sont présentes. TikTok propose aussi des carrousels MP4, images ZIP et exports audio. Le bouton **B** sur X lance la qualité maximale. L’accès dépend de la publication, de la région et des changements des plateformes ; aucun accès universel ou privé n’est promis.
-
-
-Pendant une opération, la source et le résultat attendu sont résumés une seule fois. Après enregistrement, les caractéristiques affichées sont celles du fichier vérifié ; **Détails** conserve les informations complémentaires.
-
-## Audio, file et raccourcis
-
-**Audio original** privilégie la meilleure piste AAC adaptée, enregistrée en M4A sans réencodage. À défaut, BGDD conserve une autre piste source, notamment Opus, dans son conteneur adapté. Cette préférence favorise la compatibilité et préserve les canaux connus.
-
-Avant un téléchargement, BGDD vérifie les entrées correspondantes de son historique. Vous pouvez afficher le fichier, télécharger à nouveau ou fermer le choix. Les anciens fichiers et résultats restent accessibles dans le Finder, y compris ceux produits par les anciens réexports.
-
-La ligne **En attente** permet de **Mettre en pause** les tâches suivantes sans interrompre le téléchargement actif, puis de **Reprendre**. Une limitation HTTP 429 suspend seulement les prochaines tâches du site concerné ; la reprise est manuelle et respecte le délai du serveur. Aucune relance automatique ni vérification réseau en arrière-plan.
-
-Dans les réglages, personnalisez les deux raccourcis Chrome : **Ouvrir BGDD** et **Télécharger avec BGDD**. Le second utilise le dernier format choisi lorsqu’une vidéo unique est détectée ; sinon, BGDD s’ouvre pour vous laisser choisir. Les notifications **M’avertir**, désactivées par défaut, signalent silencieusement la fin de la file, un échec ou un choix nécessaire, sans titre de vidéo. Leur activation demande la permission Chrome.
-
-## Installer
-
-1. Ouvrir le DMG adapté à votre Mac, puis **Installer BGDD.app**.
-2. Consulter le guide pour les autorisations de sécurité macOS avant l’installation. [Guide Gatekeeper](https://github.com/enrimerveille/BGDD/blob/main/docs/DISTRIBUTION-GATEKEEPER.md).
-3. Suivre les quatre étapes : **Installer BGDD / Mettre à jour BGDD**, **Préparer le moteur**, **Ajouter à Chrome**, puis **BGDD est prêt**. Dans le moteur, **Continuer** ramène à l’assistant après les quatre contrôles. L’aide et les licences sont intégrées.
-4. Pour une première installation Chrome, activer **Mode développeur** et **Charger l’extension non empaquetée** depuis le dossier montré. Pour une mise à jour, cliquer **Actualiser** sur la carte BGDD existante, sans la supprimer.
-5. Dans BGDD, ouvrir **Réglages → Vérifier l’installation**, fermer le popup, revenir à l’assistant et choisir **Vérifier la connexion**, puis **Terminer**.
-
-Une connexion Internet est nécessaire à l’installation. Aucun Terminal, Homebrew, Python ou Node.js à installer. L’extension se charge manuellement ; elle ne se met pas à jour via le Chrome Web Store. [Guide détaillé](https://github.com/enrimerveille/BGDD/blob/main/docs/DISTRIBUTION-INSTALL.md).
-
-## Mettre à jour ou retirer BGDD
-
-Depuis **0.4.8-rc.10 ou avant**, téléchargez le DMG manuellement : l’ancien assistant ne peut pas ouvrir ce nouveau paquet. Pour les versions suivantes, recherchez les mises à jour depuis l’installateur. Ouvrez le nouveau paquet, puis choisissez **Mettre à jour BGDD** et **Préparer le moteur**. Dans Chrome, cliquez **Actualiser** sur BGDD et rechargez les publications déjà ouvertes. Le dossier, l’identité, les préférences et l’historique sont conservés.
-
-Ouvrez **Désinstaller BGDD.app** dans le DMG, ou choisissez **Maintenance… → Désinstaller** dans l’installateur. L’effacement des réglages et de l’historique natifs est facultatif et décoché par défaut. **Les fichiers téléchargés sont conservés.** Retirez ensuite la carte BGDD dans Chrome.
-
-## Limites et droits
-
-Un téléchargement actif, une file de cinq tâches et 60 résultats d’historique. Fermer le popup laisse le transfert continuer ; fermer Chrome l’arrête sans reprise automatique. Aucun processus résident ni recherche périodique de mise à jour. Les fichiers existants ne sont jamais écrasés. Sur un disque exFAT, attendez la confirmation de réussite avant d’ouvrir le fichier, qui peut apparaître pendant sa copie finale.
-
-BGDD est gratuit et propriétaire. Les [conditions BGDD](https://github.com/enrimerveille/BGDD/blob/main/CONDITIONS.md) ne limitent pas les droits accordés sur les composants tiers. [Licences et sources](https://github.com/enrimerveille/BGDD/blob/main/docs/DISTRIBUTION-LICENSES.md). Téléchargez uniquement les contenus que vous êtes autorisé à conserver.
+Téléchargez uniquement les contenus que vous êtes autorisé à conserver.

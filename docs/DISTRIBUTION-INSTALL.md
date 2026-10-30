@@ -23,6 +23,26 @@ Un téléchargement est actif à la fois. **Annuler** arrête le transfert et so
 
 L’accès à une session de plateforme est facultatif : il se donne et se retire dans les réglages BGDD pour le site concerné. La disponibilité dépend de la publication et des restrictions de la plateforme. Téléchargez uniquement les contenus que vous êtes autorisé à conserver.
 
+## Choisir son format
+
+| Format | Résultat |
+|---|---|
+| Qualité maximale | Meilleurs flux accessibles, sans réencodage vidéo ; MKV si nécessaire |
+| H.265 | MP4 HEVC depuis la meilleure source accessible ; conversion matérielle si nécessaire. Affiché seulement sur les Mac compatibles |
+| H.264 compatible | Flux H.264/AAC disponibles, sans transcodage ; résolution parfois inférieure |
+| Audio original | Piste AAC/M4A privilégiée, sans réencodage ; autre piste source si nécessaire |
+| WAV | Export PCM 24 bits, fréquence et canaux de la source |
+| MP3 | Débit natif lorsqu’un MP3 exploitable existe ; sinon conversion choisie, jusqu’à 320 kb/s |
+
+H.265 recherche un compromis entre qualité visuelle, taille et temps de traitement. Il peut nécessiter une conversion avec perte et ne garantit pas un fichier plus petit qu’une source AV1 ou VP9. Si le résultat est au moins 70 % plus volumineux avec au moins 20 Mo supplémentaires, hors différence principalement due à l’audio, BGDD affiche les tailles des deux fichiers : choisissez **Conserver la source** ou **Conserver le H.265**. Les sources SDR 10 bits, HDR10 (PQ) et HLG en 4:2:0 peuvent être converties sur un Mac Apple Silicon compatible, sans passage en 8 bits ni conversion HDR vers SDR. Les sources déjà H.265 Main/Main 10 compatibles sont conservées sans réencodage vidéo, sur ARM comme sur Intel. Sur Intel, la conversion reste limitée au SDR 8 bits. Pour Dolby Vision, HDR10+, les formats 12 bits, 4:2:2/4:4:4 ou une colorimétrie ambiguë, choisissez Qualité maximale.
+
+Les vidéos MKV peuvent nécessiter un lecteur compatible, comme VLC. Choisissez **H.264 compatible** pour faciliter la lecture.
+
+YouTube, X, Instagram, TikTok et Vimeo ont des intégrations dédiées. Sur une autre page, ouvrez BGDD pour détecter les lecteurs reconnus et les fichiers vidéo HTTPS directs ; choisissez explicitement si plusieurs vidéos sont présentes. TikTok propose aussi des carrousels MP4, images ZIP et exports audio. Le bouton **B** sur X lance la qualité maximale. L’accès dépend de la publication, de la région et des changements des plateformes ; aucun accès universel ou privé n’est promis.
+
+
+Pendant une opération, la source et le résultat attendu sont résumés une seule fois. Après enregistrement, les caractéristiques affichées sont celles du fichier vérifié ; **Détails** conserve les informations complémentaires.
+
 ## Mettre à jour, réparer ou désinstaller
 
 **Maintenance…** permet de rechercher volontairement une mise à jour, de vérifier les composants, de réparer l’installation ou de la désinstaller. Les mises à jour ne s’installent pas automatiquement.
