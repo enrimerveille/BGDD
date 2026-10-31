@@ -38,7 +38,7 @@ H.265 recherche un compromis entre qualité visuelle, taille et temps de traitem
 
 Les vidéos MKV peuvent nécessiter un lecteur compatible, comme VLC. Choisissez **H.264 compatible** pour faciliter la lecture.
 
-YouTube, X, Instagram, TikTok et Vimeo ont des intégrations dédiées. Sur une autre page, ouvrez BGDD pour détecter les lecteurs reconnus et les fichiers vidéo HTTPS directs ; choisissez explicitement si plusieurs vidéos sont présentes. TikTok propose aussi des carrousels MP4, images ZIP et exports audio. Le bouton **B** sur X lance la qualité maximale. L’accès dépend de la publication, de la région et des changements des plateformes ; aucun accès universel ou privé n’est promis.
+YouTube, X, Instagram, TikTok et Vimeo ont des intégrations dédiées. Sur une autre page, ouvrez BGDD pour détecter les lecteurs reconnus et les fichiers vidéo HTTPS directs ; choisissez explicitement si plusieurs vidéos sont présentes. TikTok propose aussi des carrousels MP4, images ZIP et exports audio. Les diaporamas affichent toutes les photos dans leur ordre, avec un glissement horizontal vers la suivante. Leur durée suit la piste musicale réellement vérifiée. Sans musique, après votre accord, comptez 2,5 secondes par photo, transitions comprises. Une musique trop courte pour présenter chaque image est refusée : choisissez alors les images ZIP. Le bouton **B** sur X lance la qualité maximale. L’accès dépend de la publication, de la région et des changements des plateformes ; aucun accès universel ou privé n’est promis.
 
 
 Pendant une opération, la source et le résultat attendu sont résumés une seule fois. Après enregistrement, les caractéristiques affichées sont celles du fichier vérifié ; **Détails** conserve les informations complémentaires.
