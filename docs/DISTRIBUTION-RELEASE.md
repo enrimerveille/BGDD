@@ -1,5 +1,7 @@
-# BGDD 0.7.6 — Un bouton YouTube plus fiable
+# BGDD 0.7.7 — TikTok et finitions
 
-- Le bouton B reste visible lorsque la zone des actions YouTube accueille une barre de ratio des avis, sans chevaucher les commandes.
-- Les deux raccourcis clavier sont présentés séparément dans les réglages, avec une description plus claire.
-- Disponible pour les Mac Apple Silicon et Intel ; formats, préférences et raccourcis configurés conservés.
+- Le raccourci TikTok reconnaît la vidéo active même lorsque des lecteurs invisibles sont préparés sur la page.
+- Les publications photo TikTok retrouvent l’accès aux images originales et aux diaporamas ; la musique reste soumise à sa disponibilité.
+- Les refus d’accès TikTok et les erreurs d’analyse des images sont expliqués plus clairement.
+- Les deux tailles du choix H.265 ressortent en orange et les espacements des réglages sont harmonisés.
+- Disponible pour les Mac Apple Silicon et Intel ; réglages, historique et téléchargements conservés.

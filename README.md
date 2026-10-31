@@ -15,12 +15,12 @@ Plusieurs formats vidéo et audio, une interface simple et un traitement directe
 Choisissez le téléchargement correspondant au processeur de votre Mac et vérifiez la version de macOS indiquée ci-dessous. Les deux éditions proposent la même interface.
 
 <!-- bgdd:release:start -->
-**Version 0.7.6 — Apple Silicon et Intel.** [Notes de version](https://github.com/enrimerveille/BGDD/releases/tag/v0.7.6).
+**Version 0.7.7 — Apple Silicon et Intel.** [Notes de version](https://github.com/enrimerveille/BGDD/releases/tag/v0.7.7).
 
 | Votre Mac | Télécharger |
 |---|---|
-| Apple Silicon (ARM64), macOS 27 | [DMG Apple Silicon](https://github.com/enrimerveille/BGDD/releases/download/v0.7.6/BGDD-macOS-arm64.dmg) |
-| Intel (x86_64), macOS 26 | [DMG Intel](https://github.com/enrimerveille/BGDD/releases/download/v0.7.6/BGDD-macOS-x86_64.dmg) |
+| Apple Silicon (ARM64), macOS 27 | [DMG Apple Silicon](https://github.com/enrimerveille/BGDD/releases/download/v0.7.7/BGDD-macOS-arm64.dmg) |
+| Intel (x86_64), macOS 26 | [DMG Intel](https://github.com/enrimerveille/BGDD/releases/download/v0.7.7/BGDD-macOS-x86_64.dmg) |
 <!-- bgdd:release:end -->
 
 ## Captures d’écran
